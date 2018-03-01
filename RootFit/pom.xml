@@ -9,7 +9,7 @@
 	<packaging>war</packaging>
 
 	<name>RootFit</name>
-	<description>App de Teste</description>
+	<description>Projeto PA2</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -41,7 +41,7 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<scope>runtime</scope>
+			<version>5.1.39</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
