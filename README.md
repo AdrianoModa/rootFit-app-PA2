@@ -1,3 +1,3 @@
-# rootFit-app-PA2
+# RootFit Gestor de Academias
 
 Necessário escrever o README
