@@ -47,7 +47,7 @@ Projeto independente open-source desenvolvido em Java no GNU/Linux, testado no G
 
 ## Ajuda
 
-Para relatar bugs ou fazer perguntas utilize o [Issues](https://github.com/AdrianoModa/rootFit-app-PA2/issues) ou via email rootfit@gmail.com
+Para relatar bugs ou fazer perguntas utilize o [Issues](https://github.com/AdrianoModa/rootFit-app-PA2/issues) ou via email rootfit.inc@gmail.com
 
 Como este é um projeto em desenvolvimento, qualquer feedback será bem-vindo.
 
