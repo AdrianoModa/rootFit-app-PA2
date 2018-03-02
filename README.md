@@ -25,8 +25,8 @@ Projeto independente open-source desenvolvido em Java no GNU/Linux, testado no G
 
 ## Instalação:
 
-1. Back-end: [Instalar](https://github.com/)
-2. Front-end: - [Instalar](https://github.com/)
+1. Back-end: [instalar](https://github.com/AdrianoModa/rootFit-app-PA2/blob/master/RootFit/README.md)
+2. Front-end: [instalar](https://github.com/AdrianoModa/rootFit-app-PA2/blob/master/rootFit-front/README.md)
 
 ## Implementações
 
