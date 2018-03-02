@@ -28,8 +28,8 @@ Projeto independente open-source desenvolvido em Java no GNU/Linux, testado no G
 
 ## Instalação:
 
-1. Back-end: clique aqui
-2. Front-end: clique aqui
+1. Back-end: [Instalar](https://github.com/)
+2. Front-end: - [Instalar](https://github.com/)
 
 ## Implementações
 
