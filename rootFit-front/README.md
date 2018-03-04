@@ -9,7 +9,7 @@ Projeto independente open-source desenvolvido em Java no GNU/Linux, testado no G
 
 
 1. Instalação do Angular-CLI
-  [instalação](https://github.com/angular/angular-cli#installation)
+  [clique aqui](https://github.com/angular/angular-cli#installation)
   
   
 2. Faça um clone do projeto e entre no diretório **/rootFit-front/**  
