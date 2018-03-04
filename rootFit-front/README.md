@@ -32,6 +32,9 @@ Projeto independente open-source desenvolvido em Java no GNU/Linux, testado no G
     ```bash
     localhost:4200/
     ```
+    
+**Confira os passos no Asciinema: **[clique aqui](http://bit.ly/2CYSL2I)
+
 
 ## Ajuda ou Suporte
 
