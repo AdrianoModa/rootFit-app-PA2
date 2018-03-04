@@ -7,19 +7,27 @@ Projeto independente open-source desenvolvido em Java no GNU/Linux, testado no G
 
 ## Instalação Front-End
 
-1. Entre no diretório /rootFit-front/ e execute a instaleçãos das dependências:
+
+1. Instalação do Angular-CLI
+  [instalação](https://github.com/angular/angular-cli#installation)
+  
+  
+2. Faça um clone do projeto e entre no diretório **/rootFit-front/**  
+
+
+3. Faça a instalação das dependências:
 
     ```bash
     npm install
     ```
 
-2. Execute o projeto:
+4. Execute o projeto:
 
    ```bash
     ng serve -open
     ```
 
-3. Teste o projeto no browser:
+5. Teste o projeto no browser:
 
     ```bash
     localhost:4200/
