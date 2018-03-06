@@ -36,31 +36,16 @@ public class AlunoResource {
 		return alunoBO.buscarPorId(id);
 	}
 	
-	@PostMapping("/{nomeAluno}/{email}/{senha}")
-	public Aluno cadastrarLogin(@PathVariable String nomeAluno, @PathVariable String email, @PathVariable String senha){
+	@PostMapping("/{email}/{senha}")
+	public Aluno cadastrarLogin(@PathVariable String email, @PathVariable String senha){
 		Aluno aluno = new Aluno();
-		aluno.setNomeAluno(nomeAluno);
 		aluno.setEmail(email);
 		aluno.setSenha(senha);
 		return alunoBO.adicionarAluno(aluno);
 	}
 	
-	@PostMapping("/{nomeAluno}/{peso}/{altura}/{matricula}")
-	public Aluno adicionar(
-			@PathVariable String nomeAluno,
-			@PathVariable float peso,
-			@PathVariable float altura,
-			@PathVariable String matricula){
-		Aluno aluno = new Aluno();
-		aluno.setNomeAluno(nomeAluno);
-		aluno.setPeso(peso);
-		aluno.setAltura(altura);
-		aluno.setMatricula(matricula);		
-		return alunoBO.adicionarAluno(aluno);
-	}
-	
 	@PutMapping("/{id}/{nomeAluno}/{peso}/{altura}/{matricula}")
-	public ResponseEntity<Aluno> atualizar(@Valid
+	public Aluno adicionar(
 			@PathVariable Long id,
 			@PathVariable String nomeAluno,
 			@PathVariable float peso,
@@ -70,9 +55,8 @@ public class AlunoResource {
 		aluno.setNomeAluno(nomeAluno);
 		aluno.setPeso(peso);
 		aluno.setAltura(altura);
-		aluno.setMatricula(matricula);
-		alunoBO.atualizarAluno(aluno);
-		return ResponseEntity.ok(aluno);
+		aluno.setMatricula(matricula);		
+		return alunoBO.adicionarAluno(aluno);
 	}
 	
 	@DeleteMapping("/{id}")
