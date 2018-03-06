@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table
-public class Cliente implements Serializable {
+public class Aluno implements Serializable {
 	
 	private static final long serialVersionUID = 7219246181465284679L;
 	
@@ -23,6 +23,12 @@ public class Cliente implements Serializable {
 	private String nomeAluno;
 	
 	@Column
+	private String email;
+	
+	@Column
+	private String senha;
+	
+	@Column
 	private float peso;
 	
 	@Column
@@ -32,37 +38,63 @@ public class Cliente implements Serializable {
 	private String matricula;
 	
 	/* Getters e Setters */
-	
+
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
 	public String getNomeAluno() {
 		return nomeAluno;
 	}
+
 	public void setNomeAluno(String nomeAluno) {
 		this.nomeAluno = nomeAluno;
 	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
 	public float getPeso() {
 		return peso;
 	}
+
 	public void setPeso(float peso) {
 		this.peso = peso;
 	}
+
 	public float getAltura() {
 		return altura;
 	}
+
 	public void setAltura(float altura) {
 		this.altura = altura;
 	}
+
 	public String getMatricula() {
 		return matricula;
 	}
+
 	public void setMatricula(String matricula) {
 		this.matricula = matricula;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -70,6 +102,7 @@ public class Cliente implements Serializable {
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -78,17 +111,12 @@ public class Cliente implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Cliente other = (Cliente) obj;
+		Aluno other = (Aluno) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
 		return true;
-	}
-	@Override
-	public String toString() {
-		return "Cliente [id=" + id + ", nomeAluno=" + nomeAluno + ", peso=" + peso + ", altura=" + altura
-				+ ", matricula=" + matricula + "]";
 	}
 }
