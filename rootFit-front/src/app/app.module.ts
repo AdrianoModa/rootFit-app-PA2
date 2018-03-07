@@ -10,12 +10,16 @@ import { ListarClientesComponent } from './listar-clientes/listar-clientes.compo
 import { routing } from './app.routing';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ListarClientesService } from './listar-clientes/listar-clientes.service';
+import { LoginComponent } from './login/login.component';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListarClientesComponent,
-    DashboardComponent
+    DashboardComponent,
+    LoginComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
