@@ -1,7 +1,9 @@
+import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AppBootstrapModule } from './app-bootstrap.module';
 
@@ -10,15 +12,16 @@ import { ListarClientesComponent } from './listar-clientes/listar-clientes.compo
 import { routing } from './app.routing';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ListarClientesService } from './listar-clientes/listar-clientes.service';
-import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu.component';
+import { LoginModule } from './login/login.module';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ListarClientesComponent,
     DashboardComponent,
-    LoginComponent,
     MenuComponent
   ],
   imports: [
@@ -26,6 +29,10 @@ import { MenuComponent } from './menu/menu.component';
     NgbModule.forRoot(),
     HttpClientModule,
     AppBootstrapModule,
+    FormsModule,
+    ReactiveFormsModule,
+    LoginModule,
+    SharedModule,
     routing
 
   ],
