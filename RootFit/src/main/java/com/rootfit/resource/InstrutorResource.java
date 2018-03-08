@@ -38,7 +38,17 @@ public class InstrutorResource {
 		public ResponseEntity<?> persistInstrutor(@RequestBody Instrutor instrutor){
 		instBO.adiciona(instrutor);
 		return ResponseEntity.status(HttpStatus.CREATED).build();
+		
 		}
+	
+	@RequestMapping(value="/{id}", method=RequestMethod.PUT)
+	public ResponseEntity<?> putInstrutor(@PathVariable Long id, @RequestBody Instrutor instrutor){
+		Instrutor update = instBO.buscarPorId(id);
+		update.setNome(instrutor.getNome());
+		update.setSenha(instrutor.getSenha());
+		instBO.atualizar(update);
+		return ResponseEntity.ok().body(instrutor);
+	}
 		
 	@RequestMapping(value="/delete/{id}", method=RequestMethod.DELETE)
 	public ResponseEntity<?> deleteInstrutor(@PathVariable Long id){
