@@ -1,3 +1,4 @@
+import { LoginService } from './login.service';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
@@ -13,7 +14,7 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
 
-  constructor( private formBuilder: FormBuilder, private http: HttpClient) { }
+  constructor( private formBuilder: FormBuilder, private http: HttpClient, private loginService: LoginService) { }
 
   ngOnInit() {
       this.loginForm = this.formBuilder.group({
@@ -25,8 +26,7 @@ export class LoginComponent implements OnInit {
     console.log(this.loginForm.value);
 
     this.http.post('http://localhost:8080/aluno', JSON.stringify(this.loginForm.value))
-    .map(res => res)
+    .map((res: Response) => res.json())
     .subscribe(dados => console.log(dados));
   }
-
 }
