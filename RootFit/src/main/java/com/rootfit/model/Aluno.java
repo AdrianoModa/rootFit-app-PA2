@@ -2,11 +2,15 @@ package com.rootfit.model;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -36,6 +40,12 @@ public class Aluno implements Serializable {
 	
 	@Column
 	private String matricula;
+	
+	
+	@ManyToOne(cascade = CascadeType.ALL,
+            	fetch = FetchType.LAZY)
+	@JoinColumn(name="Instrutor_id")
+	private Instrutor instrutor;
 	
 	/* Getters e Setters */
 
@@ -94,6 +104,14 @@ public class Aluno implements Serializable {
 	public void setMatricula(String matricula) {
 		this.matricula = matricula;
 	}
+	
+	public Instrutor getInstrutor() {
+		return instrutor;
+	}
+
+	public void setInstrutor(Instrutor instrutor) {
+		this.instrutor = instrutor;
+	}
 
 	@Override
 	public int hashCode() {
@@ -119,4 +137,6 @@ public class Aluno implements Serializable {
 			return false;
 		return true;
 	}
+
+
 }
