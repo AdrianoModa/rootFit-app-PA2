@@ -1,0 +1,168 @@
+[33mcommit dcc22012eb065943827f8845afe925e028329763[m
+Author: matheustanaques <matheustanaques@gmail.com>
+Date:   Wed Mar 7 22:06:18 2018 -0300
+
+    CRUD instrutor  serviços
+
+[33mcommit e8dda9fcf71820fe74c37b68ac5ab7c8ae4d18d7[m
+Merge: de1f6f7 9bf6a7f
+Author: adrianomoda <adrianomodafeitosa@gmail.com>
+Date:   Tue Mar 6 15:42:54 2018 -0300
+
+    Merge branch 'adriano-v1-work' of https://github.com/AdrianoModa/rootFit-app-PA2
+
+[33mcommit 9bf6a7f6d3b92530693bdb631af308c64ad376a2[m
+Author: adrianomoda <adrianomodafeitosa@gmail.com>
+Date:   Tue Mar 6 15:15:50 2018 -0300
+
+    Controller login/Aluno construído
+
+[33mcommit f3560347f7ca2d42b0bd33cd04f7463a4ecfb41d[m
+Author: adrianomoda <adrianomodafeitosa@gmail.com>
+Date:   Tue Mar 6 14:37:56 2018 -0300
+
+    Alterado a entidade Cliente -> Aluno e login construído
+
+[33mcommit 510be2ac3c9d09ed071df4210c84d8e6f8ea567f[m
+Author: adrianomoda <adrianomodafeitosa@gmail.com>
+Date:   Tue Mar 6 00:07:59 2018 -0300
+
+    Cross Origin setado
+
+[33mcommit de1f6f7f06213863a2130ebed8f254300503bf3c[m
+Author: Michael Albuquerque <maikonmorais@gmail.com>
+Date:   Sun Mar 4 16:36:12 2018 -0300
+
+    Update README.md
+
+[33mcommit acd6dd825c63d8dbfe5c4849d059f9fafdfa750c[m
+Author: Michael Albuquerque <maikonmorais@gmail.com>
+Date:   Sun Mar 4 16:35:46 2018 -0300
+
+    Update README.md
+
+[33mcommit d2a07647470d6e97e174f0f41cc41a1f499db697[m
+Author: Michael Albuquerque <maikonmorais@gmail.com>
+Date:   Sun Mar 4 16:05:00 2018 -0300
+
+    Update README.md
+
+[33mcommit 12e9a89014bb0bf80e17e0e6ca1445fb5eed3522[m
+Author: Michael Albuquerque <maikonmorais@gmail.com>
+Date:   Sun Mar 4 16:04:37 2018 -0300
+
+    Update README.md
+
+[33mcommit 6466cb5a7540a7daf51d8e0eccfc866f03fffa56[m
+Author: Michael Albuquerque <maikonmorais@gmail.com>
+Date:   Sun Mar 4 15:56:50 2018 -0300
+
+    Update README.md
+
+[33mcommit e83815aa48d87a142d92ea53d0490c8cf4054b40[m
+Author: Maikon Albuquerque <maikonmorais@gmail.com>
+Date:   Sat Mar 3 16:36:11 2018 -0300
+
+    Instalação do boostrap 4
+
+[33mcommit 03c7427c9b1deea237557d0dfa801736c07f94fc[m
+Author: Maikon Albuquerque <maikonmorais@gmail.com>
+Date:   Sat Mar 3 16:35:21 2018 -0300
+
+    Instalação do boostrap 4 e consumo do rest listando clientes
+
+[33mcommit 4f54217d21a56c262527f032a16183f570c4a2af[m
+Author: Maikon Albuquerque <maikonmorais@gmail.com>
+Date:   Sat Mar 3 14:22:50 2018 -0300
+
+    adicionando componente listagem de clientes
+
+[33mcommit fd86b8f6ceecf4604361077d32e2f9cf93f1749c[m
+Author: Matheus Tanaques <matheustanaques@gmail.com>
+Date:   Fri Mar 2 20:55:31 2018 -0300
+
+    Update README.md
+
+[33mcommit 2d09c839da87a899ceaf298100f1e7b2b5eba510[m
+Author: Matheus Tanaques <matheustanaques@gmail.com>
+Date:   Fri Mar 2 20:42:24 2018 -0300
+
+    Update README.md
+
+[33mcommit 4889fb9be59df82cf3765ffd1bba7bd0546002cd[m
+Author: Matheus Tanaques <matheustanaques@gmail.com>
+Date:   Fri Mar 2 20:41:01 2018 -0300
+
+    Update README.md
+
+[33mcommit 78eab94894e6d21e1fb9c038eeb4af0fd6aa96d3[m
+Author: Matheus Tanaques <matheustanaques@gmail.com>
+Date:   Fri Mar 2 20:40:15 2018 -0300
+
+    Update README.md
+
+[33mcommit 4763f3c3a6012eaef5876da510db3f85605ddf51[m
+Author: Matheus Tanaques <matheustanaques@gmail.com>
+Date:   Fri Mar 2 20:39:29 2018 -0300
+
+    Create README.md
+
+[33mcommit 9345688d135169fc1300f82039b9c454261124ef[m
+Author: Matheus Tanaques <matheustanaques@gmail.com>
+Date:   Fri Mar 2 20:38:37 2018 -0300
+
+    Update README.md
+
+[33mcommit cca46ac465bb53e4ee3fab6a8e42a10ffcae099a[m
+Author: Adriano Moda <adrianomodafeitosa@gmail.com>
+Date:   Fri Mar 2 18:02:57 2018 -0400
+
+    Update README.md
+
+[33mcommit 4828297a8a6db5e59577836d4640af30e188ae6f[m
+Author: Adriano Moda <adrianomodafeitosa@gmail.com>
+Date:   Fri Mar 2 18:00:10 2018 -0400
+
+    Update README.md
+
+[33mcommit 574bd546eb38b47277287fbb2ebe725a9f8300d2[m
+Author: Adriano Moda <adrianomodafeitosa@gmail.com>
+Date:   Fri Mar 2 17:57:24 2018 -0400
+
+    Update README
+
+[33mcommit a61dc3dfc428767f9abf6c31caea90b8a58c9083[m
+Author: Michael Albuquerque <maikonmorais@gmail.com>
+Date:   Thu Mar 1 14:15:25 2018 -0300
+
+    Update README.md
+
+[33mcommit f579765e6cf7065bbc31474a05a6cd2ecb25da9a[m
+Author: Michael Albuquerque <maikonmorais@gmail.com>
+Date:   Thu Mar 1 14:13:13 2018 -0300
+
+    Create README.md
+
+[33mcommit 278392ad9f51fb3c82ad231b4cc8b6097094db9b[m
+Author: Maikon Albuquerque <maikonmorais@gmail.com>
+Date:   Thu Mar 1 14:09:36 2018 -0300
+
+    Initial commit
+
+[33mcommit 81de7793650d0c08fd2b99bfb1d8c0008974c9ad[m
+Author: adrianomoda <adrianomodafeitosa@gmail.com>
+Date:   Thu Mar 1 12:35:12 2018 -0300
+
+    Inserção @GetMapping e ajuste connector MySQL
+
+[33mcommit 3537af8d3718114ce4613e6ad3789e5802642bf2[m
+Author: adrianomoda <adrianomodafeitosa@gmail.com>
+Date:   Thu Mar 1 12:21:54 2018 -0300
+
+    Commit Inicial do Projeto
+
+[33mcommit 244871eca4c769b47cc4b76c942e453adbd71b7c[m
+Author: matheustanaques <matheustanaques@gmail.com>
+Date:   Thu Mar 1 01:30:04 2018 -0300
+
+    criando o gitignore inicial

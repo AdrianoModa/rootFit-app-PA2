@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class ListarClientesService {
 
-  clientesURL = 'http://localhost:8080/cliente/';
+  clientesURL = 'http://localhost:8080/aluno/';
 
   constructor(private http: HttpClient) { }
 
