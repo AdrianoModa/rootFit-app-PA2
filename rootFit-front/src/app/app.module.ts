@@ -5,12 +5,16 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AppBootstrapModule } from './app-bootstrap.module';
+import { AccordionModule } from 'primeng/accordion';
+import { MenuItem } from 'primeng/api';
+import { TableModule } from 'primeng/table';
 
 import { AppComponent } from './app.component';
 import { ListarClientesComponent } from './listar-clientes/listar-clientes.component';
 import { routing } from './app.routing';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ListarClientesService } from './listar-clientes/listar-clientes.service';
+import { LoginService } from './login/login.service';
 import { MenuComponent } from './menu/menu.component';
 import { LoginModule } from './login/login.module';
 
@@ -29,11 +33,12 @@ import { LoginModule } from './login/login.module';
     AppBootstrapModule,
     FormsModule,
     ReactiveFormsModule,
+    TableModule,
     LoginModule,
     routing
 
   ],
-  providers: [ListarClientesService],
+  providers: [ListarClientesService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
