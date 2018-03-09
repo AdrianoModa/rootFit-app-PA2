@@ -22,11 +22,12 @@ public class Instrutor implements Serializable{
 	private String nome;
 	private String senha;
 	
-	@OneToMany(cascade = CascadeType.ALL,
+/*	missing implements
+ * @OneToMany(cascade = CascadeType.ALL,
             fetch = FetchType.LAZY,
             mappedBy = "instrutor")
 	private List<Aluno> alunos = new ArrayList<>();
-	
+	*/
 	public Instrutor() {
 		
 	}
