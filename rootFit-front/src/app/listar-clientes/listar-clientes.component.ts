@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ListarClientesService } from './listar-clientes.service';
-
+import { AlunoService } from '../shared/services/aluno.service';
 
 @Component({
   selector: 'app-listar-clientes',
@@ -10,15 +9,15 @@ import { ListarClientesService } from './listar-clientes.service';
 })
 export class ListarClientesComponent implements OnInit {
 
-  clientes: Array<any>;
+  alunos: Array<any>;
 
-  constructor( private listarClientesService: ListarClientesService) { }
+  constructor( private alunoService: AlunoService) { }
 
   ngOnInit() {
     this.listar();
   }
 
   listar() {
-    this.listarClientesService.listar().subscribe( dados => this.clientes = dados);
+    this.alunoService.listar().subscribe( dados => this.alunos = dados);
   }
 }

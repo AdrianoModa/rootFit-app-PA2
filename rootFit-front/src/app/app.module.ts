@@ -1,3 +1,4 @@
+import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -10,17 +11,18 @@ import { AppComponent } from './app.component';
 import { ListarClientesComponent } from './listar-clientes/listar-clientes.component';
 import { routing } from './app.routing';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { ListarClientesService } from './listar-clientes/listar-clientes.service';
 import { MenuComponent } from './menu/menu.component';
-import { LoginModule } from './login/login.module';
-
+import { LoginComponent } from './login/login.component';
+import { AlunoService } from './shared/services/aluno.service';
+import { InstrutorService } from './shared/services/instrutor.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListarClientesComponent,
     DashboardComponent,
-    MenuComponent
+    MenuComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -28,12 +30,12 @@ import { LoginModule } from './login/login.module';
     HttpClientModule,
     AppBootstrapModule,
     FormsModule,
+    SharedModule,
     ReactiveFormsModule,
-    LoginModule,
     routing
 
   ],
-  providers: [ListarClientesService],
+  providers: [AlunoService, InstrutorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -2,14 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable()
-export class ListarClientesService {
+export class AlunoService {
 
-  clientesURL = 'http://localhost:8080/aluno/';
+  alunoURL = 'http://localhost:8080/aluno';
 
   constructor(private http: HttpClient) { }
 
   listar() {
-    return this.http.get<any[]>(`${this.clientesURL}`);
+    return this.http.get<any[]>(`${this.alunoURL}`);
   }
 
 }
