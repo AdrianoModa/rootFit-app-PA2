@@ -1,3 +1,5 @@
+import { AlunoService } from './../shared/services/aluno.service';
+import { Aluno } from './../shared/entities/aluno';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
@@ -12,21 +14,19 @@ import 'rxjs/add/operator/map';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
+  aluno: Aluno = new Aluno();
 
-  constructor( private formBuilder: FormBuilder, private http: HttpClient) { }
+  constructor( private formBuilder: FormBuilder, private alunoService: AlunoService) { }
 
   ngOnInit() {
       this.loginForm = this.formBuilder.group({
-        email: [null],
-        senha: [null]
+        email: [''],
+        senha: ['']
       });
   }
   onSubmit() {
-    console.log(this.loginForm.value);
-
-    this.http.post('http://localhost:8080/aluno', JSON.stringify(this.loginForm.value))
-    .map(res => res)
-    .subscribe(dados => console.log(dados));
+    const alunoData = this.loginForm.value;
+    this.alunoService.adicionar(alunoData);
   }
 
 }
