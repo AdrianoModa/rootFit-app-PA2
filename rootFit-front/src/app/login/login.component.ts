@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
     // let headers = new Headers({'Content-type': 'application/json'});
     // let body = JSON.stringify(this.loginForm.value);
     // let options: any = new RequestOptions({ headers: hearders});
-    this.http.post('http://localhost:8080/aluno/aluno', JSON.stringify(this.loginForm.value)).subscribe(dados => console.log(dados),);
+    this.http.post('http://localhost:8080/aluno/aluno', JSON.stringify(this.loginForm.value)).subscribe(dados => console.log(dados));
   }
 
 }
