@@ -15,9 +15,8 @@ import 'rxjs/add/operator/map';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
-  aluno: Aluno = new Aluno();
 
-  constructor( private formBuilder: FormBuilder, private alunoService: AlunoService) { }
+  constructor( private formBuilder: FormBuilder, private alunoService: AlunoService, private http: HttpClient) { }
 
   ngOnInit() {
       this.loginForm = this.formBuilder.group({
