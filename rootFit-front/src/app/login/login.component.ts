@@ -1,7 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { nullSafeIsEquivalent } from '@angular/compiler/src/output/output_ast';
+
 import 'rxjs/add/operator/map';
 
 @Component({
@@ -23,10 +24,10 @@ export class LoginComponent implements OnInit {
   }
   onSubmit() {
     console.log(this.loginForm.value);
-
-    this.http.post('http://localhost:8080/aluno', JSON.stringify(this.loginForm.value))
-    .map(res => res)
-    .subscribe(dados => console.log(dados));
+    // let headers = new Headers({'Content-type': 'application/json'});
+    // let body = JSON.stringify(this.loginForm.value);
+    // let options: any = new RequestOptions({ headers: hearders});
+    this.http.post('http://localhost:8080/aluno/aluno', JSON.stringify(this.loginForm.value)).subscribe(dados => console.log(dados),);
   }
 
 }

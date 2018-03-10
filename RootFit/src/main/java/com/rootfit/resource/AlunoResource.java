@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -36,11 +37,8 @@ public class AlunoResource {
 		return alunoBO.buscarPorId(id);
 	}
 	
-	@PostMapping("/{email}/{senha}")
-	public Aluno cadastrarLogin(@PathVariable String email, @PathVariable String senha){
-		Aluno aluno = new Aluno();
-		aluno.setEmail(email);
-		aluno.setSenha(senha);
+	@PostMapping("/aluno")
+	public Aluno cadastrarLogin(@RequestBody Aluno aluno){
 		return alunoBO.adicionarAluno(aluno);
 	}
 	
