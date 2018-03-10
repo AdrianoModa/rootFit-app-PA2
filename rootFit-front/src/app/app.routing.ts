@@ -10,7 +10,7 @@ import { LoginComponent } from './login/login.component';
 const APP_ROUTES: Routes = [
 
   {path: '', component: DashboardComponent},
-  {path: 'clientes', component: ListarClientesComponent},
+  {path: 'alunos', component: ListarClientesComponent},
   {path: 'login', component: LoginComponent}
 
 ];

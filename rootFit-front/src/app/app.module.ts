@@ -15,6 +15,7 @@ import { MenuComponent } from './menu/menu.component';
 import { LoginComponent } from './login/login.component';
 import { AlunoService } from './shared/services/aluno.service';
 import { InstrutorService } from './shared/services/instrutor.service';
+import { ColaboradorCadastroComponent } from './colaborador-cadastro/colaborador-cadastro.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { InstrutorService } from './shared/services/instrutor.service';
     ListarClientesComponent,
     DashboardComponent,
     MenuComponent,
-    LoginComponent
+    LoginComponent,
+    ColaboradorCadastroComponent
   ],
   imports: [
     BrowserModule,
