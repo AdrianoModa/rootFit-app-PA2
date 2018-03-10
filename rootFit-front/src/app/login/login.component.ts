@@ -1,10 +1,6 @@
-<<<<<<< HEAD
 import { HttpClient, HttpParams } from '@angular/common/http';
-=======
 import { AlunoService } from './../shared/services/aluno.service';
 import { Aluno } from './../shared/entities/aluno';
-import { HttpClient } from '@angular/common/http';
->>>>>>> ffd4a7401758ea01b612d892e36d37ada69fa280
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { nullSafeIsEquivalent } from '@angular/compiler/src/output/output_ast';
