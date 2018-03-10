@@ -6,6 +6,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AppBootstrapModule } from './app-bootstrap.module';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { TableModule } from 'primeng/table';
+import { ButtonModule } from 'primeng/button';
+import { InputTextModule } from 'primeng/inputtext';
+import { InputMaskModule } from 'primeng/inputmask';
+import { CalendarModule } from 'primeng/calendar';
+
 
 import { AppComponent } from './app.component';
 import { ListarClientesComponent } from './listar-clientes/listar-clientes.component';
@@ -16,6 +23,7 @@ import { LoginComponent } from './login/login.component';
 import { AlunoService } from './shared/services/aluno.service';
 import { InstrutorService } from './shared/services/instrutor.service';
 import { ColaboradorCadastroComponent } from './colaborador-cadastro/colaborador-cadastro.component';
+import { ColaboradorService } from './shared/services/colaborador.service';
 
 @NgModule({
   declarations: [
@@ -33,11 +41,17 @@ import { ColaboradorCadastroComponent } from './colaborador-cadastro/colaborador
     AppBootstrapModule,
     FormsModule,
     SharedModule,
+    BrowserAnimationsModule,
+    TableModule,
+    ButtonModule,
+    InputMaskModule,
+    InputTextModule,
+    CalendarModule,
     ReactiveFormsModule,
     routing
 
   ],
-  providers: [AlunoService, InstrutorService],
+  providers: [AlunoService, InstrutorService, ColaboradorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

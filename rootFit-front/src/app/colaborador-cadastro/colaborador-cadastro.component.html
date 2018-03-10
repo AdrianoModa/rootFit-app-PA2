@@ -1,3 +1,57 @@
-<p>
-  colaborador-cadastro works!
-</p>
+<div class="ui-g-2 ui-fluid"></div>
+<div class="ui-g-8 ui-fluid">
+  <form #frm="ngForm" (ngSubmit)="adicionar(frm)">
+    <div class="ui-g">
+        <div class="ui-g-12 ui-fluid">
+          <h2>Cadastro de Colaboradores</h2>
+        </div>
+        <div class="ui-g-6 ui-fluid">
+            <label>Nome</label>
+            <input type="text" name="nome" pInputText ngModel [required]="true" />
+        </div>
+        <div class="ui-g-6 ui-fluid">
+            <label>Email</label>
+            <input type="text" name="email" pInputText ngModel [required]="true" />
+        </div>
+        <div class="ui-g-6 ui-fluid">
+            <label>Senha</label>
+            <input type="password" name="senha" pInputText ngModel [required]="true" />
+        </div>
+        <div class="ui-g-6 ui-fluid">
+            <label>Telefone</label>
+            <p-inputMask mask="(99)99999-9999" name="telefone" placeholder="(99)99999-9999" ngModel [required]="true"></p-inputMask>
+        </div>
+        <div class="ui-g-4">
+            <button pButton type="submit" label="Adicionar" [disabled]="frm.invalid"></button>
+        </div>
+
+    </div>
+  </form>
+
+  <div class="ui-g">
+      <div class="ui-g-12 ui-fluid">
+        <p-table [value]="colaborador">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Telefone</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-colaborador>
+                <tr>
+                    <td>{{colaborador.id}}</td>
+                    <td>{{colaborador.nome}}</td>
+                    <td>{{colaborador.email}}</td>
+                    <td>{{colaborador.telefone}}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+  </div>
+</div>
+<div class="ui-g-2 ui-fluid"></div>
+
+
+

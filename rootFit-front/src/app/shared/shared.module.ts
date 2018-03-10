@@ -1,3 +1,5 @@
+import { HttpClientModule } from '@angular/common/http';
+import { ColaboradorService } from './services/colaborador.service';
 import { InstrutorService } from './services/instrutor.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -9,7 +11,8 @@ import { AlunoService } from './services/aluno.service';
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   declarations: [
     FormDebugComponent
@@ -17,6 +20,6 @@ import { AlunoService } from './services/aluno.service';
   exports: [
     FormDebugComponent
   ],
-  providers: [AlunoService, InstrutorService]
+  providers: [AlunoService, InstrutorService, ColaboradorService]
 })
 export class SharedModule { }

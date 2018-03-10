@@ -1,4 +1,7 @@
+import { FormControl } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+
+import { ColaboradorService } from '../shared/services/colaborador.service';
 
 @Component({
   selector: 'app-colaborador-cadastro',
@@ -7,15 +10,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ColaboradorCadastroComponent implements OnInit {
 
-  colaboradores = [
-    { nome: '', email: '', senha: '', telefone: ''},
-    { nome: '', email: '', senha: '', telefone: ''},
-    { nome: '', email: '', senha: '', telefone: ''}
-  ];
+  colaborador = [];
 
-  constructor() { }
+  constructor(private colaboradorService: ColaboradorService) { }
 
   ngOnInit() {
+    this.listar();
   }
 
+  listar() {
+  this.colaboradorService.listar()
+  .subscribe(dados => this.colaborador = dados);
+  }
+
+  adicionar(frm: FormControl) {
+    console.log(frm.value);
+
+    this.colaboradorService.adicionar(frm.value)
+    .subscribe(() => {
+      frm.reset();
+      this.listar();
+    });
+  }
 }
