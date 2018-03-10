@@ -12,9 +12,9 @@ Projeto independente open-source desenvolvido em Java no GNU/Linux, testado no G
 
 ## Linguagens
 
-- **Front-end**: Typescript, EcmaScript 2016, Html, CSS
+- **Front-end**: Typescript, EcmaScript 2016, HTML, CSS
 - **Back-end**: Java
-- **Serviço**: RestFul
+- **Serviço**: RestFull
 - **Banco de Dados**: Mysql
 - **Servidor**: Tomcat
 
