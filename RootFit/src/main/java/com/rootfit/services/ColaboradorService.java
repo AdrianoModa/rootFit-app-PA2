@@ -1,18 +1,18 @@
-package com.rootfit.BO;
+package com.rootfit.services;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.rootfit.DAO.ColaboradorDAO;
 import com.rootfit.model.Colaborador;
+import com.rootfit.repositories.ColaboradorRepository;
 
 @Service
-public class ColaboradorBO {
+public class ColaboradorService {
 	
 	@Autowired
-	private ColaboradorDAO colaboradorDAO;
+	private ColaboradorRepository colaboradorDAO;
 
 	public Colaborador adicionarColaborador(Colaborador colaborador){
 		return colaboradorDAO.save(colaborador);

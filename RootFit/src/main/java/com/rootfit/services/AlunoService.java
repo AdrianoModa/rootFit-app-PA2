@@ -1,18 +1,18 @@
-package com.rootfit.BO;
+package com.rootfit.services;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.rootfit.DAO.AlunoDAO;
 import com.rootfit.model.Aluno;
+import com.rootfit.repositories.AlunoRepository;
 
 @Service
-public class AlunoBO {
+public class AlunoService {
 	
 	@Autowired
-	private AlunoDAO alunoDAO;
+	private AlunoRepository alunoDAO;
 
 	public Aluno adicionarAluno(Aluno aluno){
 		return alunoDAO.save(aluno);

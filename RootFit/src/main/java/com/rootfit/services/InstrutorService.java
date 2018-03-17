@@ -1,18 +1,18 @@
-package com.rootfit.BO;
+package com.rootfit.services;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.rootfit.DAO.InstrutorDAO;
 import com.rootfit.model.Instrutor;
+import com.rootfit.repositories.InstrutorRepository;
 
 @Service
-public class InstrutorBO {
+public class InstrutorService {
 	
 	@Autowired
-	private InstrutorDAO instrutorDAO;
+	private InstrutorRepository instrutorDAO;
 	
 	public Instrutor adiciona(Instrutor inst){
 		return instrutorDAO.save(inst);

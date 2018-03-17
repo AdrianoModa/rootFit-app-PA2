@@ -1,4 +1,4 @@
-package com.rootfit.resource;
+package com.rootfit.controllers;
 
 import java.util.List;
 
@@ -16,16 +16,16 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.rootfit.BO.AlunoBO;
 import com.rootfit.model.Aluno;
+import com.rootfit.services.AlunoService;
 
 @RestController
 @RequestMapping("/aluno")
 @CrossOrigin("${origem-permitida}")
-public class AlunoResource {
+public class AlunoController {
 	
 	@Autowired
-	private AlunoBO alunoBO;
+	private AlunoService alunoBO;
 	
 	@GetMapping
 	public List<Aluno> listarTodos(){

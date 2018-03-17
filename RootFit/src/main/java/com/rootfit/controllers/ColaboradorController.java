@@ -1,4 +1,4 @@
-package com.rootfit.resource;
+package com.rootfit.controllers;
 
 import java.util.List;
 
@@ -13,15 +13,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.rootfit.DAO.ColaboradorDAO;
 import com.rootfit.model.Colaborador;
+import com.rootfit.repositories.ColaboradorRepository;
 
 @RestController
 @CrossOrigin("${origem-permitida}")
-public class ColaboradorResource {
+public class ColaboradorController {
 	
 	@Autowired
-	private ColaboradorDAO colaboradorDAO;
+	private ColaboradorRepository colaboradorDAO;
 	
 	@GetMapping("/colaborador")
 	public List<Colaborador> listar() {

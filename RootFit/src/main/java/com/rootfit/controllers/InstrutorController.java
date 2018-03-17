@@ -1,4 +1,4 @@
-package com.rootfit.resource;
+package com.rootfit.controllers;
 
 import java.util.List;
 
@@ -11,15 +11,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.rootfit.BO.InstrutorBO;
 import com.rootfit.model.Instrutor;
+import com.rootfit.services.InstrutorService;
 
 @RestController
 @RequestMapping(value="/instrutor")
-public class InstrutorResource {
+public class InstrutorController {
 	
 	@Autowired
-	InstrutorBO instBO;
+	InstrutorService instBO;
 	
 	@RequestMapping(value="/{id}", method=RequestMethod.GET)
 	public ResponseEntity<?> findById(@PathVariable Long id){
