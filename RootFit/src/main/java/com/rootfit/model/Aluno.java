@@ -9,36 +9,26 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 @Entity
 @Table
 public class Aluno implements Serializable {
 	
 	private static final long serialVersionUID = 7219246181465284679L;
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	
-	@Column
 	private String nomeAluno;
-	
-	@Column
 	private String email;
-	
-	@Column
 	private String senha;
-	
-	@Column
 	private float peso;
-	
-	@Column
 	private float altura;
-	
-	@Column
 	private String matricula;
 	
 	/* Getters e Setters */
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	public Long getId() {
 		return id;
 	}
@@ -47,6 +37,8 @@ public class Aluno implements Serializable {
 		this.id = id;
 	}
 
+	@NotEmpty
+	@Column
 	public String getNomeAluno() {
 		return nomeAluno;
 	}
@@ -55,6 +47,8 @@ public class Aluno implements Serializable {
 		this.nomeAluno = nomeAluno;
 	}
 
+	@NotEmpty
+	@Column
 	public String getEmail() {
 		return email;
 	}
@@ -63,6 +57,8 @@ public class Aluno implements Serializable {
 		this.email = email;
 	}
 
+	@NotEmpty
+	@Column
 	public String getSenha() {
 		return senha;
 	}
@@ -71,6 +67,8 @@ public class Aluno implements Serializable {
 		this.senha = senha;
 	}
 
+	@NotEmpty
+	@Column
 	public float getPeso() {
 		return peso;
 	}
@@ -79,6 +77,8 @@ public class Aluno implements Serializable {
 		this.peso = peso;
 	}
 
+	@NotEmpty
+	@Column
 	public float getAltura() {
 		return altura;
 	}
@@ -87,6 +87,8 @@ public class Aluno implements Serializable {
 		this.altura = altura;
 	}
 
+	@NotEmpty
+	@Column
 	public String getMatricula() {
 		return matricula;
 	}
