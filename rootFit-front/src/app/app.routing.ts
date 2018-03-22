@@ -9,9 +9,9 @@ import { LoginComponent } from './login/login.component';
 
 const APP_ROUTES: Routes = [
 
-  {path: '', component: DashboardComponent},
+  {path: '', component: LoginComponent},
   {path: 'alunos', component: ListarClientesComponent},
-  {path: 'login', component: LoginComponent}
+  {path: 'dashboard', component: DashboardComponent}
 
 ];
 
