@@ -30,6 +30,10 @@ public class Empresa implements Serializable{
 	@OneToMany(mappedBy="empresa")
 	private List<Instrutor> instrutores = new ArrayList<>();
 	
+	public Empresa() {
+		
+	}
+	
 	
 	public Empresa(Long id, String nome, String razaoSocial, String cnpj, String horarioFuncionamento,
 			Boolean matriz_filial) {

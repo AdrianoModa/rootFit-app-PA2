@@ -1,14 +1,15 @@
 package com.rootfit.model.enums;
 
-public enum Rules {
+public enum TipoColaborador {
 	
 	ADMINISTRADOR(1, "Administrador"),
-	FUNCIONARIO(2, "Funcionário");
+	FUNCIONARIO(2, "Funcionário"),
+	PROPRIETARIO(3, "Dono");
 	
 	private int cod;
 	private String descricao;
 	
-	private Rules(int cod, String descricao) {
+	private TipoColaborador(int cod, String descricao) {
 		this.cod = cod;
 		this.descricao = descricao;
 	}
@@ -21,13 +22,13 @@ public enum Rules {
 		return descricao;
 	}
 	
-	public static Rules toEnum(Integer cod) {
+	public static TipoColaborador toEnum(Integer cod) {
 		
 		if (cod == null) {
 			return null;
 		}
 		
-		for (Rules rule : Rules.values()) {
+		for (TipoColaborador rule : TipoColaborador.values()) {
 			if (cod.equals(rule.getCod())){
 				return rule;	
 			}
