@@ -1,16 +1,13 @@
 package com.rootfit.model;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Instrutor implements Serializable{
@@ -22,12 +19,16 @@ public class Instrutor implements Serializable{
 	private String nome;
 	private String senha;
 	
-/*	missing implements
+/*TODO	missing implements
  * @OneToMany(cascade = CascadeType.ALL,
             fetch = FetchType.LAZY,
             mappedBy = "instrutor")
 	private List<Aluno> alunos = new ArrayList<>();
 	*/
+	@ManyToOne
+	@JoinColumn(name="empresa_id")
+	private Empresa empresa;
+	
 	public Instrutor() {
 		
 	}

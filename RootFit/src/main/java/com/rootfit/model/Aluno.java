@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.NotEmpty;
@@ -24,6 +26,11 @@ public class Aluno implements Serializable {
 	private float peso;
 	private float altura;
 	private String matricula;
+	
+	@ManyToOne
+	@JoinColumn(name="empresa_id")
+	private Empresa empresa;
+
 	
 	/* Getters e Setters */
 
