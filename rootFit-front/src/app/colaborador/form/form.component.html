@@ -1,0 +1,74 @@
+<br/>
+<div class="container">
+    <div class="col-lg-12 colreset">
+      <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
+            <li class="breadcrumb-item"><a routerLink="/colaborador">Colaborador</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{editando ? 'Edição':'Cadastro'}}</li>
+          </ol>
+      </nav>
+    </div>
+    <div class="col-lg-12">
+       <h4>{{editando ? 'Edição' : 'Cadastro' }} de Colaborador</h4><br/>
+      <form #frm="ngForm" (ngSubmit)="salvar(frm)">
+          <div class="row">
+              <div class="col-sm-6">
+                      <div class="input-group">
+                          <input type="text" class="form-control" name="nome" placeholder="Seu nome" [(ngModel)]='colaboradores.nome' [required]="true">
+                      </div>
+              </div>
+              <div class="col-sm-6">
+                      <div class="input-group">
+                          <input type="text" class="form-control" label="Nome" name="email" placeholder="email@email.com.br" [(ngModel)]='colaboradores.email' [required]="true">
+                      </div>
+              </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4">
+                      <div class="input-group">
+                          <input type="text" name="senha" class="form-control" placeholder="sua senha" [(ngModel)]='colaboradores.senha' [required]="true">
+                      </div>
+            </div>
+            <div class="col-sm-4">
+                      <div class="input-group">
+                          <input type="text" name="telefone" class="form-control" placeholder="(99)99999-9999" [(ngModel)]='colaboradores.telefone' [required]="true">
+                      </div>
+            </div>
+            <!-- <div class="col-sm-4">
+                <select class="form-control" [required]="true">
+                    <option>Selecione o tipo</option>
+                    <option ngModel *ngFor="let tipo of tipos" value="{{tipo.codigo}}">{{tipo.tipo}}</option>
+                  </select>
+            </div> -->
+          </div>
+          <!-- <div class="row">
+              <div class="col-sm-4">
+                        <div class="input-group">
+                            <input type="text" name="login" class="form-control" placeholder="nome de usuário" ngModel [required]="true">
+                        </div>
+              </div>
+              <div class="col-sm-4">
+                        <div class="input-group">
+                            <input type="text" name="cpf" class="form-control" placeholder="CPF" ngModel [required]="true">
+                        </div>
+              </div>
+              <div class="col-sm-4">
+                  <div class="input-group">
+                      <input type="text" name="rg" class="form-control" placeholder="RG" ngModel [required]="true">
+                  </div>
+              </div>
+            </div> -->
+
+
+          <!--
+                tipo: string; -->
+          <button type="submit" label="Atualizar" [disabled]="frm.invalid" class="btn btn-primary">Atualizar</button>
+          <button type="submit" label="Adicionar" [disabled]="frm.invalid" class="btn btn-primary">Adicionar</button>
+      </form>
+    </div>
+  </div>
+
+
+
+

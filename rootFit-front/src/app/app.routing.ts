@@ -2,16 +2,19 @@ import { Routes, RouterModule } from '@angular/router';
 import { ModuleWithProviders, Component } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { ListarClientesComponent } from './listar-clientes/listar-clientes.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
+import { ColaboradorComponent } from './colaborador/colaborador.component';
+import { FormComponent } from './colaborador/form/form.component';
 
 
 const APP_ROUTES: Routes = [
 
-  {path: '', component: LoginComponent},
-  {path: 'alunos', component: ListarClientesComponent},
-  {path: 'dashboard', component: DashboardComponent}
+  { path: '', component: LoginComponent },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'colaborador', component: ColaboradorComponent},
+  { path: 'colaborador/adicionar', component: FormComponent},
+  { path: 'colaborador/:id', component: FormComponent}
 
 ];
 

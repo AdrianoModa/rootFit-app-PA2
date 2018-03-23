@@ -15,16 +15,16 @@
 
       <div class="collapse navbar-collapse justify-content-end" id="navigation">
         <ul class="navbar-nav">
-              <li [routerLink]="['active']" class ="nav-item">
+              <li [routerLinkActive]="['active']" class ="nav-item">
                   <a class="nav-link" href="#pablo">Aluno</a>
               </li>
-              <li [routerLink]="['active']" class="nav-item">
-                  <a class="nav-link" href="#pablo">Colaboradores</a>
+              <li [routerLinkActive]="['active']" class="nav-item">
+                  <a class="nav-link" [routerLink]="['colaborador']">Colaboradores</a>
               </li>
-              <li [routerLink]="['active']" class="nav-item">
+              <li [routerLinkActive]="['active']" class="nav-item">
                 <a class="nav-link" href="#pablo">Relatórios</a>
             </li>
-              <li [routerLink]="['active']" class="nav-item">
+              <li [routerLinkActive]="['active']" class="nav-item">
                   <a class="nav-link disabled" href="#pablo">Alba</a>
               </li>
           </ul>

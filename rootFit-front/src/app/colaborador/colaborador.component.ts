@@ -1,39 +1,25 @@
-import { Colaborador } from './../shared/entities/colaborador';
-import { FormControl } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-
+import { Colaborador } from '../shared/entities/colaborador';
 import { ColaboradorService } from '../shared/services/colaborador.service';
 
 @Component({
-  selector: 'app-colaborador-cadastro',
-  templateUrl: './colaborador-cadastro.component.html',
-  styleUrls: ['./colaborador-cadastro.component.css']
+  selector: 'app-colaborador',
+  templateUrl: './colaborador.component.html',
+  styleUrls: ['./colaborador.component.css']
 })
-export class ColaboradorCadastroComponent implements OnInit {
+export class ColaboradorComponent implements OnInit {
 
   colaboradores: Colaborador[] = [];
 
-  constructor(private colaboradorService: ColaboradorService) { }
+  constructor( private colaboradorService: ColaboradorService ) { }
 
-  ngOnInit(): void {
-
+  ngOnInit() {
     this.listar();
-
   }
 
   listar() {
     this.colaboradorService.listar()
     .subscribe(data => this.colaboradores = data);
-  }
-
-  adicionar(frm: FormControl) {
-    console.log(frm.value);
-
-    this.colaboradorService.adicionar(frm.value)
-    .subscribe(() => {
-      frm.reset();
-      this.listar();
-    });
   }
 
   remover(colaboradores) {
@@ -50,5 +36,6 @@ export class ColaboradorCadastroComponent implements OnInit {
           });
 
     }
-}
+  }
+
 }

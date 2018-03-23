@@ -7,32 +7,28 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AppBootstrapModule } from './app-bootstrap.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { TableModule } from 'primeng/table';
-import { ButtonModule } from 'primeng/button';
-import { InputTextModule } from 'primeng/inputtext';
-import { InputMaskModule } from 'primeng/inputmask';
-import { CalendarModule } from 'primeng/calendar';
-
 
 import { AppComponent } from './app.component';
-import { ListarClientesComponent } from './listar-clientes/listar-clientes.component';
 import { routing } from './app.routing';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MenuComponent } from './menu/menu.component';
 import { LoginComponent } from './login/login.component';
 import { AlunoService } from './shared/services/aluno.service';
 import { InstrutorService } from './shared/services/instrutor.service';
-import { ColaboradorCadastroComponent } from './colaborador-cadastro/colaborador-cadastro.component';
 import { ColaboradorService } from './shared/services/colaborador.service';
+import { ColaboradorComponent } from './colaborador/colaborador.component';
+import { FormComponent } from './colaborador/form/form.component';
+import { FormEnderecoComponent } from './shared/form-endereco/form-endereco.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListarClientesComponent,
     DashboardComponent,
     MenuComponent,
     LoginComponent,
-    ColaboradorCadastroComponent
+    ColaboradorComponent,
+    FormComponent,
+    FormEnderecoComponent
   ],
   imports: [
     BrowserModule,
@@ -42,11 +38,6 @@ import { ColaboradorService } from './shared/services/colaborador.service';
     FormsModule,
     SharedModule,
     BrowserAnimationsModule,
-    TableModule,
-    ButtonModule,
-    InputMaskModule,
-    InputTextModule,
-    CalendarModule,
     ReactiveFormsModule,
     routing
 
