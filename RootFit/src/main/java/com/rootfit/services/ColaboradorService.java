@@ -2,6 +2,7 @@ package com.rootfit.services;
 
 import java.util.List;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,9 +19,10 @@ public class ColaboradorService {
 		return colaboradorDAO.save(colaborador);
 	}
 	
-	public Colaborador atualizarColaborador(Colaborador colaborador){
-		Colaborador colaboradorExistente = colaboradorDAO.findOne(colaborador.getId());	
-		return colaboradorDAO.save(colaboradorExistente);
+	public Colaborador atualizarColaborador(Long id, Colaborador colaborador){
+		Colaborador colaboradorSalvo = colaboradorDAO.findOne(id);
+		BeanUtils.copyProperties(colaborador, colaboradorSalvo, "id");
+		return colaboradorDAO.save(colaboradorSalvo);
 	}
 	
 	public Colaborador buscarPorId(Long id){
