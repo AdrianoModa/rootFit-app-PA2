@@ -32,8 +32,8 @@ public class Endereco implements Serializable{
 	@OneToMany(mappedBy="endereco")
 	private List<Aluno> alunos = new ArrayList<>();
 	
-	@OneToMany(mappedBy="endereco")
-	private List<Colaborador> colaboradores = new ArrayList<>();
+//	@OneToMany(mappedBy="endereco")
+//	private List<Colaborador> colaboradores = new ArrayList<>();
 	
 	@OneToMany(mappedBy="endereco")
 	private List<Instrutor> instrutor = new ArrayList<>();
@@ -69,13 +69,13 @@ public class Endereco implements Serializable{
 		this.alunos = alunos;
 	}
 
-	public List<Colaborador> getColaboradores() {
-		return colaboradores;
-	}
-
-	public void setColaboradores(List<Colaborador> colaboradores) {
-		this.colaboradores = colaboradores;
-	}
+//	public List<Colaborador> getColaboradores() {
+//		return colaboradores;
+//	}
+//
+//	public void setColaboradores(List<Colaborador> colaboradores) {
+//		this.colaboradores = colaboradores;
+//	}
 
 	public List<Instrutor> getInstrutor() {
 		return instrutor;
