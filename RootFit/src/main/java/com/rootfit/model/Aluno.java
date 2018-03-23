@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.NotEmpty;
@@ -14,8 +16,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 @Entity
 @Table
 public class Aluno implements Serializable {
-	
-	private static final long serialVersionUID = 7219246181465284679L;
+	private static final long serialVersionUID = 1L;
 	
 	private Long id;
 	private String nomeAluno;
@@ -24,6 +25,11 @@ public class Aluno implements Serializable {
 	private float peso;
 	private float altura;
 	private String matricula;
+	
+	private Empresa empresa;
+	private Endereco endereco;
+	private Instrutor instrutor;
+
 	
 	/* Getters e Setters */
 
@@ -35,6 +41,36 @@ public class Aluno implements Serializable {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+	
+	@ManyToOne
+	@JoinColumn(name="instrutor_id")
+	public Instrutor getInstrutor() {
+		return instrutor;
+	}
+
+	public void setInstrutor(Instrutor instrutor) {
+		this.instrutor = instrutor;
+	}
+
+	@ManyToOne
+	@JoinColumn(name="endereco_id")
+	public Endereco getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
+
+	@ManyToOne
+	@JoinColumn(name="empresa_id")
+	public Empresa getEmpresa() {
+		return empresa;
+	}
+
+	public void setEmpresa(Empresa empresa) {
+		this.empresa = empresa;
 	}
 
 	@NotEmpty

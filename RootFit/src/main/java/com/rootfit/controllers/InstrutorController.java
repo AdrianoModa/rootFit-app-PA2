@@ -19,31 +19,31 @@ import com.rootfit.services.InstrutorService;
 public class InstrutorController {
 	
 	@Autowired
-	InstrutorService instBO;
+	InstrutorService instrutorService;
 	
 	@RequestMapping(value="/{id}", method=RequestMethod.GET)
 	public ResponseEntity<?> findById(@PathVariable Long id){
-		Instrutor obj = instBO.buscarPorId(id);
+		Instrutor obj = instrutorService.buscarPorId(id);
 		return ResponseEntity.ok().body(obj);
 	}
 	
-	@RequestMapping(value="/", method=RequestMethod.GET)
+	@RequestMapping(method=RequestMethod.GET)
 	public ResponseEntity<?> findAll() {
-		List<Instrutor> obj = instBO.listarTodos();
+		List<Instrutor> obj = instrutorService.listarTodos();
 		return ResponseEntity.ok().body(obj);
 		
 	}
 	
 	@RequestMapping(value="/newInstrutor", method=RequestMethod.POST)
 		public ResponseEntity<?> persistInstrutor(@RequestBody Instrutor instrutor){
-		instBO.adiciona(instrutor);
+		instrutorService.adiciona(instrutor);
 		return ResponseEntity.status(HttpStatus.CREATED).build();
 		}
 		
 	@RequestMapping(value="/delete/{id}", method=RequestMethod.DELETE)
 	public ResponseEntity<?> deleteInstrutor(@PathVariable Long id){
-		Instrutor inst = instBO.buscarPorId(id);
-		instBO.remover(id);
+		Instrutor inst = instrutorService.buscarPorId(id);
+		instrutorService.remover(id);
 		return ResponseEntity.ok().build();
 		
 	}

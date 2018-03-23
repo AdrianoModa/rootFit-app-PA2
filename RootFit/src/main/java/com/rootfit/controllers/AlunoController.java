@@ -25,21 +25,21 @@ import com.rootfit.services.AlunoService;
 public class AlunoController {
 	
 	@Autowired
-	private AlunoService alunoBO;
+	private AlunoService alunoService;
 	
 	@GetMapping
 	public List<Aluno> listarTodos(){
-		return alunoBO.ListarTodosAlunos();
+		return alunoService.ListarTodosAlunos();
 	}
 	
 	@GetMapping("/{id}")
 	public Aluno listarPorId(@PathVariable @Valid Long id){
-		return alunoBO.buscarPorId(id);
+		return alunoService.buscarPorId(id);
 	}
 	
 	@PostMapping("/aluno")
 	public Aluno cadastrarLogin(@RequestBody Aluno aluno){
-		return alunoBO.adicionarAluno(aluno);
+		return alunoService.adicionarAluno(aluno);
 	}
 	
 	@PutMapping("/{id}/{nomeAluno}/{peso}/{altura}/{matricula}")
@@ -49,21 +49,21 @@ public class AlunoController {
 			@PathVariable float peso,
 			@PathVariable float altura,
 			@PathVariable String matricula){
-		Aluno aluno = alunoBO.buscarPorId(id);
+		Aluno aluno = alunoService.buscarPorId(id);
 		aluno.setNomeAluno(nomeAluno);
 		aluno.setPeso(peso);
 		aluno.setAltura(altura);
 		aluno.setMatricula(matricula);		
-		return alunoBO.adicionarAluno(aluno);
+		return alunoService.adicionarAluno(aluno);
 	}
 	
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Void> remover(@PathVariable Long id){
-		Aluno aluno = alunoBO.buscarPorId(id);
+		Aluno aluno = alunoService.buscarPorId(id);
 		if (aluno == null) {
 			ResponseEntity.notFound().build();
 		}
-		alunoBO.removerAluno(aluno.getId());
+		alunoService.removerAluno(aluno.getId());
 		return ResponseEntity.noContent().build();
 	}
 
