@@ -28,6 +28,7 @@ public class Aluno implements Serializable {
 	
 	private Empresa empresa;
 	private Endereco endereco;
+	private Instrutor instrutor;
 
 	
 	/* Getters e Setters */
@@ -42,7 +43,16 @@ public class Aluno implements Serializable {
 		this.id = id;
 	}
 	
-	
+	@ManyToOne
+	@JoinColumn(name="instrutor_id")
+	public Instrutor getInstrutor() {
+		return instrutor;
+	}
+
+	public void setInstrutor(Instrutor instrutor) {
+		this.instrutor = instrutor;
+	}
+
 	@ManyToOne
 	@JoinColumn(name="endereco_id")
 	public Endereco getEndereco() {
