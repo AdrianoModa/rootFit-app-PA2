@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.NotEmpty;
@@ -29,8 +31,7 @@ public class Colaborador implements Serializable{
 	private String senha;
 	private Integer tipo;
 	
-	
-	// TODO private Endereco endereco;
+	private Endereco endereco;
 	private Empresa empresa;
 	
 	public Colaborador() {
@@ -61,7 +62,17 @@ public class Colaborador implements Serializable{
 	public void setId(Long id) {
 		this.id = id;
 	}
-			
+	
+	@ManyToOne
+	@JoinColumn(name="endereco_id")
+	public Endereco getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
+	
 	public String getRg() {
 		return rg;
 	}
@@ -89,6 +100,8 @@ public class Colaborador implements Serializable{
 		this.tipo = tipo.getCod();
 	}
 	
+	@ManyToOne
+	@JoinColumn(name="empresa_id")
 	public Empresa getEmpresa() {
 		return empresa;
 	}

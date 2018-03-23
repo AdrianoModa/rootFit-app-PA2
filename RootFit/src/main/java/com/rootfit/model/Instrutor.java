@@ -25,9 +25,15 @@ public class Instrutor implements Serializable{
             mappedBy = "instrutor")
 	private List<Aluno> alunos = new ArrayList<>();
 	*/
+	
+	
 	@ManyToOne
 	@JoinColumn(name="empresa_id")
 	private Empresa empresa;
+	
+	@ManyToOne
+	@JoinColumn(name="endereco_id")
+	private Endereco endereco;
 	
 	public Instrutor() {
 		
@@ -46,6 +52,15 @@ public class Instrutor implements Serializable{
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	
+	public Empresa getEmpresa() {
+		return empresa;
+	}
+
+	public void setEmpresa(Empresa empresa) {
+		this.empresa = empresa;
 	}
 
 	public String getNome() {

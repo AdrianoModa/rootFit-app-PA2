@@ -16,8 +16,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 @Entity
 @Table
 public class Aluno implements Serializable {
-	
-	private static final long serialVersionUID = 7219246181465284679L;
+	private static final long serialVersionUID = 1L;
 	
 	private Long id;
 	private String nomeAluno;
@@ -27,9 +26,8 @@ public class Aluno implements Serializable {
 	private float altura;
 	private String matricula;
 	
-	@ManyToOne
-	@JoinColumn(name="empresa_id")
 	private Empresa empresa;
+	private Endereco endereco;
 
 	
 	/* Getters e Setters */
@@ -42,6 +40,27 @@ public class Aluno implements Serializable {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+	
+	
+	@ManyToOne
+	@JoinColumn(name="endereco_id")
+	public Endereco getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
+
+	@ManyToOne
+	@JoinColumn(name="empresa_id")
+	public Empresa getEmpresa() {
+		return empresa;
+	}
+
+	public void setEmpresa(Empresa empresa) {
+		this.empresa = empresa;
 	}
 
 	@NotEmpty
