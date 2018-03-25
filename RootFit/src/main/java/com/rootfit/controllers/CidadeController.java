@@ -37,7 +37,7 @@ public class CidadeController {
 		return cidadeService.buscarPorId(id);
 	}
 	
-	@PostMapping("/adicionar")
+	@PostMapping
 	public Cidade adicionar(@RequestBody Cidade cidade){
 		return cidadeService.adicionarCidade(cidade);
 	}
