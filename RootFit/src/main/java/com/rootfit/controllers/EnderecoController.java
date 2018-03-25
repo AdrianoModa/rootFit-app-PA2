@@ -32,6 +32,7 @@ public class EnderecoController {
 		return enderecoService.listarTodosEnderecos();
 	}
 
+	@GetMapping("{id}")
 	public Endereco listarPorId(@PathVariable @Valid Long id){
 		return enderecoService.buscarPorId(id);
 	}
