@@ -42,6 +42,7 @@ public class InstrutorController {
 		
 	@RequestMapping(value="/delete/{id}", method=RequestMethod.DELETE)
 	public ResponseEntity<?> deleteInstrutor(@PathVariable Long id){
+		@SuppressWarnings("unused")
 		Instrutor inst = instrutorService.buscarPorId(id);
 		instrutorService.remover(id);
 		return ResponseEntity.ok().build();
