@@ -15,6 +15,8 @@ import 'rxjs/add/operator/map';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
+  loginImage:string = "./../assets/img/capagym.jpg" 
+  logoImage:string = "./../assets/logo.jpg"
 
   constructor( private formBuilder: FormBuilder, private alunoService: AlunoService, private http: HttpClient) { }
 
@@ -31,5 +33,10 @@ export class LoginComponent implements OnInit {
     // let options: any = new RequestOptions({ headers: hearders});
     this.http.post('http://localhost:8080/aluno/aluno', JSON.stringify(this.loginForm.value)).subscribe(dados => console.log(dados));
   }
+
+  getUrl()
+{
+  return "url('./../assets/img/capagym.jpg')";
+}
 
 }

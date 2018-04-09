@@ -1,27 +1,42 @@
-<br/>
-<div class="container">
+ <div class="container-fluid" [ngStyle]="{'background-image': getUrl()}">
   <div class="row">
-    <div class="col">
+      <div class="container">
+      <div class="col">
+          <!--<img [src]="logoImage"/>-->
+          <p class="text-center">LOGO ROOTFIT</p>
+          <br/>
+          <br/>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col back-cover">
+      <h3>"A little progress each day adds up to big results."</h3>
+      <br/><br/>
+      <p>
+          Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.  <br/>
+          Quem num gosta di mé, boa gentis num é. <br/>
+          Detraxit consequat et quo num tendi nada. <br/>
+          Si num tem leite então bota uma pinga aí cumpadi!<br/>
+      </p>
 
+        
     </div>
     <div class="col">
         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
             <div class="form-group">
-              <label for="exampleInputEmail1">Email</label>
+              <label for="exampleInputEmail1">Matrícula</label>
               <input type="email" class="form-control" placeholder="seu email" formControlName="email">
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Senha</label>
               <input type="password" class="form-control" placeholder="sua senha" formControlName="senha">
             </div>
-            <button type="submit" class="btn btn-primary" [routerLink]="['dashboard']">Entrar</button>
-
-            <app-form-debug [form]="loginForm"></app-form-debug>
+            <button type="submit" class="btn btn-success btn-lg" [routerLink]="['dashboard']">Entrar</button>
+             | <a href="#">Esqueceu sua senha?</a>
 
           </form>
     </div>
-    <div class="col">
-
     </div>
-  </div>
+    <!--<app-form-debug [form]="loginForm"></app-form-debug>-->
 </div>
