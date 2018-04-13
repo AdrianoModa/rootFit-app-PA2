@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -37,24 +38,20 @@ public class AlunoController {
 		return alunoService.buscarPorId(id);
 	}
 	
-	@PostMapping("/aluno")
+	@PostMapping
 	public Aluno cadastrarLogin(@RequestBody Aluno aluno){
 		return alunoService.adicionarAluno(aluno);
 	}
 	
-	@PutMapping("/{id}/{nomeAluno}/{peso}/{altura}/{matricula}")
-	public Aluno adicionar(
-			@PathVariable Long id,
-			@PathVariable String nomeAluno,
-			@PathVariable float peso,
-			@PathVariable float altura,
-			@PathVariable String matricula){
-		Aluno aluno = alunoService.buscarPorId(id);
-		aluno.setNomeAluno(nomeAluno);
-		aluno.setPeso(peso);
-		aluno.setAltura(altura);
-		aluno.setMatricula(matricula);		
-		return alunoService.adicionarAluno(aluno);
+	@PutMapping("/{id}")
+	public ResponseEntity<Aluno> atualizar(@PathVariable Long id, @RequestBody Aluno aluno){
+		Aluno alunoExistente = alunoService.buscarPorId(id);
+		if (alunoExistente == null) {
+			ResponseEntity.notFound().build();
+		}
+		BeanUtils.copyProperties(aluno, alunoExistente, "id");
+		aluno = alunoService.atualizarAluno(alunoExistente);
+		return ResponseEntity.ok(aluno);
 	}
 	
 	@DeleteMapping("/{id}")
