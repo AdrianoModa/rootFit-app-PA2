@@ -83,7 +83,6 @@ public class Aluno implements Serializable {
 		this.empresa = empresa;
 	}
 
-	@NotEmpty
 	@Column
 	public String getNomeAluno() {
 		return nomeAluno;
@@ -113,7 +112,6 @@ public class Aluno implements Serializable {
 		this.senha = senha;
 	}
 
-	@NotEmpty
 	@Column
 	public float getPeso() {
 		return peso;
@@ -123,7 +121,6 @@ public class Aluno implements Serializable {
 		this.peso = peso;
 	}
 
-	@NotEmpty
 	@Column
 	public float getAltura() {
 		return altura;
@@ -133,7 +130,6 @@ public class Aluno implements Serializable {
 		this.altura = altura;
 	}
 
-	@NotEmpty
 	@Column
 	public String getMatricula() {
 		return matricula;
