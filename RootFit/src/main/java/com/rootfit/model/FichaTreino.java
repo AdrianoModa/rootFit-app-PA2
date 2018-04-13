@@ -76,13 +76,13 @@ public class FichaTreino implements Serializable{
 		this.instrutor = instrutor;
 	}
 
-	public List<Exercicio> getExercicios() {
+	/*public List<Exercicio> getExercicios() {
 		return exercicios;
 	}
 
 	public void setExercicios(List<Exercicio> exercicios) {
 		this.exercicios = exercicios;
-	}
+	}*/
 
 	@Override
 	public int hashCode() {
