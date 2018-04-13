@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.MapsId;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -29,8 +30,8 @@ public class FichaTreino implements Serializable{
 	@MapsId
 	private Instrutor instrutor;
 	
-	
-//	private List<Exercicio> exercicios = new ArrayList<Exercicio>();
+	@OneToMany(mappedBy="fichaTreino")
+	private List<Exercicio> exercicios = new ArrayList<Exercicio>();
 	
 	public FichaTreino() {
 		
@@ -76,13 +77,13 @@ public class FichaTreino implements Serializable{
 		this.instrutor = instrutor;
 	}
 
-	/*public List<Exercicio> getExercicios() {
+	public List<Exercicio> getExercicios() {
 		return exercicios;
 	}
 
 	public void setExercicios(List<Exercicio> exercicios) {
 		this.exercicios = exercicios;
-	}*/
+	}
 
 	@Override
 	public int hashCode() {
