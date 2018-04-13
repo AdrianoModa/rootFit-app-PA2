@@ -1,6 +1,8 @@
 package com.rootfit.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.NotEmpty;
@@ -17,7 +20,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 @Table
 public class Aluno implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
+
 	private Long id;
 	private String nomeAluno;
 	private String email;
@@ -25,12 +28,14 @@ public class Aluno implements Serializable {
 	private float peso;
 	private float altura;
 	private String matricula;
-	
+
 	private Empresa empresa;
 	private Endereco endereco;
 	private Instrutor instrutor;
 
-	
+	@OneToMany(mappedBy="aluno_id")
+	private List<AvaliacaoFisica> avaliacoes = new ArrayList<AvaliacaoFisica>();
+
 	/* Getters e Setters */
 
 	@Id
@@ -42,9 +47,9 @@ public class Aluno implements Serializable {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	
+
 	@ManyToOne
-	@JoinColumn(name="instrutor_id")
+	@JoinColumn(name = "instrutor_id")
 	public Instrutor getInstrutor() {
 		return instrutor;
 	}
@@ -54,7 +59,7 @@ public class Aluno implements Serializable {
 	}
 
 	@ManyToOne
-	@JoinColumn(name="endereco_id")
+	@JoinColumn(name = "endereco_id")
 	public Endereco getEndereco() {
 		return endereco;
 	}
@@ -64,7 +69,7 @@ public class Aluno implements Serializable {
 	}
 
 	@ManyToOne
-	@JoinColumn(name="empresa_id")
+	@JoinColumn(name = "empresa_id")
 	public Empresa getEmpresa() {
 		return empresa;
 	}

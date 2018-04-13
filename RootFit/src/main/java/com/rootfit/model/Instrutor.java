@@ -29,6 +29,9 @@ public class Instrutor implements Serializable{
 	private String login;
 	private String senha;
 	
+	@OneToMany(mappedBy="avaliacao")
+	private List<AvaliacaoFisica> avaliacoes = new ArrayList<AvaliacaoFisica>();
+	
 	
 	@OneToMany(mappedBy="instrutor")
 	private List<Aluno> alunos = new ArrayList<>();
@@ -60,6 +63,14 @@ public class Instrutor implements Serializable{
 		this.senha = senha;
 		this.empresa = empresa;
 		this.endereco = endereco;
+	}
+	
+	public List<AvaliacaoFisica> getAvaliacoes() {
+		return avaliacoes;
+	}
+
+	public void setAvaliacoes(List<AvaliacaoFisica> avaliacoes) {
+		this.avaliacoes = avaliacoes;
 	}
 
 	public Long getId() {
@@ -191,7 +202,7 @@ public class Instrutor implements Serializable{
 			return false;
 		return true;
 	}
-	
-	
+
+
 
 }
