@@ -29,7 +29,7 @@ public class Instrutor implements Serializable{
 	private String login;
 	private String senha;
 	
-	@OneToMany(mappedBy="avaliacao")
+	@OneToMany(mappedBy="avaliador")
 	private List<AvaliacaoFisica> avaliacoes = new ArrayList<AvaliacaoFisica>();
 	
 	
