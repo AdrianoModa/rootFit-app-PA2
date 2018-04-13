@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.NotEmpty;
@@ -33,8 +35,11 @@ public class Aluno implements Serializable {
 	private Endereco endereco;
 	private Instrutor instrutor;
 
-	@OneToMany(mappedBy="aluno_id")
+	@OneToMany(mappedBy="aluno")
 	private List<AvaliacaoFisica> avaliacoes = new ArrayList<AvaliacaoFisica>();
+	
+	@OneToOne(cascade=CascadeType.ALL, mappedBy="aluno")
+	private FichaTreino fichaTreino;
 
 	/* Getters e Setters */
 
