@@ -19,6 +19,7 @@ import { ColaboradorService } from './shared/services/colaborador.service';
 import { ColaboradorComponent } from './colaborador/colaborador.component';
 import { FormComponent } from './colaborador/form/form.component';
 import { FormEnderecoComponent } from './shared/form-endereco/form-endereco.component';
+import { CadastrarUsuarioComponent } from './cadastrar-usuario/cadastrar-usuario.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { FormEnderecoComponent } from './shared/form-endereco/form-endereco.comp
     LoginComponent,
     ColaboradorComponent,
     FormComponent,
-    FormEnderecoComponent
+    FormEnderecoComponent,
+    CadastrarUsuarioComponent
   ],
   imports: [
     BrowserModule,

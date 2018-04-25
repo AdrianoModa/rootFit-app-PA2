@@ -1,3 +1,4 @@
+import { CadastrarUsuarioComponent } from './cadastrar-usuario/cadastrar-usuario.component';
 import { Routes, RouterModule } from '@angular/router';
 import { ModuleWithProviders, Component } from '@angular/core';
 
@@ -14,7 +15,8 @@ const APP_ROUTES: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'colaborador', component: ColaboradorComponent},
   { path: 'colaborador/adicionar', component: FormComponent},
-  { path: 'colaborador/:id', component: FormComponent}
+  { path: 'colaborador/:id', component: FormComponent},
+  { path: 'cadastrar-usuario', component: CadastrarUsuarioComponent}
 
 ];
 
