@@ -30,7 +30,7 @@ public class FichaTreino implements Serializable{
 	private Instrutor instrutor;
 	
 	
-//	private List<Exercicio> exercicios = new ArrayList<Exercicio>();
+	private List<Exercicio> exercicios = new ArrayList<Exercicio>();
 	
 	public FichaTreino() {
 		
