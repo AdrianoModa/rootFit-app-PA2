@@ -12,6 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Endereco implements Serializable{
 	private static final long serialVersionUID = 1L;
@@ -24,6 +26,10 @@ public class Endereco implements Serializable{
 	private String complemento;
 	private String bairro;
 	private String cep;
+	
+	@JsonIgnore
+	@OneToMany(mappedBy="endereco")
+	private List<Usuario> usuarios = new ArrayList<>();
 	
 	@ManyToOne
 	@JoinColumn(name="cidade_id")

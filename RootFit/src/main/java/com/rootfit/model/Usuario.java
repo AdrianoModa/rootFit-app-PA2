@@ -1,12 +1,23 @@
 package com.rootfit.model;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+@Entity
+@Inheritance(strategy=InheritanceType.JOINED)
 public class Usuario implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private String id;
 	private String cpf;
 	private String email;
@@ -17,15 +28,18 @@ public class Usuario implements Serializable {
 	private String senha;
 	private String rg;
 	private String telefone;
+
 	
-	private List<Endereco> enderecos = new ArrayList();
+	@ManyToOne
+	@JoinColumn(name="endereco_id")
+	private Endereco endereco;
 	
 	public Usuario() {
 		
 	}
 
 	public Usuario(String id, String cpf, String email, String genero, String login, String matricula, String nome,
-			String senha, String rg, String telefone) {
+			String senha, String rg, String telefone, Endereco endereco) {
 		super();
 		this.id = id;
 		this.cpf = cpf;
@@ -37,6 +51,17 @@ public class Usuario implements Serializable {
 		this.senha = senha;
 		this.rg = rg;
 		this.telefone = telefone;
+		this.endereco = endereco;
+	}
+
+	
+
+	public Endereco getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
 	}
 
 	public String getId() {
@@ -117,14 +142,6 @@ public class Usuario implements Serializable {
 
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
-	}
-
-	public List<Endereco> getEnderecos() {
-		return enderecos;
-	}
-
-	public void setEnderecos(List<Endereco> enderecos) {
-		this.enderecos = enderecos;
 	}
 
 	@Override
