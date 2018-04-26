@@ -1,15 +1,21 @@
 package com.rootfit.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Instrutor extends Usuario implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
-//	private List<Aluno> alunos = new ArrayList<>();
-//	private List<AvaliacaoFisica> avaliacaoFisica = new ArrayList<>();
+	@OneToMany(mappedBy="instrutor")
+	private List<Aluno> alunos = new ArrayList<>();
+	
+	@OneToMany(mappedBy="instrutor")
+	private List<AvaliacaoFisica> avaliacaoFisica = new ArrayList<>();
 	
 	public Instrutor() {
 		
@@ -20,7 +26,7 @@ public class Instrutor extends Usuario implements Serializable{
 		super(id, cpf, email, genero, login, matricula, nome, senha, rg, telefone, endereco);
 	}
 
-/**	public List<Aluno> getAlunos() {
+	public List<Aluno> getAlunos() {
 		return alunos;
 	}
 
@@ -34,7 +40,7 @@ public class Instrutor extends Usuario implements Serializable{
 
 	public void setAvaliacaoFisica(List<AvaliacaoFisica> avaliacaoFisica) {
 		this.avaliacaoFisica = avaliacaoFisica;
-	}*/
+	}
 	
 	
 	

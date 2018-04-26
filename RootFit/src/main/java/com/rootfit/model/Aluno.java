@@ -32,6 +32,9 @@ public class Aluno implements Serializable {
 	private String matricula;
 
 	private Endereco endereco;
+	
+	@ManyToOne
+	@JoinColumn(name="instrutor_id")
 	private Instrutor instrutor;
 
 	@OneToMany(mappedBy="aluno")

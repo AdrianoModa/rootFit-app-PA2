@@ -31,7 +31,7 @@ public class AvaliacaoFisica implements Serializable{
 	
 	@ManyToOne
 	@JoinColumn(name="instrutor_id")
-	private Instrutor avaliador;
+	private Instrutor instrutor;
 	
 	@OneToOne(cascade=CascadeType.ALL, mappedBy="avaliacaoFisica")
 	private GrupoMuscular grupomuscular;
