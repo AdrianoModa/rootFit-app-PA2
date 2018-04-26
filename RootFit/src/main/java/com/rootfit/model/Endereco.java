@@ -35,9 +35,9 @@ public class Endereco implements Serializable{
 	@JoinColumn(name="cidade_id")
 	private Cidade cidade;
 	
-	@OneToMany(mappedBy="endereco")
+/*	@OneToMany(mappedBy="endereco")
 	private List<Aluno> alunos = new ArrayList<>();
-	
+	*/
 //	@OneToMany(mappedBy="endereco")
 //	private List<Colaborador> colaboradores = new ArrayList<>();
 	
@@ -67,7 +67,7 @@ public class Endereco implements Serializable{
 		this.id = id;
 	}
 	
-	public List<Aluno> getAlunos() {
+/*	public List<Aluno> getAlunos() {
 		return alunos;
 	}
 

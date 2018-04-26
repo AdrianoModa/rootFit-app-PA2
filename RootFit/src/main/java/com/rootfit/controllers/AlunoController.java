@@ -50,10 +50,10 @@ public class AlunoController {
 			@PathVariable float altura,
 			@PathVariable String matricula){
 		Aluno aluno = alunoService.buscarPorId(id);
-		aluno.setNomeAluno(nomeAluno);
+/*		aluno.setNomeAluno(nomeAluno);
 		aluno.setPeso(peso);
 		aluno.setAltura(altura);
-		aluno.setMatricula(matricula);		
+		aluno.setMatricula(matricula);	*/	
 		return alunoService.adicionarAluno(aluno);
 	}
 	
