@@ -1,14 +1,13 @@
 package com.rootfit.model;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.MapsId;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -19,9 +18,8 @@ public class FichaTreino implements Serializable{
 	private Long id;
 	private Date instance;
 	
-	@OneToOne
+	@OneToMany
 	@JoinColumn(name="aluno_id")
-	@MapsId
 	private Aluno aluno;
 	
 	@OneToOne

@@ -6,6 +6,9 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Aluno extends Usuario implements Serializable {
@@ -16,9 +19,13 @@ public class Aluno extends Usuario implements Serializable {
 	private Date nascimento;
 	private Date inicio;
 	
+	@ManyToOne
+	@JoinColumn(name="instrutor_id")
 	private Instrutor instrutor;
 	
+	@OneToMany(mappedBy="aluno")
 	private List<AvaliacaoFisica> avaliacoesFisicas = new ArrayList<>();
+	@OneToMany(mappedBy="aluno")
 	private List<FichaTreino> fichasTreino = new ArrayList<>();
 	
 	public Aluno() {
