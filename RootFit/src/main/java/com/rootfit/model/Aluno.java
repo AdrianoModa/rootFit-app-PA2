@@ -31,7 +31,6 @@ public class Aluno implements Serializable {
 	private float altura;
 	private String matricula;
 
-	private Empresa empresa;
 	private Endereco endereco;
 	private Instrutor instrutor;
 
@@ -73,15 +72,6 @@ public class Aluno implements Serializable {
 		this.endereco = endereco;
 	}
 
-	@ManyToOne
-	@JoinColumn(name = "empresa_id")
-	public Empresa getEmpresa() {
-		return empresa;
-	}
-
-	public void setEmpresa(Empresa empresa) {
-		this.empresa = empresa;
-	}
 
 	@NotEmpty
 	@Column

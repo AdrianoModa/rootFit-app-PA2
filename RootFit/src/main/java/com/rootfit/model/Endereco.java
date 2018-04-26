@@ -41,8 +41,8 @@ public class Endereco implements Serializable{
 //	@OneToMany(mappedBy="endereco")
 //	private List<Colaborador> colaboradores = new ArrayList<>();
 	
-	@OneToMany(mappedBy="endereco")
-	private List<Instrutor> instrutor = new ArrayList<>();
+//	@OneToMany(mappedBy="endereco")
+//	private List<Instrutor> instrutor = new ArrayList<>();
 	
 	
 	public Endereco() {
@@ -83,13 +83,13 @@ public class Endereco implements Serializable{
 //		this.colaboradores = colaboradores;
 //	}
 
-	public List<Instrutor> getInstrutor() {
+/**	public List<Instrutor> getInstrutor() {
 		return instrutor;
 	}
 
 	public void setInstrutor(List<Instrutor> instrutor) {
 		this.instrutor = instrutor;
-	}
+	}**/
 
 	public Cidade getCidade() {
 		return cidade;
