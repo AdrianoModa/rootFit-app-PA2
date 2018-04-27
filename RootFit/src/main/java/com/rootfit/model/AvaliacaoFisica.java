@@ -19,12 +19,10 @@ public class AvaliacaoFisica implements Serializable{
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
-	private Float peso;
-	private Float altura;
-	private Float percMuscular;
-	private Float imc;
-	private Date data;
-	
+	private Double peso;
+	private Double altura;
+	private Date dataAvaliacao;
+
 	@ManyToOne
 	@JoinColumn(name="aluno_id")
 	private Aluno aluno;
@@ -33,23 +31,62 @@ public class AvaliacaoFisica implements Serializable{
 	@JoinColumn(name="instrutor_id")
 	private Instrutor instrutor;
 	
-	@OneToOne(cascade=CascadeType.ALL, mappedBy="avaliacaoFisica")
-	private GrupoMuscular grupomuscular;
+	
 	
 	public AvaliacaoFisica() {
 		
 	}
 
-	public AvaliacaoFisica(Long id, Float peso, Float altura, Float percMuscular, Float imc, Date data,
-			GrupoMuscular grupomuscular) {
+	public AvaliacaoFisica(Long id, Double peso, Double altura, Date dataAvaliacao, Aluno aluno, Instrutor instrutor) {
 		super();
 		this.id = id;
 		this.peso = peso;
 		this.altura = altura;
-		this.percMuscular = percMuscular;
-		this.imc = imc;
-		this.data = data;
-		this.grupomuscular = grupomuscular;
+		this.dataAvaliacao = dataAvaliacao;
+		this.aluno = aluno;
+		this.instrutor = instrutor;
+	}
+	
+	
+
+	public Double getPeso() {
+		return peso;
+	}
+
+	public void setPeso(Double peso) {
+		this.peso = peso;
+	}
+
+	public Double getAltura() {
+		return altura;
+	}
+
+	public void setAltura(Double altura) {
+		this.altura = altura;
+	}
+
+	public Date getDataAvaliacao() {
+		return dataAvaliacao;
+	}
+
+	public void setDataAvaliacao(Date dataAvaliacao) {
+		this.dataAvaliacao = dataAvaliacao;
+	}
+
+	public Aluno getAluno() {
+		return aluno;
+	}
+
+	public void setAluno(Aluno aluno) {
+		this.aluno = aluno;
+	}
+
+	public Instrutor getInstrutor() {
+		return instrutor;
+	}
+
+	public void setInstrutor(Instrutor instrutor) {
+		this.instrutor = instrutor;
 	}
 
 	public Long getId() {
@@ -58,54 +95,6 @@ public class AvaliacaoFisica implements Serializable{
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public Float getPeso() {
-		return peso;
-	}
-
-	public void setPeso(Float peso) {
-		this.peso = peso;
-	}
-
-	public Float getAltura() {
-		return altura;
-	}
-
-	public void setAltura(Float altura) {
-		this.altura = altura;
-	}
-
-	public Float getPercMuscular() {
-		return percMuscular;
-	}
-
-	public void setPercMuscular(Float percMuscular) {
-		this.percMuscular = percMuscular;
-	}
-
-	public Float getImc() {
-		return imc;
-	}
-
-	public void setImc(Float imc) {
-		this.imc = imc;
-	}
-
-	public Date getData() {
-		return data;
-	}
-
-	public void setData(Date data) {
-		this.data = data;
-	}
-
-	public GrupoMuscular getGrupomuscular() {
-		return grupomuscular;
-	}
-
-	public void setGrupomuscular(GrupoMuscular grupomuscular) {
-		this.grupomuscular = grupomuscular;
 	}
 
 	@Override
