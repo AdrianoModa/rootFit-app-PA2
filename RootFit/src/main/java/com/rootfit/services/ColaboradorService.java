@@ -13,29 +13,29 @@ import com.rootfit.repositories.ColaboradorRepository;
 public class ColaboradorService {
 	
 	@Autowired
-	private ColaboradorRepository colaboradorDAO;
+	private ColaboradorRepository colaboradorRepository;
 
 	public Colaborador adicionarColaborador(Colaborador colaborador){
-		return colaboradorDAO.save(colaborador);
+		return colaboradorRepository.save(colaborador);
 	}
 	
 	public Colaborador atualizarColaborador(Long id, Colaborador colaborador){
-		Colaborador colaboradorSalvo = colaboradorDAO.findOne(id);
+		Colaborador colaboradorSalvo = colaboradorRepository.findOne(id);
 		BeanUtils.copyProperties(colaborador, colaboradorSalvo, "id");
-		return colaboradorDAO.save(colaboradorSalvo);
+		return colaboradorRepository.save(colaboradorSalvo);
 	}
 	
 	public Colaborador buscarPorId(Long id){
-		return colaboradorDAO.findOne(id);
+		return colaboradorRepository.findOne(id);
 	}
 	
 	public void removerColaborador(Long id){
-		Colaborador colaborador = colaboradorDAO.findOne(id);
-		colaboradorDAO.delete(colaborador);
+		Colaborador colaborador = colaboradorRepository.findOne(id);
+		colaboradorRepository.delete(colaborador);
 	}
 	
 	public List<Colaborador> ListarTodosColaborador(){
-		return colaboradorDAO.findAll();
+		return colaboradorRepository.findAll();
 	}
 	
 }
