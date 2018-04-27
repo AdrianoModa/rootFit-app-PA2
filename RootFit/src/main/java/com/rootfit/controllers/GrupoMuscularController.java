@@ -21,7 +21,7 @@ import com.rootfit.model.GrupoMuscular;
 import com.rootfit.services.GrupoMuscularService;
 
 @RestController
-@RequestMapping("/empresa")
+@RequestMapping("/grupo-muscular")
 @CrossOrigin("${origem-permitida}")
 public class GrupoMuscularController {
 

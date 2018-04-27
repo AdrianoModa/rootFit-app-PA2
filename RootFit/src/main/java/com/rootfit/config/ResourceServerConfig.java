@@ -37,8 +37,6 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 		http.authorizeRequests()
 		.antMatchers(HttpMethod.GET, "/aluno").permitAll()
 		.antMatchers(HttpMethod.POST, "/aluno").permitAll()
-		.antMatchers(HttpMethod.GET, "/instrutor/**").permitAll()
-		.antMatchers(HttpMethod.PUT, "/instrutor/**").permitAll()
 		.anyRequest().authenticated()
 		.and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 		.and().csrf().disable();
