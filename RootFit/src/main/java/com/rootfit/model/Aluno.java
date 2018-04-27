@@ -32,8 +32,13 @@ public class Aluno extends Usuario implements Serializable {
 		
 	}
 	
-	public Aluno(Boolean status, String objetivo, Date nascimento, Date inicio, Instrutor instrutor) {
-		super();
+	public Aluno(Long id) {
+		super(id);
+		
+	}
+	
+	public Aluno(Long id, Boolean status, String objetivo, Date nascimento, Date inicio, Instrutor instrutor) {
+		super(id);
 		this.status = status;
 		this.objetivo = objetivo;
 		this.nascimento = nascimento;
