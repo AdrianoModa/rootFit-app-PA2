@@ -12,7 +12,6 @@ import { AppComponent } from './app.component';
 import { routing } from './app.routing';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MenuComponent } from './menu/menu.component';
-import { LoginComponent } from './login/login.component';
 import { AlunoService } from './shared/services/aluno.service';
 import { InstrutorService } from './shared/services/instrutor.service';
 import { ColaboradorService } from './shared/services/colaborador.service';
@@ -20,17 +19,20 @@ import { ColaboradorComponent } from './colaborador/colaborador.component';
 import { FormComponent } from './colaborador/form/form.component';
 import { FormEnderecoComponent } from './shared/form-endereco/form-endereco.component';
 import { CadastrarUsuarioComponent } from './cadastrar-usuario/cadastrar-usuario.component';
+import { SegurancaComponent } from './seguranca/seguranca.component';
+import { LoginFormComponent } from './seguranca/login-form/login-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     MenuComponent,
-    LoginComponent,
     ColaboradorComponent,
     FormComponent,
     FormEnderecoComponent,
-    CadastrarUsuarioComponent
+    CadastrarUsuarioComponent,
+    SegurancaComponent,
+    LoginFormComponent
   ],
   imports: [
     BrowserModule,
