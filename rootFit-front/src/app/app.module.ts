@@ -8,6 +8,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AppBootstrapModule } from './app-bootstrap.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { JwtHelper } from 'angular2-jwt';
 
 import { AppComponent } from './app.component';
 import { routing } from './app.routing';
@@ -47,7 +48,13 @@ import { LoginFormComponent } from './seguranca/login-form/login-form.component'
     routing
 
   ],
-  providers: [AlunoService, InstrutorService, ColaboradorService, AuthService],
+  providers: [
+    AlunoService, 
+    InstrutorService, 
+    ColaboradorService, 
+    AuthService,
+    JwtHelper,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
