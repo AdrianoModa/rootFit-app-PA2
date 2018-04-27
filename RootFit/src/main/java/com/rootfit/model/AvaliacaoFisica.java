@@ -1,16 +1,18 @@
 package com.rootfit.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 
 @Entity
 public class AvaliacaoFisica implements Serializable{
@@ -31,6 +33,12 @@ public class AvaliacaoFisica implements Serializable{
 	@JoinColumn(name="instrutor_id")
 	private Instrutor instrutor;
 	
+	@ManyToMany
+	@JoinTable(name="medida_avaliacao",
+		joinColumns = @JoinColumn(name="medida_id"),
+		inverseJoinColumns = @JoinColumn(name="medidaMusculare_id"))
+	private List<MedidaMuscular> medidasMusculares = new ArrayList<>();
+	
 	
 	
 	public AvaliacaoFisica() {
@@ -48,6 +56,14 @@ public class AvaliacaoFisica implements Serializable{
 	}
 	
 	
+
+	public List<MedidaMuscular> getMedidasMusculares() {
+		return medidasMusculares;
+	}
+
+	public void setMedidasMusculares(List<MedidaMuscular> medidasMusculares) {
+		this.medidasMusculares = medidasMusculares;
+	}
 
 	public Double getPeso() {
 		return peso;
