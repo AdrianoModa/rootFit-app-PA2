@@ -16,7 +16,6 @@ export class AlunoService {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let body = JSON.stringify(aluno);
     this.http.post(this.alunoURL + '/' + aluno.email + '/' + aluno.senha, body)
-    .map(res => res)
     .subscribe(dados => console.log(dados));
   }
 

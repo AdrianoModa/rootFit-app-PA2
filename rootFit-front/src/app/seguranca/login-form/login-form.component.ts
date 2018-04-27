@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { AuthService } from './../auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 
@@ -7,19 +7,12 @@ import { FormGroup, FormBuilder } from '@angular/forms';
   templateUrl: './login-form.component.html',
   styleUrls: ['./login-form.component.css']
 })
-export class LoginFormComponent implements OnInit {
+export class LoginFormComponent {
 
-  loginForm: FormGroup;
+  constructor(private auth: AuthService) { }
 
-  constructor( private formBuilder: FormBuilder, private http: HttpClient) { }
-
-  ngOnInit() {
-      this.loginForm = this.formBuilder.group({
-        email: [''],
-        senha: ['']
-      });
-  }
-  onSubmit() {
+  login(usuario: string, senha: string) {
+    this.auth.login(usuario, senha);
   }
 
 }

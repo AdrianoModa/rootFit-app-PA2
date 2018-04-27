@@ -1,3 +1,4 @@
+import { AuthService } from './seguranca/auth.service';
 import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
@@ -46,7 +47,7 @@ import { LoginFormComponent } from './seguranca/login-form/login-form.component'
     routing
 
   ],
-  providers: [AlunoService, InstrutorService, ColaboradorService],
+  providers: [AlunoService, InstrutorService, ColaboradorService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
