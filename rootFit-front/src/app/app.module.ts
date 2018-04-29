@@ -18,7 +18,6 @@ import { ColaboradorComponent } from './colaborador/colaborador.component';
 import { FormComponent } from './colaborador/form/form.component';
 import { FormEnderecoComponent } from './shared/form-endereco/form-endereco.component';
 import { CadastrarUsuarioComponent } from './cadastrar-usuario/cadastrar-usuario.component';
-import { LoginFormComponent } from './seguranca/login-form/login-form.component';
 import { SegurancaModule } from './seguranca/seguranca.module';
 
 @NgModule({
@@ -29,8 +28,7 @@ import { SegurancaModule } from './seguranca/seguranca.module';
     ColaboradorComponent,
     FormComponent,
     FormEnderecoComponent,
-    CadastrarUsuarioComponent,
-    LoginFormComponent
+    CadastrarUsuarioComponent
   ],
   imports: [
     BrowserModule,

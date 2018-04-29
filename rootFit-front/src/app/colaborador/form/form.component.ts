@@ -19,7 +19,7 @@ export class FormComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.listar();
+    /*this.listar();
 
     const codigoColaborador = this.route.snapshot.params['id'];
     if (codigoColaborador) {
@@ -77,6 +77,6 @@ export class FormComponent implements OnInit {
             this.colaboradores.splice(index, 0, colaboradores);
           });
 
-    }
+    }*/
   }
 }
