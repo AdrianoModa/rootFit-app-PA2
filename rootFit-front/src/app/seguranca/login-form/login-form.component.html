@@ -1,4 +1,5 @@
-
+<div class="container">
+  {{ auth.jwtPayload | json}}
 <form autocomplete="off" #f="ngForm">
   <div class="form-group">
     <label>Email</label>
@@ -11,5 +12,5 @@
   <button type="submit" label="Login" [disabled]="!f.valid"
   (click)="login(usuario.value, senha.value); senha.value = '';" class="btn btn-success btn-lg">Entrar</button>
    | <a href="dashboard">Esqueceu sua senha?</a>
-
 </form>
+</div>

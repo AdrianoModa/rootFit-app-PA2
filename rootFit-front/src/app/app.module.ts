@@ -1,13 +1,10 @@
 import { AuthService } from './seguranca/auth.service';
 import { SharedModule } from './shared/shared.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
-import { AppBootstrapModule } from './app-bootstrap.module';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { JwtHelper } from 'angular2-jwt';
 
 import { AppComponent } from './app.component';
@@ -21,8 +18,8 @@ import { ColaboradorComponent } from './colaborador/colaborador.component';
 import { FormComponent } from './colaborador/form/form.component';
 import { FormEnderecoComponent } from './shared/form-endereco/form-endereco.component';
 import { CadastrarUsuarioComponent } from './cadastrar-usuario/cadastrar-usuario.component';
-import { SegurancaComponent } from './seguranca/seguranca.component';
 import { LoginFormComponent } from './seguranca/login-form/login-form.component';
+import { SegurancaModule } from './seguranca/seguranca.module';
 
 @NgModule({
   declarations: [
@@ -33,17 +30,14 @@ import { LoginFormComponent } from './seguranca/login-form/login-form.component'
     FormComponent,
     FormEnderecoComponent,
     CadastrarUsuarioComponent,
-    SegurancaComponent,
     LoginFormComponent
   ],
   imports: [
     BrowserModule,
-    NgbModule.forRoot(),
-    HttpClientModule,
-    AppBootstrapModule,
+    HttpModule,
     FormsModule,
     SharedModule,
-    BrowserAnimationsModule,
+    SegurancaModule,
     ReactiveFormsModule,
     routing
 

@@ -11,18 +11,23 @@ export class ColaboradorComponent implements OnInit {
 
   colaboradores: Colaborador[] = [];
 
+  lancamentos = [];
+
   constructor( private colaboradorService: ColaboradorService ) { }
 
   ngOnInit() {
-    this.listar();
+    this.pesquisar();
   }
 
-  listar() {
-    this.colaboradorService.listar()
-    .subscribe(data => this.colaboradores = data);
+  pesquisar() {
+
+    this.colaboradorService.pesquisar()
+      .then(resultado => {
+        this.lancamentos = resultado.lancamentos;
+      })
   }
 
-  remover(colaboradores) {
+  /*remover(colaboradores) {
     if (confirm('Deseja remover o colaborador:  ' + colaboradores.nome + '?')) {
       const index = this.colaboradores.indexOf(colaboradores);
       this.colaboradores.splice(index, 1);
@@ -36,6 +41,6 @@ export class ColaboradorComponent implements OnInit {
           });
 
     }
-  }
+  }*/
 
 }

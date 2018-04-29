@@ -1,15 +1,13 @@
-.container-fluid{
-    color: white;
+.container{
+    color: black;
     height: 100%;
-    padding-top:200px;
+    padding-top:150px;
     padding-left: 300px;
     padding-right: 300px;
 }
 .form-control{
-    border: springgreen 4px solid;
-    background: transparent;
+    border: gray 4px solid;
     height: 80px;
-    color: springgreen;
 }
 input-placeholder{
     color: springgreen;
@@ -17,5 +15,5 @@ input-placeholder{
     font-weight: bold;
 }
 a{
-    color: white;
+    color: black;
 }

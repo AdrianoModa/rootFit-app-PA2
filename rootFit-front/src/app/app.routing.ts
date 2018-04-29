@@ -1,4 +1,4 @@
-import { SegurancaComponent } from './seguranca/seguranca.component';
+import { LoginFormComponent } from './seguranca/login-form/login-form.component';
 import { CadastrarUsuarioComponent } from './cadastrar-usuario/cadastrar-usuario.component';
 import { Routes, RouterModule } from '@angular/router';
 import { ModuleWithProviders, Component } from '@angular/core';
@@ -13,7 +13,7 @@ const APP_ROUTES: Routes = [
 
   
  
-  { path: 'login', component: SegurancaComponent },
+  { path: 'login', component: LoginFormComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full'},
   { path: 'dashboard', component: DashboardComponent },
   { path: 'colaborador', component: ColaboradorComponent},

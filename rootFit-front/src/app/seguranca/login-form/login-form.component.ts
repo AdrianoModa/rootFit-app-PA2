@@ -14,15 +14,14 @@ export class LoginFormComponent {
 
   login(usuario: string, senha: string) {
     this.auth.login(usuario, senha)
-    .catch(erro => {
-        if( erro === 'invalid_grant'){
-          return Promise.reject('Usuário ou senha inválida!')
-        }
-        return Promise.reject(erro)
-    })
     .then(() => {
-        this.router.navigate(['/dashboard']);
-    });
+      this.router.navigate(['/dashboard']);
+    })
+    .catch(erro => {
+          if(erro === 'invalid_grant'){
+            return Promise.reject('Usuário ou senha inválida!');
+          }
+      });
   }
 
 }
