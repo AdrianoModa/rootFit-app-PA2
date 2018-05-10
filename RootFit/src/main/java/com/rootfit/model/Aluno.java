@@ -2,67 +2,51 @@ package com.rootfit.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-
-import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
-@Table
-public class Aluno implements Serializable {
+public class Aluno extends Usuario implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	private Long id;
-	private String nomeAluno;
-	private String email;
-	private String senha;
-	private float peso;
-	private float altura;
-	private String matricula;
-
-	private Empresa empresa;
-	private Endereco endereco;
-	private Instrutor instrutor;
-
-	@OneToMany(mappedBy="aluno")
-	private List<AvaliacaoFisica> avaliacoes = new ArrayList<AvaliacaoFisica>();
+	private Boolean status;
+	private String objetivo;
+	private Date nascimento;
+	private Date inicio;
 	
-	@OneToOne(cascade=CascadeType.ALL, mappedBy="aluno")
-	private FichaTreino fichaTreino;
-
-	/* Getters e Setters */
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
 	@ManyToOne
-	@JoinColumn(name = "instrutor_id")
-	public Instrutor getInstrutor() {
-		return instrutor;
+	@JoinColumn(name="instrutor_id")
+	private Instrutor instrutor;
+	
+	@OneToMany(mappedBy="aluno")
+	private List<AvaliacaoFisica> avaliacoesFisicas = new ArrayList<>();
+	@OneToMany(mappedBy="aluno")
+	private List<FichaTreino> fichasTreino = new ArrayList<>();
+	
+	public Aluno() {
+		
 	}
-
-	public void setInstrutor(Instrutor instrutor) {
+	
+	public Aluno(Long id) {
+		super(id);
+		
+	}
+	
+	public Aluno(Long id, Boolean status, String objetivo, Date nascimento, Date inicio, Instrutor instrutor) {
+		super(id);
+		this.status = status;
+		this.objetivo = objetivo;
+		this.nascimento = nascimento;
+		this.inicio = inicio;
 		this.instrutor = instrutor;
 	}
 
+<<<<<<< HEAD
 	@ManyToOne
 	@JoinColumn(name = "endereco_id")
 	public Endereco getEndereco() {
@@ -86,81 +70,84 @@ public class Aluno implements Serializable {
 	@Column
 	public String getNomeAluno() {
 		return nomeAluno;
+=======
+	public Boolean getStatus() {
+		return status;
+>>>>>>> 9db53125d110827b7da1bf3f20426e8f06133395
 	}
 
-	public void setNomeAluno(String nomeAluno) {
-		this.nomeAluno = nomeAluno;
+	public void setStatus(Boolean status) {
+		this.status = status;
 	}
 
-	@NotEmpty
-	@Column
-	public String getEmail() {
-		return email;
+	public String getObjetivo() {
+		return objetivo;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setObjetivo(String objetivo) {
+		this.objetivo = objetivo;
 	}
 
-	@NotEmpty
-	@Column
-	public String getSenha() {
-		return senha;
+	public Date getNascimento() {
+		return nascimento;
 	}
 
-	public void setSenha(String senha) {
-		this.senha = senha;
+	public void setNascimento(Date nascimento) {
+		this.nascimento = nascimento;
 	}
 
+<<<<<<< HEAD
 	@Column
 	public float getPeso() {
 		return peso;
+=======
+	public Date getInicio() {
+		return inicio;
+>>>>>>> 9db53125d110827b7da1bf3f20426e8f06133395
 	}
 
-	public void setPeso(float peso) {
-		this.peso = peso;
+	public void setInicio(Date inicio) {
+		this.inicio = inicio;
 	}
 
+<<<<<<< HEAD
 	@Column
 	public float getAltura() {
 		return altura;
+=======
+	public Instrutor getInstrutor() {
+		return instrutor;
+>>>>>>> 9db53125d110827b7da1bf3f20426e8f06133395
 	}
 
-	public void setAltura(float altura) {
-		this.altura = altura;
+	public void setInstrutor(Instrutor instrutor) {
+		this.instrutor = instrutor;
 	}
 
+<<<<<<< HEAD
 	@Column
 	public String getMatricula() {
 		return matricula;
+=======
+	public List<AvaliacaoFisica> getAvaliacoesFisicas() {
+		return avaliacoesFisicas;
+>>>>>>> 9db53125d110827b7da1bf3f20426e8f06133395
 	}
 
-	public void setMatricula(String matricula) {
-		this.matricula = matricula;
+	public void setAvaliacoesFisicas(List<AvaliacaoFisica> avaliacoesFisicas) {
+		this.avaliacoesFisicas = avaliacoesFisicas;
 	}
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		return result;
+	public List<FichaTreino> getFichasTreino() {
+		return fichasTreino;
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Aluno other = (Aluno) obj;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		return true;
+	public void setFichasTreino(List<FichaTreino> fichasTreino) {
+		this.fichasTreino = fichasTreino;
 	}
+	
+	
+	
+	
+	
 }

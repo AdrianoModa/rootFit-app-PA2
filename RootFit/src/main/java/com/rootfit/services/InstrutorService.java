@@ -18,10 +18,10 @@ public class InstrutorService {
 		return instrutorDAO.save(inst);
 	}
 	
-	public Instrutor atualizar(Instrutor inst){
+/**	public Instrutor atualizar(Instrutor inst){
 		Instrutor instCadastrado = instrutorDAO.findOne(inst.getId());	
 		return instrutorDAO.save(instCadastrado);
-	}
+	}*/
 	
 	public Instrutor buscarPorId(Long id){
 		return instrutorDAO.findOne(id);

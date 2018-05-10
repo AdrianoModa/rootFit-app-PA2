@@ -12,6 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Endereco implements Serializable{
 	private static final long serialVersionUID = 1L;
@@ -25,18 +27,22 @@ public class Endereco implements Serializable{
 	private String bairro;
 	private String cep;
 	
+	@JsonIgnore
+	@OneToMany(mappedBy="endereco")
+	private List<Usuario> usuarios = new ArrayList<>();
+	
 	@ManyToOne
 	@JoinColumn(name="cidade_id")
 	private Cidade cidade;
 	
-	@OneToMany(mappedBy="endereco")
+/*	@OneToMany(mappedBy="endereco")
 	private List<Aluno> alunos = new ArrayList<>();
-	
+	*/
 //	@OneToMany(mappedBy="endereco")
 //	private List<Colaborador> colaboradores = new ArrayList<>();
 	
-	@OneToMany(mappedBy="endereco")
-	private List<Instrutor> instrutor = new ArrayList<>();
+//	@OneToMany(mappedBy="endereco")
+//	private List<Instrutor> instrutor = new ArrayList<>();
 	
 	
 	public Endereco() {
@@ -61,7 +67,7 @@ public class Endereco implements Serializable{
 		this.id = id;
 	}
 	
-	public List<Aluno> getAlunos() {
+/*	public List<Aluno> getAlunos() {
 		return alunos;
 	}
 
@@ -77,13 +83,13 @@ public class Endereco implements Serializable{
 //		this.colaboradores = colaboradores;
 //	}
 
-	public List<Instrutor> getInstrutor() {
+/**	public List<Instrutor> getInstrutor() {
 		return instrutor;
 	}
 
 	public void setInstrutor(List<Instrutor> instrutor) {
 		this.instrutor = instrutor;
-	}
+	}**/
 
 	public Cidade getCidade() {
 		return cidade;
