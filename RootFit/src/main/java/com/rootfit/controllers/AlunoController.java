@@ -53,6 +53,21 @@ public class AlunoController {
 		aluno = alunoService.atualizarAluno(alunoExistente);
 		return ResponseEntity.ok(aluno);
 	}
+
+	@PutMapping("/{id}/{nomeAluno}/{peso}/{altura}/{matricula}")
+	public Aluno adicionar(
+			@PathVariable Long id,
+			@PathVariable String nomeAluno,
+			@PathVariable float peso,
+			@PathVariable float altura,
+			@PathVariable String matricula){
+		Aluno aluno = alunoService.buscarPorId(id);
+/*		aluno.setNomeAluno(nomeAluno);
+		aluno.setPeso(peso);
+		aluno.setAltura(altura);
+		aluno.setMatricula(matricula);	*/	
+		return alunoService.adicionarAluno(aluno);
+	}
 	
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Void> remover(@PathVariable Long id){

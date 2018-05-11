@@ -2,15 +2,13 @@ package com.rootfit.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.MapsId;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 
 @Entity
 public class FichaTreino implements Serializable{
@@ -18,17 +16,11 @@ public class FichaTreino implements Serializable{
 	
 	@Id
 	private Long id;
-	private Date instance;
+	private String nome;
 	
-	@OneToOne
+	@ManyToOne
 	@JoinColumn(name="aluno_id")
-	@MapsId
 	private Aluno aluno;
-	
-	@OneToOne
-	@JoinColumn(name="instrutor_id")
-	@MapsId
-	private Instrutor instrutor;
 	
 	@OneToMany(mappedBy="fichaTreino")
 	private List<Exercicio> exercicios = new ArrayList<Exercicio>();
@@ -37,13 +29,14 @@ public class FichaTreino implements Serializable{
 		
 	}
 
-	public FichaTreino(Long id, Date instance, Aluno aluno, Instrutor instrutor) {
+	public FichaTreino(Long id, String nome, Aluno aluno) {
 		super();
 		this.id = id;
-		this.instance = instance;
+		this.nome = nome;
 		this.aluno = aluno;
-		this.instrutor = instrutor;
 	}
+
+
 
 	public Long getId() {
 		return id;
@@ -53,12 +46,13 @@ public class FichaTreino implements Serializable{
 		this.id = id;
 	}
 
-	public Date getInstance() {
-		return instance;
+
+	public String getNome() {
+		return nome;
 	}
 
-	public void setInstance(Date instance) {
-		this.instance = instance;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public Aluno getAluno() {
@@ -69,13 +63,6 @@ public class FichaTreino implements Serializable{
 		this.aluno = aluno;
 	}
 
-	public Instrutor getInstrutor() {
-		return instrutor;
-	}
-
-	public void setInstrutor(Instrutor instrutor) {
-		this.instrutor = instrutor;
-	}
 
 	public List<Exercicio> getExercicios() {
 		return exercicios;
@@ -109,7 +96,5 @@ public class FichaTreino implements Serializable{
 			return false;
 		return true;
 	}
-	
-	
-
 }
+	

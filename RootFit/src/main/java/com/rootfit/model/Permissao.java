@@ -1,9 +1,12 @@
 package com.rootfit.model;
 
+import java.util.List;
+import java.util.Objects;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
-import java.util.Objects;
 
 @Entity
 @Table(name = "permissao")
@@ -11,6 +14,9 @@ public class Permissao {
 
     private Long id;
     private String descricao;
+    
+    @ManyToMany(mappedBy="permissoes")
+    private List<Usuario> usuarios;
 
     @Id
     public Long getId() {
