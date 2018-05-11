@@ -1,41 +1,46 @@
 <div class="container">
 <div class="card">
   <div class="card-body">
-  <form>      
+  <form #f="ngForm" autocomplete="off" (ngSubmit)="adicionarNovoColaborador(f)">      
     <div class="row">
         <div class="col-lg-4">
             <div class="form-group">
-                  <label for="exampleInputEmail1">Matricula:</label>
-                  <input type="text" class="form-control" aria-describedby="emailHelp" >
+                  <label>Matricula:</label>
+                  <input type="text" name="matricula" class="form-control" aria-describedby="matricula" [(ngModel)]="colaborador.matricula"
+                  #matricula >
             </div>
         </div>
         <div class="col-lg-4">
             <div class="form-group">
-                  <label for="exampleInputEmail1">Nome Completo:</label>
-                  <input type="text" class="form-control"  aria-describedby="emailHelp" >
+                  <label>Nome:</label>
+                  <input type="text" name="nome" class="form-control"  aria-describedby="nome" [(ngModel)]="colaborador.nome"
+                  #nome >
             </div>
         </div>
         <div class="col-lg-4">
             <div class="form-group">
-                  <label for="exampleInputEmail1">Sexo:</label>
-                  <input type="text" class="form-control"  aria-describedby="emailHelp" >
+                  <label>Telefone:</label>
+                  <input type="text" name="telefone" class="form-control"  aria-describedby="telefone" [(ngModel)]="colaborador.telefone"
+                  #telefone >
             </div>
           </div>
     </div>
     <div class="row">
         <div class="col-lg-4">
             <div class="form-group">
-                  <label for="exampleInputEmail1">CPF:</label>
-                  <input type="text" class="form-control"  aria-describedby="emailHelp">
+                  <label>Email:</label>
+                  <input type="text" name="email" class="form-control"  aria-describedby="emailHelp" [(ngModel)]="colaborador.email"
+                  #email>
             </div>
         </div>
         <div class="col-lg-4">
               <div class="form-group">
-                    <label for="exampleInputEmail1">RG:</label>
-                    <input type="text" class="form-control"  aria-describedby="emailHelp">
+                    <label>Tipo:</label>
+                    <input type="text" name="tipo" class="form-control"  aria-describedby="tipo" [(ngModel)]="colaborador.tipo"
+                    #tipo>
               </div>
         </div>
-        <div class="col-lg-4">
+        <!-- <div class="col-lg-4">
             <div class="form-group">
                   <label for="exampleInputEmail1">Telefone:</label>
                   <input type="text" class="form-control" aria-describedby="emailHelp" >
@@ -104,9 +109,10 @@
                 <label >Confirme a Senha</label>
                 <input type="password" class="form-control" id="password2" placeholder="Password">
               </div>
-            </div>
+            </div>-->
       </div>
-    <button type="submit" class="btn btn-primary">Cadastrar</button>
+    <button type="submit" class="btn btn-primary"  (click)="adicionarNovoColaborador(f)">Cadastrar</button>
+    <a routerLink="/colaboradores">Voltar para colaboradores</a>
   </form>
   </div>
 </div>

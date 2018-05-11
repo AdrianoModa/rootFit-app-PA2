@@ -6,7 +6,7 @@
         <div class="col-lg-6">
             <div class=text-left>
               <h5>
-              Total de Colaboradores: {{colaboradores.length}}
+             
               </h5>
             </div>
         </div>
@@ -22,7 +22,7 @@
         <table class="table">
             <thead class="bg-light">
               <tr>
-                <th scope="col">ID</th>
+                <th scope="col">Matricula</th>
                 <th scope="col">Nome</th>
                 <th scope="col">Email</th>
                 <th scope="col">Telefone</th>
@@ -33,7 +33,7 @@
             </thead>
             <tbody>
               <tr *ngFor="let colaborador of colaboradores">
-                <th scope="row">{{colaborador.id}}</th>
+                <td scope="row">{{colaborador.matricula}}</td>
                 <td>{{colaborador.nome}}</td>
                 <td>{{colaborador.email}}</td>
                 <td>{{colaborador.telefone}}</td>
@@ -48,7 +48,7 @@
                     </button>
                 </td>
                 <td class="text-center">
-                    <button class="btn btn-danger btn-sm" (click)="remover(colaborador)">
+                    <button class="btn btn-danger btn-sm">
                         <i class="fa fa-times-circle"></i>
                     </button>
                 </td>

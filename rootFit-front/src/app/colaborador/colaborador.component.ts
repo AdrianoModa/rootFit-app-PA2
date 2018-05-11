@@ -9,23 +9,32 @@ import { ColaboradorService } from '../shared/services/colaborador.service';
 })
 export class ColaboradorComponent implements OnInit {
 
-  colaboradores: Colaborador[] = [];
+  // colaboradores: Colaborador[] = [];
 
-  lancamentos = [];
+  colaboradores= [];
 
   constructor( private colaboradorService: ColaboradorService ) { }
 
   ngOnInit() {
-    this.pesquisar();
+   this.consultarTodos();
   }
 
-  pesquisar() {
-
-    this.colaboradorService.pesquisar()
-      .then(resultado => {
-        this.lancamentos = resultado.lancamentos;
-      })
+  consultarTodos(){
+    this.colaboradorService.consultar()
+    .then(dados => {
+      this.colaboradores = dados;
+    });
   }
+
+  adicionarNovo(){
+    this.colaboradorService.adicionar(Colaborador)
+    .then(colaborador => {
+      alert(`Colaborador "${colaborador.nome}", adicionado com a matrícula "${colaborador.matricula}"!`);
+      this.consultarTodos();
+    })
+  }
+
+  
 
   /*remover(colaboradores) {
     if (confirm('Deseja remover o colaborador:  ' + colaboradores.nome + '?')) {

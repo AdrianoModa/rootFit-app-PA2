@@ -3,10 +3,11 @@
 
 export class Colaborador {
   id: number;
+  matricula: string;
   nome: string;
-  email: string;
   telefone: string;
-  senha: string;
+  email: string;
+  tipo: string;
   // endereco: Endereco = new Endereco();
   // empresa: Empresa = new Empresa();
 }

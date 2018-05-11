@@ -1,33 +1,31 @@
-import { Colaborador } from './../entities/colaborador';
+import { Http, Headers } from '@angular/http';
 import { Injectable } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AuthHttp } from 'angular2-jwt';
+import 'rxjs/add/operator/toPromise'
 
 @Injectable()
 export class ColaboradorService {
 
-  colaboradorURL = 'http://localhost:8080/colaborador';
+  colaboradorUrl = 'http://localhost:3000/colaboradores';
 
-  constructor(private http: AuthHttp) { }
+  constructor(private http: Http) { }
 
-  pesquisar(): Promise<any> {
-    const params = new URLSearchParams();
-
-    return this.http.get(`${this.colaboradorURL}`)
+  consultar(): Promise<any>{
+    return this.http.get(this.colaboradorUrl)
       .toPromise()
-      .then(response => {
-        const responseJson = response.json();
-        const colaboradores = responseJson.content;
+      .then(response => response.json());
 
-        const resultado = {
-          colaboradores,
-          total: responseJson.totalElements
-        };
-
-        return resultado;
-      });
   }
 
+  adicionar(colaborador: any): Promise<any>{
+      return this.http.post(this.colaboradorUrl, colaborador)
+        .toPromise()
+        .then(response => response.json());
+  }
+
+
+  
   /*bucarPorId(id: number) {
     return this.http.get<Colaborador[]>(`${this.colaboradorURL}/${id}`);
   }
