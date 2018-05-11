@@ -25,8 +25,12 @@ public class Aluno extends Usuario implements Serializable {
 	
 	@OneToMany(mappedBy="aluno")
 	private List<AvaliacaoFisica> avaliacoesFisicas = new ArrayList<>();
+
 	@OneToMany(mappedBy="aluno")
 	private List<FichaTreino> fichasTreino = new ArrayList<>();
+	
+	@ManyToOne
+	private Endereco endereco;
 	
 	public Aluno() {
 		
@@ -46,7 +50,6 @@ public class Aluno extends Usuario implements Serializable {
 		this.instrutor = instrutor;
 	}
 
-<<<<<<< HEAD
 	@ManyToOne
 	@JoinColumn(name = "endereco_id")
 	public Endereco getEndereco() {
@@ -57,23 +60,8 @@ public class Aluno extends Usuario implements Serializable {
 		this.endereco = endereco;
 	}
 
-	@ManyToOne
-	@JoinColumn(name = "empresa_id")
-	public Empresa getEmpresa() {
-		return empresa;
-	}
-
-	public void setEmpresa(Empresa empresa) {
-		this.empresa = empresa;
-	}
-
-	@Column
-	public String getNomeAluno() {
-		return nomeAluno;
-=======
 	public Boolean getStatus() {
 		return status;
->>>>>>> 9db53125d110827b7da1bf3f20426e8f06133395
 	}
 
 	public void setStatus(Boolean status) {
@@ -96,42 +84,16 @@ public class Aluno extends Usuario implements Serializable {
 		this.nascimento = nascimento;
 	}
 
-<<<<<<< HEAD
-	@Column
-	public float getPeso() {
-		return peso;
-=======
-	public Date getInicio() {
-		return inicio;
->>>>>>> 9db53125d110827b7da1bf3f20426e8f06133395
-	}
-
 	public void setInicio(Date inicio) {
 		this.inicio = inicio;
 	}
 
-<<<<<<< HEAD
-	@Column
-	public float getAltura() {
-		return altura;
-=======
 	public Instrutor getInstrutor() {
 		return instrutor;
->>>>>>> 9db53125d110827b7da1bf3f20426e8f06133395
 	}
 
 	public void setInstrutor(Instrutor instrutor) {
 		this.instrutor = instrutor;
-	}
-
-<<<<<<< HEAD
-	@Column
-	public String getMatricula() {
-		return matricula;
-=======
-	public List<AvaliacaoFisica> getAvaliacoesFisicas() {
-		return avaliacoesFisicas;
->>>>>>> 9db53125d110827b7da1bf3f20426e8f06133395
 	}
 
 	public void setAvaliacoesFisicas(List<AvaliacaoFisica> avaliacoesFisicas) {
@@ -145,9 +107,14 @@ public class Aluno extends Usuario implements Serializable {
 	public void setFichasTreino(List<FichaTreino> fichasTreino) {
 		this.fichasTreino = fichasTreino;
 	}
-	
-	
-	
+
+	public Date getInicio() {
+		return inicio;
+	}
+
+	public List<AvaliacaoFisica> getAvaliacoesFisicas() {
+		return avaliacoesFisicas;
+	}
 	
 	
 }

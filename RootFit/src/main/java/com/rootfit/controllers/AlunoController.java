@@ -43,7 +43,6 @@ public class AlunoController {
 		return alunoService.adicionarAluno(aluno);
 	}
 	
-<<<<<<< HEAD
 	@PutMapping("/{id}")
 	public ResponseEntity<Aluno> atualizar(@PathVariable Long id, @RequestBody Aluno aluno){
 		Aluno alunoExistente = alunoService.buscarPorId(id);
@@ -53,7 +52,8 @@ public class AlunoController {
 		BeanUtils.copyProperties(aluno, alunoExistente, "id");
 		aluno = alunoService.atualizarAluno(alunoExistente);
 		return ResponseEntity.ok(aluno);
-=======
+	}
+
 	@PutMapping("/{id}/{nomeAluno}/{peso}/{altura}/{matricula}")
 	public Aluno adicionar(
 			@PathVariable Long id,
@@ -67,7 +67,6 @@ public class AlunoController {
 		aluno.setAltura(altura);
 		aluno.setMatricula(matricula);	*/	
 		return alunoService.adicionarAluno(aluno);
->>>>>>> 9db53125d110827b7da1bf3f20426e8f06133395
 	}
 	
 	@DeleteMapping("/{id}")

@@ -3,12 +3,19 @@ package com.rootfit.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+
+@Entity
 public class MedidaMuscular {
 	
+	@Id
 	private Long id;
 	private String nome;
 	private Double tamanho;
 	
+	@ManyToMany(mappedBy= "medidasMusculares")
 	private List<AvaliacaoFisica> avaliacoesFisicas = new ArrayList<>();
 	
 	public MedidaMuscular() {

@@ -9,15 +9,12 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.rootfit.model.Instrutor;
-import com.rootfit.model.Usuario;
+import com.rootfit.model.Aluno;
+import com.rootfit.repositories.AlunoRepository;
 import com.rootfit.repositories.InstrutorRepository;
 
 @SpringBootApplication
 public class RootFitApplication implements CommandLineRunner {
-	
-	@Autowired
-	InstrutorRepository instrutorRepository;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(RootFitApplication.class, args);
@@ -28,11 +25,6 @@ public class RootFitApplication implements CommandLineRunner {
 	
 	@Override
 	public void run(String... arg0) throws Exception {
-		
-		Instrutor i1 = new Instrutor(null, "123.456.789-00", "i1@gmail.com", "homemcis", "i1", 
-											"132465", "nome", "senha", "rg", "telefone", null);
-		instrutorRepository.save(i1);
-		
 		
 		
 	}

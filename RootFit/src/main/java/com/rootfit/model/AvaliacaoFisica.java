@@ -35,8 +35,8 @@ public class AvaliacaoFisica implements Serializable{
 	
 	@ManyToMany
 	@JoinTable(name="medida_avaliacao",
-		joinColumns = @JoinColumn(name="medida_id"),
-		inverseJoinColumns = @JoinColumn(name="medidaMusculare_id"))
+		joinColumns = @JoinColumn(name="avaliacaoFisica_id"),
+		inverseJoinColumns = @JoinColumn(name="medidaMuscular_id"))
 	private List<MedidaMuscular> medidasMusculares = new ArrayList<>();
 	
 	
