@@ -1,0 +1,36 @@
+{
+  "colaboradores": [
+    {
+      "matricula": "1613235",
+      "nome": "Maikon Albuquerque",
+      "telefone": "(85) 34720299",
+      "email": "maikonmorais@gmail.com",
+      "tipo": "Colaborador",
+      "id": 1
+    },
+    {
+      "matricula": "1613230",
+      "nome": "Adriano Moda",
+      "telefone": "(85) 34720009",
+      "email": "adrianomodafeitosa@gmail.com",
+      "tipo": "Colaborador",
+      "id": 2
+    },
+    {
+      "matricula": "1613290",
+      "nome": "Matheus Tanaques",
+      "telefone": "(85) 34720900",
+      "email": "matheustanaques@gmail.com",
+      "tipo": "Colaborador",
+      "id": 3
+    },
+    {
+      "matricula": "1613007",
+      "nome": "Pedro Castro e Silva",
+      "telefone": "(85) 34720200",
+      "email": "pedrocastroesilva@gmail.com",
+      "tipo": "Colaborador",
+      "id": 4
+    }
+  ]
+}
