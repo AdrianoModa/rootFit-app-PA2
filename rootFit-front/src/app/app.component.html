@@ -1,4 +1,14 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<app-menu *ngIf="exibindoMenu()"></app-menu>
-<router-outlet></router-outlet>
+<!-- <app-menu *ngIf="exibindoMenu()"></app-menu> -->
+<div class="wrapper">
+    <div class="sidebar" data-color="green" data-image="" *ngIf="exibindoMenu()">
+        <app-sidebar *ngIf="exibindoMenu()"></app-sidebar>
+        <div class="sidebar-background" style="background-image: url(/assets/img/capagym.jpg)" *ngIf="exibindoMenu()"></div>
+    </div>
+
+    <div class="main-panel">
+        <app-navbar *ngIf="exibindoMenu()"></app-navbar>
+        <router-outlet></router-outlet>
+    </div>
+</div>
 
