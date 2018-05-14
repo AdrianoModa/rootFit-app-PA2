@@ -21,6 +21,9 @@ import { CadastrarUsuarioComponent } from './cadastrar-usuario/cadastrar-usuario
 import { SegurancaModule } from './seguranca/seguranca.module';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { AvaliacaoFisicaService } from './shared/services/avaliacao-fisica.service';
+import { CadastrarAvaliacaoFisicaComponent } from './cadastrar-avaliacao-fisica/cadastrar-avaliacao-fisica.component';
+import { FormAvaliacaoFisicaComponent } from './cadastrar-avaliacao-fisica/form-avaliacao-fisica/form-avaliacao-fisica.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,9 @@ import { NavbarComponent } from './navbar/navbar.component';
     FormEnderecoComponent,
     CadastrarUsuarioComponent,
     SidebarComponent,
-    NavbarComponent
+    NavbarComponent,
+    CadastrarAvaliacaoFisicaComponent,
+    FormAvaliacaoFisicaComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +53,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     AlunoService, 
     InstrutorService, 
     ColaboradorService, 
+    AvaliacaoFisicaService,
     AuthService,
     JwtHelper,
   ],
