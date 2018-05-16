@@ -1,12 +1,14 @@
-import { AuthService } from './seguranca/auth.service';
-import { SharedModule } from './shared/shared.module';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { JwtHelper } from 'angular2-jwt';
+import { ToastyModule } from 'ng2-toasty';
 
+import { ErrorHandlerService } from './shared/services/error-handler.service';
+import { AuthService } from './seguranca/auth.service';
+import { SharedModule } from './shared/shared.module';
 import { AppComponent } from './app.component';
 import { routing } from './app.routing';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -41,8 +43,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     SharedModule,
     SegurancaModule,
     ReactiveFormsModule,
+    ToastyModule.forRoot(),
     routing
-
   ],
   providers: [
     AlunoService, 
@@ -50,6 +52,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     ColaboradorService, 
     AuthService,
     JwtHelper,
+    ErrorHandlerService
   ],
   bootstrap: [AppComponent]
 })

@@ -17,3 +17,12 @@ input-placeholder{
 a{
     color: black;
 }
+
+.ng-invalid.ng-touched:not(form){
+    border: solid 4px red;
+}
+
+p{
+    color: red;
+}
+  

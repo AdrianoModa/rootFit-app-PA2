@@ -35,11 +35,10 @@ export class AuthService {
             const responseJson = response.json();
 
             if(responseJson.error === 'invalid_grant'){
-              return Promise.reject('Usuário ou senha inválida!');
+              return Promise.reject('Matrícula ou senha inválida!');
             }
         }
         return Promise.reject(response);
-        
       });
   }
 

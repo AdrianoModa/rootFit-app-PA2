@@ -1,12 +1,20 @@
 <div class="container">
 <form autocomplete="off" #f="ngForm">
+
   <div class="form-group">
     <label>Matricula</label>
-    <input type="matricula" name="usuario" class="form-control" placeholder="" ngModel required #usuario>
+    <input type="matricula" name="usuario" class="form-control" pattern="[0-9]{7}" ngModel required #usuario="ngModel">
+    <div *ngIf="!usuario.valid && usuario.touched">
+        <p><small>Matrícula é obrigatória!</small></p>
+    </div>
   </div>
+
   <div class="form-group">
     <label>Senha</label>
-    <input type="password" name="senha" class="form-control" ngModel required #senha>
+    <input type="password" name="senha" class="form-control" minlength="5" ngModel required #senha="ngModel">
+    <div *ngIf="!senha.valid && senha.touched">
+        <p><small>Senha é obrigatória!</small></p>
+    </div>
   </div>
   <button type="submit" label="Login" [disabled]="!f.valid"
   (click)="login(usuario.value, senha.value); senha.value = '';" class="btn btn-success btn-lg">Entrar</button>
