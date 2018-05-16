@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ColaboradorComponent } from './colaborador/colaborador.component';
 import { FormComponent } from './colaborador/form/form.component';
+import { FormAvaliacaoFisicaComponent } from './cadastrar-avaliacao-fisica/form-avaliacao-fisica/form-avaliacao-fisica.component';
 
 
 const APP_ROUTES: Routes = [
@@ -19,7 +20,8 @@ const APP_ROUTES: Routes = [
   { path: 'colaborador', component: ColaboradorComponent},
   { path: 'colaborador/adicionar', component: FormComponent},
   { path: 'colaborador/:id', component: FormComponent},
-  { path: 'cadastrar-usuario', component: CadastrarUsuarioComponent}
+  { path: 'cadastrar-usuario', component: CadastrarUsuarioComponent},
+  { path: 'cadastrar-avaliacao-fisica', component: FormAvaliacaoFisicaComponent}
   
 
 ];

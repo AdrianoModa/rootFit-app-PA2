@@ -1,0 +1,39 @@
+<br/>
+<div class="container">
+    <div class="col-lg-12 colreset">
+      <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
+            <li class="breadcrumb-item"><a routerLink="/colaborador">Colaborador</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{editando ? 'Edição':'Cadastro'}}</li>
+          </ol>
+      </nav>
+    </div>
+    <div class="col-lg-12">
+       <h4>{{editando ? 'Edição' : 'Cadastro' }} de Avaliacao Física</h4><br/>
+      <form #frm="ngForm" (ngSubmit)="salvar(frm)">
+          <div class="row">
+              <div class="col-sm-4">
+                <div class="input-group">
+                    <input type="text" class="form-control" label="Peso" name="peso" placeholder="Seu Peso Kg" [(ngModel)]='avaliacao.peso' [required]="true">
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="input-group">
+                    <input type="text" class="form-control" label="Altura" name="altura" placeholder="Sua altura" [(ngModel)]='avaliacao.altura' [required]="true">
+                </div>
+              </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-8">
+                <div class="input-group">
+                    <input type="text" class="form-control" label="dataAvaliacao" name="dataAvaliacao" placeholder="Data da Avaliacao" [(ngModel)]='avaliacao.dataAvaliacao' [required]="true">
+                </div>
+            </div>
+          </div>  
+            
+          <button type="submit" label="Atualizar" [disabled]="frm.invalid" class="btn btn-primary">Atualizar</button>
+          <button type="submit" label="Adicionar" [disabled]="frm.invalid" class="btn btn-primary">Adicionar</button>
+      </form>
+    </div>
+  </div>
