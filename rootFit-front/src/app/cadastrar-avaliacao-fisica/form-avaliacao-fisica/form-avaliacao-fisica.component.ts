@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { AvaliacaoFisica } from '../../shared/entities/avaliacao-fisica';
 import { AvaliacaoFisicaService } from '../../shared/services/avaliacao-fisica.service';
+import { CadastrarUsuarioComponent } from '../../cadastrar-usuario/cadastrar-usuario.component';
 
 @Component({
   selector: 'app-form-avaliacao-fisica',
@@ -15,7 +16,7 @@ export class FormAvaliacaoFisicaComponent implements OnInit {
   avaliacao: AvaliacaoFisica[] = [];
 
   constructor(private avaliacaoFisicaService: AvaliacaoFisicaService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.consultar();
@@ -28,9 +29,11 @@ export class FormAvaliacaoFisicaComponent implements OnInit {
 
   salvar(frm: FormControl){
     this.avaliacaoFisicaService.adicionar(frm.value)
-    .subscribe(() => {
+    .subscribe(dados  => {
       frm.reset()
       this.avaliacaoFisicaService.buscar();
+      alert("Avaliacao Gerada com Sucesso!");
+      this.router.navigate(['avaliacao-fisica']);
     })
   }
 

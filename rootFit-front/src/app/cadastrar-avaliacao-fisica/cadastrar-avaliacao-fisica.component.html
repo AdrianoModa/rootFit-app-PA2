@@ -1,3 +1,60 @@
-<p>
-  cadastrar-avaliacao-fisica works!
-</p>
+<br/>
+<div class="container">
+
+<div class="col-lg-12">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class=text-left>
+              <h5>
+             
+              </h5>
+            </div>
+        </div>
+        <div class="col-lg-6">
+          <div class=text-right>
+            <button class="btn btn-success" routerLink="/cadastrar-avaliacao-fisica">
+              Adicionar <i class="fa fa-plus"></i>
+            </button>
+          </div>
+        </div>
+    </div>
+    <div class="row">
+        <table class="table">
+            <thead class="bg-light">
+              <tr>
+                <th scope="col">Peso</th>
+                <th scope="col">Altura</th>
+                <th scope="col">Data da Avaliacao</th>
+                <th scope="col" class="text-center">Perfil</th>
+                <th scope="col" class="text-center">Editar</th>
+                <th scope="col" class="text-center">Deletar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let avaliacao of avaliacaoFisica">
+                <td scope="row">{{avaliacao.peso}}</td>
+                <td>{{avaliacao.altura}}</td>
+                <td>{{avaliacao.dataAvaliacao}}</td>
+                <td class="text-center">
+                    <button class="btn btn-light btn-sm">
+                        Ver Perfil
+                    </button>
+                </td>
+                <td class="text-center">
+                    <button class="btn btn-info btn-sm" [routerLink]="['/avaliacao-fisica', avaliacao.id]">
+                        <i class="fa fa-edit"></i>
+                    </button>
+                </td>
+                <td class="text-center">
+                    <button class="btn btn-danger btn-sm" [routerLink]="['/avaliacao-fisica', avaliacao.id]" (click)="remover(avaliacao.id)">
+                        <i class="fa fa-times-circle"></i>
+                    </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
+
+</div>
+
