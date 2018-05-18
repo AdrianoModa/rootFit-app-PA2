@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Colaborador } from '../shared/entities/colaborador';
 import { ColaboradorService } from '../shared/services/colaborador.service';
 
@@ -16,23 +17,21 @@ export class ColaboradorComponent implements OnInit {
   constructor( private colaboradorService: ColaboradorService ) { }
 
   ngOnInit() {
-   this.consultarTodos();
+    this.consultar();
   }
 
-  consultarTodos(){
+  consultar(){
     this.colaboradorService.consultar()
-    .then(dados => {
-      this.colaboradores = dados;
-    });
+      .then(() => null);
   }
 
-  adicionarNovo(){
+  /*adicionarNovo(){
     this.colaboradorService.adicionar(Colaborador)
     .then(colaborador => {
       alert(`Colaborador "${colaborador.nome}", adicionado com a matrícula "${colaborador.matricula}"!`);
       this.consultarTodos();
     })
-  }
+  }*/
 
   
 

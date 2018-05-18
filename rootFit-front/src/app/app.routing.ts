@@ -1,3 +1,4 @@
+import { PerfilComponent } from './colaborador/perfil/perfil.component';
 import { CadastrarAvaliacaoFisicaComponent } from './cadastrar-avaliacao-fisica/cadastrar-avaliacao-fisica.component';
 import { LoginFormComponent } from './seguranca/login-form/login-form.component';
 import { CadastrarUsuarioComponent } from './cadastrar-usuario/cadastrar-usuario.component';
@@ -18,11 +19,12 @@ const APP_ROUTES: Routes = [
   { path: 'login', component: LoginFormComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full'},
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'colaborador', component: ColaboradorComponent},
-  { path: 'colaborador/adicionar', component: FormComponent},
-  { path: 'colaborador/:id', component: FormComponent},
+  { path: 'listar-usuarios', component: ColaboradorComponent},
+  { path: 'listar-usuarios/adicionar', component: FormComponent},
+  { path: 'listar-usuarios/:id', component: FormComponent},
   { path: 'cadastrar-usuario', component: CadastrarUsuarioComponent},
   { path: 'cadastrar-avaliacao-fisica', component: FormAvaliacaoFisicaComponent},
+  { path: 'perfil', component: PerfilComponent},
   { path: 'avaliacao-fisica', component: CadastrarAvaliacaoFisicaComponent }
   
 

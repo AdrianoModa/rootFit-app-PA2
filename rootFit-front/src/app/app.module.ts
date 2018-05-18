@@ -26,6 +26,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { CadastrarAvaliacaoFisicaComponent } from './cadastrar-avaliacao-fisica/cadastrar-avaliacao-fisica.component';
 import { FormAvaliacaoFisicaComponent } from './cadastrar-avaliacao-fisica/form-avaliacao-fisica/form-avaliacao-fisica.component';
 import { AvaliacaoFisicaService } from './shared/services/avaliacao-fisica.service';
+import { PerfilComponent } from './colaborador/perfil/perfil.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { AvaliacaoFisicaService } from './shared/services/avaliacao-fisica.servi
     SidebarComponent,
     NavbarComponent,
     CadastrarAvaliacaoFisicaComponent,
-    FormAvaliacaoFisicaComponent
+    FormAvaliacaoFisicaComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,
