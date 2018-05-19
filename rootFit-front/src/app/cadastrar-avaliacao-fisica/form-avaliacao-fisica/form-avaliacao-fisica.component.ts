@@ -27,6 +27,11 @@ export class FormAvaliacaoFisicaComponent implements OnInit {
     .subscribe(dados => this.avaliacao = dados);
   }
 
+  consultarPorId(frm: FormControl){
+    this.avaliacaoFisicaService.bucarPorId(frm.value)
+    .subscribe(dados => this.avaliacao = dados)
+  }
+
   salvar(frm: FormControl){
     this.avaliacaoFisicaService.adicionar(frm.value)
     .subscribe(dados  => {
