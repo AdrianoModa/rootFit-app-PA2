@@ -22,7 +22,7 @@ const APP_ROUTES: Routes = [
   { path: 'listar-usuarios', component: ColaboradorComponent},
   { path: 'listar-usuarios/adicionar', component: FormComponent},
   { path: 'listar-usuarios/:id', component: FormComponent},
-  { path: 'cadastrar-usuario', component: CadastrarUsuarioComponent},
+  { path: 'cadastrar-usuarios', component: CadastrarUsuarioComponent},
   { path: 'cadastrar-avaliacao-fisica', component: FormAvaliacaoFisicaComponent},
   { path: 'perfil', component: PerfilComponent},
   { path: 'avaliacao-fisica', component: CadastrarAvaliacaoFisicaComponent }

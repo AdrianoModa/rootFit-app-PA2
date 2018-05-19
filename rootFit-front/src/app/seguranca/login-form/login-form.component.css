@@ -1,13 +1,16 @@
 .container{
-    color: black;
+    color: white;
     height: 100%;
+    width: 100%;
     padding-top:150px;
     padding-left: 300px;
     padding-right: 300px;
+    background: #000 url("/assets/img/capagym2.jpg");
 }
 .form-control{
-    border: gray 4px solid;
+    border: gray 1px solid;
     height: 80px;
+    border-radius: 0%;
 }
 input-placeholder{
     color: springgreen;
@@ -15,14 +18,13 @@ input-placeholder{
     font-weight: bold;
 }
 a{
-    color: black;
+    color: white;
 }
 
 .ng-invalid.ng-touched:not(form){
-    border: solid 4px red;
+    border: solid 1px red;
 }
 
 p{
     color: red;
 }
-  
