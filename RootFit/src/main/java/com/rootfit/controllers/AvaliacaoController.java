@@ -21,7 +21,7 @@ import com.rootfit.model.AvaliacaoFisica;
 import com.rootfit.services.AvaliacaoFisicaService;
 
 @RestController
-@RequestMapping("/avaliacaoFisica")
+@RequestMapping("/avaliacao-fisica")
 @CrossOrigin("${origem-permitida}")
 public class AvaliacaoController {
 	
