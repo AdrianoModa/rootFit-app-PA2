@@ -15,11 +15,27 @@ export class FormAvaliacaoFisicaComponent implements OnInit {
 
   avaliacao: AvaliacaoFisica[] = [];
 
-  constructor(private avaliacaoFisicaService: AvaliacaoFisicaService,
+  constructor(
+    private avaliacaoFisicaService: AvaliacaoFisicaService,
     private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-    this.consultar();
+    var id = this.route.params.subscribe(params => {
+      var id = params['id'];
+
+      this.avaliacaoFisicaService.buscarPorId(id)
+        .subscribe(
+          avaliacao => this.avaliacao = avaliacao,
+          response => {
+            if (response.status == 404) {
+              this.router.navigate(['Não Encontrado']);
+            }
+          });
+    });
+  }
+
+  get editando(){
+    return Boolean (this.route.snapshot.params['id']);
   }
 
   consultar(){
@@ -28,25 +44,33 @@ export class FormAvaliacaoFisicaComponent implements OnInit {
   }
 
   consultarPorId(frm: FormControl){
-    this.avaliacaoFisicaService.bucarPorId(frm.value)
+    this.avaliacaoFisicaService.buscarPorId(frm.value)
     .subscribe(dados => this.avaliacao = dados)
   }
 
   salvar(frm: FormControl){
+    if(this.editando){
+      return this.atualizar(frm);
+    }else{
+      return this.adicionar(frm);
+    }
+  }
+
+  adicionar(frm: FormControl){
     this.avaliacaoFisicaService.adicionar(frm.value)
     .subscribe(dados  => {
       frm.reset()
-      this.avaliacaoFisicaService.buscar();
       alert("Avaliacao Gerada com Sucesso!");
       this.router.navigate(['avaliacao-fisica']);
     })
   }
 
   atualizar(frm: FormControl){
-    this.avaliacaoFisicaService.atualizar(frm.value)
+    this.avaliacaoFisicaService.atualizar(this.avaliacao)
     .subscribe(() => {
       frm.reset()
       alert("Seu cadastro foi atualizado com sucesso!");
+      this.router.navigate(['avaliacao-fisica'])
     })
   }
 

@@ -14,7 +14,7 @@ export class AvaliacaoFisicaService {
     return this.httpCliente.get<AvaliacaoFisica[]>(`${this.avaliacaoURL}`);
   }
 
-  bucarPorId(id: number) {
+  buscarPorId(id: number) {
     return this.httpCliente.get<AvaliacaoFisica[]>(`${this.avaliacaoURL}/${id}`);
   }
 

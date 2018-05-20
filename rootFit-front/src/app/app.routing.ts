@@ -24,6 +24,7 @@ const APP_ROUTES: Routes = [
   { path: 'listar-usuarios/:id', component: FormComponent},
   { path: 'cadastrar-usuarios', component: CadastrarUsuarioComponent},
   { path: 'cadastrar-avaliacao-fisica', component: FormAvaliacaoFisicaComponent},
+  { path: 'avaliacao-fisica/:id', component: FormAvaliacaoFisicaComponent},
   { path: 'perfil', component: PerfilComponent},
   { path: 'avaliacao-fisica', component: CadastrarAvaliacaoFisicaComponent }
   

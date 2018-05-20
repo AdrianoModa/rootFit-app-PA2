@@ -24,12 +24,6 @@ export class CadastrarAvaliacaoFisicaComponent implements OnInit {
     .subscribe(dados => this.avaliacaoFisica = dados);
   }
 
-  // remover(avaliacaoFisica){
-  //   this.avaliacaoFisicaService.remover(avaliacaoFisica)
-  //   .subscribe(dados => alert("removido com sucesso"))
-  //   this.avaliacaoFisicaService.buscar();
-  // }
-
   remover(avaliacaoFisica){
     if (confirm('Deseja remover a avaliacao:  ' + avaliacaoFisica.peso + '?')) {
       const index = this.avaliacaoFisica.indexOf(avaliacaoFisica);
