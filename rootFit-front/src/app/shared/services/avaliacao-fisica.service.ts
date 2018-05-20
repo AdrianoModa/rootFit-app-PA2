@@ -6,7 +6,7 @@ import { AvaliacaoFisica } from './../entities/avaliacao-fisica';
 @Injectable()
 export class AvaliacaoFisicaService {
 
-  avaliacaoURL = 'http://localhost:8080/avaliacaoFisica';
+  avaliacaoURL = 'http://localhost:8080/avaliacao-fisica';
 
   constructor(private httpCliente: HttpClient) { }
 
