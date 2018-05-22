@@ -11,7 +11,6 @@ import { Component, OnInit } from '@angular/core';
 export class CadastrarAvaliacaoFisicaComponent implements OnInit {
 
   avaliacaoFisica: AvaliacaoFisica[] = [];
-  instrutor: Instrutor[] = [];
 
   constructor(private avaliacaoFisicaService: AvaliacaoFisicaService) { }
 

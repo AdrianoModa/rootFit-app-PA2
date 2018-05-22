@@ -20,6 +20,8 @@ export class FormAvaliacaoFisicaComponent implements OnInit {
     private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
+    this.consultar();
+    console.log(this.consultar());
     var id = this.route.params.subscribe(params => {
       var id = params['id'];
 

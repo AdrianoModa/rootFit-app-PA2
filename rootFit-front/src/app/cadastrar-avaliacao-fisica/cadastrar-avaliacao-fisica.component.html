@@ -32,9 +32,9 @@
             </thead>
             <tbody>
               <tr *ngFor="let avaliacao of avaliacaoFisica">
-                <td scope="row">{{avaliacao.peso}}</td>
-                <td>{{avaliacao.altura}}</td>
-                <td>{{avaliacao.dataAvaliacao}}</td>
+                <td scope="row">{{ avaliacao.peso }}</td>
+                <td>{{ avaliacao.altura }}</td>
+                <td>{{ avaliacao.dataAvaliacao | date: 'dd-MM-yyyy' }}</td>
                 <td class="text-center">
                     <button class="btn btn-light btn-sm">
                         Ver Perfil
