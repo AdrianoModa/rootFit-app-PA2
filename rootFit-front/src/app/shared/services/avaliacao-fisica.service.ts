@@ -18,12 +18,12 @@ export class AvaliacaoFisicaService {
     return this.httpCliente.get<AvaliacaoFisica[]>(`${this.avaliacaoURL}/${id}`);
   }
 
-  atualizar(avaliacao: any) {
-    return this.httpCliente.put(this.avaliacaoURL + '/' + `${avaliacao.id}`, avaliacao);
-  }
-
   adicionar(avaliacao: any) {
     return this.httpCliente.post(this.avaliacaoURL, avaliacao);
+  }
+  
+  atualizar(avaliacao: any) {
+    return this.httpCliente.put(this.avaliacaoURL + '/' + `${avaliacao.id}`, avaliacao);
   }
 
   remover(id: number) {
