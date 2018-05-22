@@ -22,8 +22,8 @@ public class UsuarioController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void criar(@RequestBody Usuario usuario){
-        Usuario usuarioSalvo = usuarioRepository.save(usuario);
+    public Usuario criar(@RequestBody Usuario usuario){
+        return usuarioRepository.save(usuario);
     }
 
 
