@@ -1,6 +1,7 @@
 package com.rootfit.model;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -23,7 +24,7 @@ public class AvaliacaoFisica implements Serializable{
 	private Long id;
 	private Double peso;
 	private Double altura;
-	private Date dataAvaliacao;
+	private LocalDate dataAvaliacao;
 
 	@ManyToOne
 	@JoinColumn(name="aluno_id")
@@ -45,7 +46,7 @@ public class AvaliacaoFisica implements Serializable{
 		
 	}
 
-	public AvaliacaoFisica(Long id, Double peso, Double altura, Date dataAvaliacao, Aluno aluno, Instrutor instrutor) {
+	public AvaliacaoFisica(Long id, Double peso, Double altura, LocalDate dataAvaliacao, Aluno aluno, Instrutor instrutor) {
 		super();
 		this.id = id;
 		this.peso = peso;
@@ -81,11 +82,11 @@ public class AvaliacaoFisica implements Serializable{
 		this.altura = altura;
 	}
 
-	public Date getDataAvaliacao() {
+	public LocalDate getDataAvaliacao() {
 		return dataAvaliacao;
 	}
 
-	public void setDataAvaliacao(Date dataAvaliacao) {
+	public void setDataAvaliacao(LocalDate dataAvaliacao) {
 		this.dataAvaliacao = dataAvaliacao;
 	}
 
