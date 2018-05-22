@@ -1,22 +1,33 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+import { Aluno } from './../entities/aluno';
+
 @Injectable()
 export class AlunoService {
 
   alunoURL = 'http://localhost:8080/aluno';
 
-  constructor(private http: HttpClient) { }
+  constructor(private httpCliente: HttpClient) { }
 
-  listar() {
-    return this.http.get<any[]>(`${this.alunoURL}`);
+  buscar() {
+    return this.httpCliente.get<Aluno[]>(`${this.alunoURL}`);
   }
 
-  adicionar(aluno){
-    let headers = new Headers({ 'Content-Type': 'application/json' });
-    let body = JSON.stringify(aluno);
-    this.http.post(this.alunoURL + '/' + aluno.email + '/' + aluno.senha, body)
-    .subscribe(dados => console.log(dados));
+  buscarPorId(id: number) {
+    return this.httpCliente.get<Aluno[]>(`${this.alunoURL}/${id}`);
+  }
+
+  adicionar(aluno: any) {
+    return this.httpCliente.post(this.alunoURL, aluno);
+  }
+
+  atualizar(aluno: any) {
+    return this.httpCliente.put(this.alunoURL + '/' + `${aluno.id}`, aluno);
+  }
+
+  remover(id: number) {
+    return this.httpCliente.delete(this.alunoURL + '/' + `${id}`);
   }
 
 }
