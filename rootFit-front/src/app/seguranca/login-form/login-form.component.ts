@@ -12,6 +12,8 @@ import { AuthService } from './../auth.service';
 })
 export class LoginFormComponent {
 
+  logo = './../../assets/img/logo.png';
+
   constructor(private auth: AuthService, 
               private router: Router,
               private errorHandlerService: ErrorHandlerService) { }

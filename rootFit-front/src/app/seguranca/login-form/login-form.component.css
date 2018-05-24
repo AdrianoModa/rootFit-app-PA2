@@ -8,9 +8,10 @@
     background: #000 url("/assets/img/capagym2.jpg");
 }
 .form-control{
-    border: gray 1px solid;
-    height: 80px;
-    border-radius: 0%;
+    border: white 1px solid;
+    height: 55px;
+    border-radius: 10px;
+    box-shadow: #000 1px 1px 1px;
 }
 input-placeholder{
     color: springgreen;

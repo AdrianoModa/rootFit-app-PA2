@@ -1,6 +1,7 @@
 <div class="container">
   <div class="col-lg-4"></div>
   <div class="col-lg-4">
+    <div class="logo"><img [src]="logo" width="290"></div>
     <form autocomplete="off" #f="ngForm">
       <div class="form-group">
         <label>Matricula</label>
@@ -22,7 +23,7 @@
         </div>
       </div>
       <button type="submit" label="Login" [disabled]="!f.valid" (click)="login(usuario.value, senha.value); senha.value = '';"
-        class="btn btn-success btn-lg">Entrar</button>
+        class="btn btn-success btn-fill pull-right">Entrar</button>
       |
       <a href="dashboard">Esqueceu sua senha?</a>
     </form>
