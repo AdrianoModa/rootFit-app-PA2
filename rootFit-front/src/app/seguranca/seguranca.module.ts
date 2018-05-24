@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { SegurancaRoutingModule } from './seguranca-routing.module';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { AuthHttp, AuthConfig } from 'angular2-jwt';
+import { RecuperarSenhaComponent } from './recuperar-senha/recuperar-senha.component';
 
 export function authHttpServiceFactory(http: Http, options: RequestOptions) {
   return new AuthHttp(new AuthConfig(), http, options);
@@ -18,7 +19,7 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
     
     SegurancaRoutingModule
   ],
-  declarations: [LoginFormComponent],
+  declarations: [LoginFormComponent, RecuperarSenhaComponent],
   providers : [
     {
       provide: AuthHttp,

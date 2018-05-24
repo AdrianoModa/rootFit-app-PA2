@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+      <form autocomplete="off" #f="ngForm">
+        <div class="form-group">
+          <label>Matricula</label>
+          <input type="matricula" name="usuario" class="form-control" pattern="[0-9]{7}" ngModel required #usuario="ngModel">
+          <div *ngIf="!usuario.valid && usuario.touched">
+            <p>
+              <small>Matrícula é obrigatória!</small>
+            </p>
+          </div>
+        </div>
+        <button type="submit" label="Login" [disabled]="!f.valid"
+          class="btn btn-success btn-fill pull-right">Recuperar Senha</button>
+      </form>
+    </div>
+    <div class="col-lg-4"></div>
+  </div>
