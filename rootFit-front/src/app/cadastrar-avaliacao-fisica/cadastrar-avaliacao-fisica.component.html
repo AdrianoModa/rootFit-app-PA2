@@ -22,9 +22,10 @@
         <table class="table">
             <thead class="bg-light">
               <tr>
+                <th scope="col">Nome Aluno</th>
                 <th scope="col">Peso</th>
                 <th scope="col">Altura</th>
-                <th scope="col">Data da Avaliacao</th>
+                <th scope="col">Data da Avaliacao</th>                
                 <th scope="col" class="text-center">Perfil</th>
                 <th scope="col" class="text-center">Editar</th>
                 <th scope="col" class="text-center">Deletar</th>
@@ -32,9 +33,10 @@
             </thead>
             <tbody>
               <tr *ngFor="let avaliacao of avaliacaoFisica">
+                <td scope="row">{{ avaliacao.aluno.nome }}</td>
                 <td scope="row">{{ avaliacao.peso }}</td>
-                <td>{{ avaliacao.altura }}</td>
-                <td>{{ avaliacao.dataAvaliacao | date: 'dd-MM-yyyy' }}</td>
+                <td scope="row">{{ avaliacao.altura }}</td>
+                <td scope="row">{{ avaliacao.dataAvaliacao | date: 'dd-MM-yyyy' }}</td>                
                 <td class="text-center">
                     <button class="btn btn-light btn-sm">
                         Ver Perfil
