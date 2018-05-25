@@ -26,4 +26,11 @@ export class ColaboradorService {
       .toPromise()
       .then(() => null)
   }
+
+  adicionar(colaborador: Colaborador): Promise<Colaborador>{
+    return this.http.post(this.colaboradorUrl, colaborador)
+    .toPromise()
+    .then(response => response.json());
+
+  }
 }

@@ -16,8 +16,8 @@ import { MenuComponent } from './menu/menu.component';
 import { AlunoService } from './shared/services/aluno.service';
 import { InstrutorService } from './shared/services/instrutor.service';
 import { ColaboradorService } from './shared/services/colaborador.service';
-import { ColaboradorComponent } from './colaborador/colaborador.component';
-import { FormComponent } from './colaborador/form/form.component';
+import { ListarUsuariosComponent } from './listar-usuarios/listar-usuarios.component';
+import { FormComponent } from './listar-usuarios/form/form.component';
 import { FormEnderecoComponent } from './shared/form-endereco/form-endereco.component';
 import { CadastrarUsuarioComponent } from './cadastrar-usuario/cadastrar-usuario.component';
 import { SegurancaModule } from './seguranca/seguranca.module';
@@ -26,14 +26,14 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { CadastrarAvaliacaoFisicaComponent } from './cadastrar-avaliacao-fisica/cadastrar-avaliacao-fisica.component';
 import { FormAvaliacaoFisicaComponent } from './cadastrar-avaliacao-fisica/form-avaliacao-fisica/form-avaliacao-fisica.component';
 import { AvaliacaoFisicaService } from './shared/services/avaliacao-fisica.service';
-import { PerfilComponent } from './colaborador/perfil/perfil.component';
+import { PerfilComponent } from './listar-usuarios/perfil/perfil.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     MenuComponent,
-    ColaboradorComponent,
+    ListarUsuariosComponent,
     FormComponent,
     FormEnderecoComponent,
     CadastrarUsuarioComponent,

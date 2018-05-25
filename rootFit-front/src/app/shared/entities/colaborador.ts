@@ -8,6 +8,7 @@ export class Colaborador {
   telefone: string;
   email: string;
   tipo: string;
+  senha: string;
   // endereco: Endereco = new Endereco();
   // empresa: Empresa = new Empresa();
 }

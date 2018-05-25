@@ -70,7 +70,7 @@ public class Colaborador implements Serializable{
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
+
 	@NotEmpty
 	@Column
 	public String getSenha() {

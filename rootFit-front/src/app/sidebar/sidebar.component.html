@@ -7,10 +7,22 @@
             </a>
         </div>
         <ul class="nav responsive-nav">
-            <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}}">
-                <a  [routerLink]="[menuItem.path]">
-                    <i class="{{menuItem.icon}}"></i>
-                    <p>{{menuItem.title}}</p>
+            <li routerLinkActive="active" *ngIf="auth.temPermissao('ROLE_PESQUISAR_COLABORADOR')"  >
+                <a  routerLink="dashboard">
+                    <i class="pe-7s-graph"></i>
+                    <p>Dashboard</p>
+                </a>
+            </li>
+            <li routerLinkActive="active"  *ngIf="auth.temPermissao('ROLE_CADASTRAR_COLABORADOR')" >
+                <a  routerLink="listar-usuarios">
+                    <i class="pe-7s-user"></i>
+                    <p>Listar</p>
+                </a>
+            </li>
+            <li routerLinkActive="active"  *ngIf="auth.temPermissao('ROLE_CADASTRAR_COLABORADOR')" >
+                <a  routerLink ="cadastrar-usuarios">
+                    <i class="pe-7s-note2"></i>
+                    <p>Cadastrar</p>
                 </a>
             </li>
         </ul>

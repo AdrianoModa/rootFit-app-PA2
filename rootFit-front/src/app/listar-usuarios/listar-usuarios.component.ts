@@ -6,11 +6,11 @@ import { ColaboradorService } from '../shared/services/colaborador.service';
 import { ErrorHandlerService } from '../shared/services/error-handler.service';
 
 @Component({
-  selector: 'app-colaborador',
-  templateUrl: './colaborador.component.html',
-  styleUrls: ['./colaborador.component.css']
+  selector: 'app-listar-usuarios',
+  templateUrl: './listar-usuarios.component.html',
+  styleUrls: ['./listar-usuarios.component.css']
 })
-export class ColaboradorComponent implements OnInit {
+export class ListarUsuariosComponent implements OnInit {
 
   //colaboradores: Colaborador[] = [];
 
