@@ -1,5 +1,7 @@
+import { AuthService } from './../seguranca/auth.service';
 import { Component, OnInit } from '@angular/core';;
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
+import { AuthHttp } from 'angular2-jwt';
 
 
 @Component({
@@ -14,7 +16,7 @@ export class NavbarComponent implements OnInit {
     private toggleButton: any;
     private sidebarVisible: boolean;
 
-    constructor(location: Location) {
+    constructor(location: Location, private auth: AuthService) {
       this.location = location;
           this.sidebarVisible = false;
     }

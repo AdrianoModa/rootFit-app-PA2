@@ -4,14 +4,12 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="header">
-                        <h4 class="title">Striped Table with Hover</h4>
-                        <p class="category">Here is a subtitle for this table</p>
+                        <h4 class="title">Colaboradores</h4>
                     </div>
                     <div class="content table-responsive table-full-width">
                         <table class="table table-hover">
                             <thead>
                                 <tr>
-                                    <th scope="col">Matricula</th>
                                     <th scope="col">Nome</th>
                                     <th scope="col">Email</th>
                                     <th scope="col">Telefone</th>
@@ -21,30 +19,28 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr *ngFor="let colaborador of colaboradores">
-                                    <td scope="row">{{colaborador.matricula}}</td>
-                                    <td>{{colaborador.nome}}</td>
-                                    <td>{{colaborador.email}}</td>
-                                    <td>{{colaborador.telefone}}</td>
+                                <tr *ngFor="let colab of colaboradores">
+                                    <td>{{colab.nome}}</td>
+                                    <td>{{colab.email}}</td>
+                                    <td>{{colab.telefone}}</td>
                                     <td class="text-center">
                                         <button class="btn btn-light btn-sm" [routerLink]="['/perfil']">
                                             Ver Perfil
                                         </button>
                                     </td>
                                     <td class="text-center">
-                                        <button class="btn btn-info btn-sm" [routerLink]="['/listar-usuarios', colaborador.id]">
+                                        <button class="btn btn-info btn-sm" [routerLink]="['/listar-usuarios', colab.id]">
                                             <i class="fa fa-edit"></i>
                                         </button>
                                     </td>
                                     <td class="text-center">
-                                        <button class="btn btn-danger btn-sm">
+                                        <button class="btn btn-danger btn-sm" (click)="deletarUsuario(colab)">
                                             <i class="fa fa-times-circle"></i>
                                         </button>
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
-
                     </div>
                 </div>
             </div>

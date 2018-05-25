@@ -11,15 +11,13 @@
               <a href="#">
                 <img class="avatar border-gray" src="assets/img/faces/face-3.jpg" alt="..." />
 
-                <h4 class="title">Mike Andrew
+                <h4 class="title">{{auth.jwtPayload?.nome}}
                   <br />
-                  <small>michael24</small>
+                  <small>Matricula: {{auth.jwtPayload?.matricula}}</small>
                 </h4>
               </a>
             </div>
-            <p class="description text-center"> "Lamborghini Mercy
-              <br> Your chick she so thirsty
-              <br> I'm in that two seat Lambo"
+            <p class="description text-center"> 
             </p>
           </div>
           <hr>

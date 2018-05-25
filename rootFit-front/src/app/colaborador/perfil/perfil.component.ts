@@ -1,3 +1,4 @@
+import { AuthService } from './../../seguranca/auth.service';
 import { ColaboradorService } from './../../shared/services/colaborador.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -10,7 +11,7 @@ export class PerfilComponent implements OnInit {
 
   colaboradores= [];
 
-  constructor(private colaboradorService: ColaboradorService) { }
+  constructor(private colaboradorService: ColaboradorService, private auth: AuthService) { }
 
   ngOnInit() {
     this.consultarTodos();

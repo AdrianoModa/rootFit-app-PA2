@@ -19,11 +19,4 @@ export class CadastrarUsuarioComponent implements OnInit {
   ngOnInit() {
   }
 
-  adicionarNovoColaborador(Colaborador){
-    this.colaboradorService.adicionar(Colaborador)
-      .then( colaborador => {
-        alert(`${colaborador.tipo}: "${colaborador.nome}" foi adicionado com a matricula "${colaborador.matricula}"! `);
-      })
-  }
-
 }
