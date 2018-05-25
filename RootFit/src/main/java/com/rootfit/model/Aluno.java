@@ -11,6 +11,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Aluno extends Usuario implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -21,10 +23,12 @@ public class Aluno extends Usuario implements Serializable {
 	private Date inicio;
 	
 	@ManyToOne
+	@JsonIgnore
 	@JoinColumn(name="instrutor_id")
 	private Instrutor instrutor;
 	
 	@OneToMany(mappedBy="aluno")
+	@JsonIgnore
 	private List<AvaliacaoFisica> avaliacoesFisicas = new ArrayList<>();
 
 	@OneToMany(mappedBy="aluno")

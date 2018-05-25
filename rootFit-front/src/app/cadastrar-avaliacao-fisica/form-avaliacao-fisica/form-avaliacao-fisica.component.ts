@@ -36,7 +36,7 @@ export class FormAvaliacaoFisicaComponent implements OnInit {
 
       this.avaliacaoFisicaService.buscarPorId(id)
         .subscribe(
-          avaliacao => this.avaliacoes = avaliacao,
+          avaliacao => this.avaliacoes = avaliacao,          
           response => {
             if (response.status == 404) {
               this.router.navigate(['Não Encontrado']);

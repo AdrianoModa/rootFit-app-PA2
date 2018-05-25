@@ -1,39 +1,108 @@
-<br/>
-<div class="container">
-    <div class="col-lg-12 colreset">
-      <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
-            <li class="breadcrumb-item"><a routerLink="/avaliacao-fisica">Avaliacao Fisica</a></li>
-            <li class="breadcrumb-item active" aria-current="page">{{editando ? 'Edição':'Cadastro'}}</li>
-          </ol>
-      </nav>
-    </div>
-    <div class="col-lg-12">
-       <h4>{{editando ? 'Edição' : 'Cadastro' }} de Avaliacao Física</h4><br/>
-      <form #frm="ngForm" (ngSubmit)="salvar(frm)">
-          <div class="row">
-              <div class="col-sm-4">
-                <div class="input-group">
-                    <input type="text" class="form-control" label="Peso" name="peso" placeholder="Seu Peso Kg" [(ngModel)]='avaliacoes.peso' [required]="true">
-                </div>
-              </div>
-              <div class="col-sm-4">
-                <div class="input-group">
-                    <input type="text" class="form-control" label="Altura" name="altura" placeholder="Sua altura" [(ngModel)]='avaliacoes.altura' [required]="true">
-                </div>
-              </div>
-          </div>
-          <div class="row">
-            <div class="col-sm-8">
-                <div class="input-group">
-                    <input type="text" class="form-control" label="dataAvaliacao" name="dataAvaliacao" placeholder="Data da Avaliacao" [(ngModel)]='avaliacoes.dataAvaliacao' [required]="true">
+<div class="main-content">
+    <div class="container-fluid">
+            <div class="col-lg-12 colreset">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a routerLink="/avaliacao-fisica">Avaliacao Fisica</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">{{editando ? 'Edição':'Cadastro'}}</li>
+                    </ol>
+                </nav>
+            </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card" style="background-color: antiquewhite">                    
+                    <div class="content">
+                        <h4>{{editando ? 'Edição' : 'Cadastro' }} de Avaliacao Física</h4><br/>
+                        <form #frm="ngForm" (ngSubmit)="salvar(frm)">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label>Nome Instrutor</label>
+                                        <input type="text" (ngModel)="avaliacoes.instrutor.nome" class="form-control" 
+                                        placeholder="Nome do Aluno" [value]="avaliacoes.instrutor.nome">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Matricula</label>
+                                        <input type="text" (ngModel)="avaliacoes.instrutor.matricula" class="form-control" 
+                                        placeholder="Ex:1613000" [value]="avaliacoes.instrutor.matricula">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Email</label>
+                                        <input type="email" (ngModel)="avaliacoes.instrutor.email" class="form-control" 
+                                        placeholder="email@meuemail.com" [value]="avaliacoes.instrutor.email">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h4>Dados do Aluno: {{avaliacoes.aluno.nome}}</h4>
+                            <hr>
+
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label>Nome Aluno</label>
+                                        <input type="text" (ngModel)="avaliacoes.aluno.nome" class="form-control" 
+                                        placeholder="Nome do Aluno" [value]="avaliacoes.aluno.nome">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Matricula</label>
+                                        <input type="text" (ngModel)="avaliacoes.aluno.matricula" class="form-control" 
+                                        placeholder="Ex:1613000" [value]="avaliacoes.aluno.matricula">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Email</label>
+                                        <input type="email" (ngModel)="avaliacoes.instrutor.email" class="form-control" 
+                                        placeholder="email@meuemail.com" [value]="avaliacoes.aluno.email">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Peso</label>
+                                        <input type="text" class="form-control" name="peso" placeholder="Peso em Kg" [(ngModel)]="avaliacoes.peso">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Altura</label>
+                                        <input type="text" class="form-control" name="altura" placeholder="Altura" [(ngModel)]="avaliacoes.altura">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Data Avaliacao</label>
+                                        <input type="text" class="form-control" name="dataAvaliacao" placeholder="aaaa/MM/dd" [(ngModel)]="avaliacoes.dataAvaliacao">
+                                    </div>
+                                </div>
+                            </div>                                                     
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Objetivo</label>
+                                        <textarea rows="5" class="form-control" placeholder="Descricao do objetivo"
+                                        (ngModel)="avaliacoes.aluno.objetivo" [value]="avaliacoes.aluno.objetivo">Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" label="Atualizar" [disabled]="frm.invalid" class="btn btn-primary">Atualizar</button>
+                            <button type="submit" label="Adicionar" [disabled]="frm.invalid" class="btn btn-primary">Adicionar</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
                 </div>
             </div>
-          </div>  
-            
-          <button type="submit" label="Atualizar" [disabled]="frm.invalid" class="btn btn-primary">Atualizar</button>
-          <button type="submit" label="Adicionar" [disabled]="frm.invalid" class="btn btn-primary">Adicionar</button>
-      </form>
+        </div>
     </div>
-  </div>
+</div>

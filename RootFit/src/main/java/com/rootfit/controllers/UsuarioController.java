@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Random;
 
 @RestController
 @RequestMapping("/usuarios")
@@ -23,6 +24,10 @@ public class UsuarioController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Usuario criar(@RequestBody Usuario usuario){
+    	Random r = new Random();
+		int num = r.nextInt(99999);
+		String geradorMatricula = 18 + String.valueOf(num);
+    	usuario.setMatricula(geradorMatricula);
         return usuarioRepository.save(usuario);
     }
 
