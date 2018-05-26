@@ -18,6 +18,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
@@ -38,17 +39,14 @@ public class Usuario implements Serializable {
 	private String senha;
 	private String rg;
 	private String telefone;
-
 	
 	@ManyToOne
 	@JoinColumn(name="endereco_id")
 	private Endereco endereco;
 	
-	@JsonBackReference
-	@ManyToMany(fetch= FetchType.EAGER)
-	@JoinTable(name="usuario_permissao", joinColumns = @JoinColumn(name="usuario_id"),
-				inverseJoinColumns = @JoinColumn(name="permissao_id"))
-	private List<Permissao> permissoes;
+	@OneToOne
+	private TipoUsuario tipoUsuario;
+	
 	
 	public Usuario() {
 		
@@ -182,13 +180,12 @@ public class Usuario implements Serializable {
 		this.telefone = telefone;
 	}
 
-	
-	 public List<Permissao> getPermissoes() {
-		return permissoes;
+	public TipoUsuario getTipoUsuario() {
+		return tipoUsuario;
 	}
 
-	public void setPermissoes(List<Permissao> permissoes) {
-		this.permissoes = permissoes;
+	public void setTipoUsuario(TipoUsuario tipoUsuario) {
+		this.tipoUsuario = tipoUsuario;
 	}
 
 	@Override
