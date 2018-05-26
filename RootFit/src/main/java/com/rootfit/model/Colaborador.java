@@ -2,44 +2,34 @@ package com.rootfit.model;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.Table;
-import javax.validation.constraints.Size;
-
-import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table
-public class Colaborador implements Serializable{
+@Inheritance(strategy=InheritanceType.JOINED)
+public class Colaborador extends Usuario implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	
 	private Long id;
-	private String nome;
-	private String email;
-	private String telefone;
-	private String senha;
+	private String cargo;
 	
 	
 	public Colaborador() {
 		
 	}
-	
-	public Colaborador(Long id, String nome, String email, String telefone, String senha) {
+		
+	public Colaborador(Long id, String cargo) {
 		super();
 		this.id = id;
-		this.nome = nome;
-		this.email = email;
-		this.telefone = telefone;
-		this.senha = senha;
-		//this.tipo = tipo.getCod();
-//		this.empresa = empresa;
+		this.cargo = cargo;
 	}
-
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -51,44 +41,15 @@ public class Colaborador implements Serializable{
 	}
 	
 	
-	@NotEmpty
-	@Size(min = 5, max = 30)
-	@Column
-	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
 	
-	
-	@NotEmpty
-	@Column
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
+	public String getCargo() {
+		return cargo;
 	}
 
-	@NotEmpty
-	@Column
-	public String getSenha() {
-		return senha;
+	public void setCargo(String cargo) {
+		this.cargo = cargo;
 	}
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
-	
-	@NotEmpty
-	@Column
-	public String getTelefone() {
-		return telefone;
-	}
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
-	}
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;

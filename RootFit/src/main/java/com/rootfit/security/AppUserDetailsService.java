@@ -1,5 +1,6 @@
 package com.rootfit.security;
 
+import com.rootfit.model.TipoUsuario;
 import com.rootfit.model.Usuario;
 import com.rootfit.repositories.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,12 +27,12 @@ public class AppUserDetailsService implements UserDetailsService {
     public UserDetails loadUserByUsername(String matricula) throws UsernameNotFoundException {
         Optional<Usuario> usuarioOptional = usuarioRepository.findUsuarioByMatricula(matricula);
         Usuario usuario = usuarioOptional.orElseThrow(() -> new UsernameNotFoundException("usuario e/ou senha incorretos!"));
-        return new UsuarioSistema(usuario, getPermissoes(usuario));
+        return new UsuarioSistema(usuario, getPermissoes(usuario.getTipoUsuario()));
     }
 
-    private Collection<? extends GrantedAuthority> getPermissoes(Usuario usuario) {
+    private Collection<? extends GrantedAuthority> getPermissoes(TipoUsuario tipoUsuario) {
         Set<SimpleGrantedAuthority> authorities = new HashSet<>();
-        usuario.getPermissoes().forEach(p -> authorities.add(new SimpleGrantedAuthority(p.getDescricao().toUpperCase())));
+        tipoUsuario.getPermissoes().forEach(p -> authorities.add(new SimpleGrantedAuthority(p.getDescricao().toUpperCase())));
         return authorities;
     }
 }
