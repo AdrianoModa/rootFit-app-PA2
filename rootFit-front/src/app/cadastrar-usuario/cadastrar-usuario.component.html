@@ -4,9 +4,13 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="header">
-                        <h4 class="title">Cadastro de Usuário</h4>
+                            <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                      <li class="breadcrumb-item"><a href="dashboard">Dashboard</a></li>
+                                      <li class="breadcrumb-item active" aria-current="page"><a href="/">Cadastrar-usuário</a></li>
+                                    </ol>
+                            </nav>
                         <hr/>
-                        <br/>
                         <h5 class="title">Selecione o tipo de usuário</h5>
                         <div class="row">
                             <div class="col-md-4">
@@ -19,117 +23,14 @@
                             </div>
                         </div>
                     </div>
-                    <div class="content">
-                            <form #f="ngForm" autocomplete="off" (ngSubmit)="salvarColaborador(f)">
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <div class="form-group">
-                                        <label>Matrícula</label>
-                                        <input type="text" class="form-control"  placeholder="Matricula" [ngModel]="colaborador.matricula" #matricula="ngModel" required>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <label>Inicio</label>
-                                    <input type="month" class="form-control" disabled placeholder="Inicio">
-                                </div>
-                                <div class="col-md-3">
-                                    <label>Status</label>
-                                    <input type="text" class="form-control" disabled placeholder="Status">
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Nome</label>
-                                        <input type="text" name="nome" class="form-control" placeholder="Nome" [ngModel]="colaborador.nome" required>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Email</label>
-                                        <input type="email" class="form-control" name="email" placeholder="Email" [ngModel]="colaborador.email" required>
-                                    </div>
-                                </div>
-                                <div class="col-md-2">
-                                    <div class="form-group">
-                                        <label>Data de Nascimento</label>
-                                        <input type="date" class="form-control" placeholder="Nascimento">
-                                    </div>
-                                </div>
-                            </div>           
-
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Endereço</label>
-                                        <input type="text" class="form-control" placeholder="Endereço">
-                                    </div>
-                                </div>
-                                <div class="col-md-2">
-                                    <div class="form-group">
-                                        <label>Número</label>
-                                        <input type="text" class="form-control" placeholder="Número">
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>Complemento</label>
-                                        <input type="text" class="form-control" placeholder="Complemento">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>Bairro</label>
-                                        <input type="text" class="form-control" placeholder="Bairro">
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>Cidade</label>
-                                        <input type="text" class="form-control" placeholder="Cidade">
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>CEP</label>
-                                        <input type="text" class="form-control" placeholder="CEP">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Telefone</label>
-                                        <input type="text" class="form-control" name="telefone" placeholder="Telefone" [ngModel]="colaborador.telefone" required>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Senha</label>
-                                        <input type="password" class="form-control" name="senha" [ngModel]="colaborador.senha" required>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label>Objetivo</label>
-                                        <textarea rows="5" class="form-control" placeholder="Qual a sua meta na academia" >Me manter em forma</textarea>
-                                    </div>
-                                </div>
-                            </div>
-                            <button type="submit" class="btn btn-info btn-fill pull-right" [disabled]="f.invalid">Cadastrar</button>
-                            <div class="clearfix"></div>
-                        </form>
-                    </div>
                 </div>
+                <div class="card">
+                        <div class="header">
+                            <div class="row">
+                               
+                            </div>
+                        </div>
+                    </div>
             </div>
         </div>
     </div>

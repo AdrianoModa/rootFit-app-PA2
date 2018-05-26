@@ -3,15 +3,41 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
+                    <div class="header">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="dashboard">Dashboard</a>
+                                </li>
+                                <li class="breadcrumb-item active" aria-current="page">
+                                    <a href="/">Listar-usuários</a>
+                                </li>
+                            </ol>
+                        </nav>
+                        <hr/>
+                        <h5 class="title">Selecione o tipo de usuário</h5>
                         <div class="row">
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <div class="header">
-                                            <input type="text" class="form-control"  placeholder="Buscar">
-                                        </div>
-                                    </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <select class="form-control" id="exampleFormControlSelect1">
+                                        <option>Selecionar tipo</option>
+                                        <option>Administrador</option>
+                                    </select>
                                 </div>
+                            </div>
                         </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <div class="header">
+                                    <input type="text" class="form-control" placeholder="Buscar">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="content table-responsive table-full-width">
                         <table class="table table-hover">
                             <thead>
