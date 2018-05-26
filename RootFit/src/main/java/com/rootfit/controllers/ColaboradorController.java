@@ -34,20 +34,20 @@ public class ColaboradorController {
 	private ColaboradorService colaboradorService;
 	
 	@GetMapping("/colaborador")
-	@PreAuthorize("hasAuthority('ROLE_PESQUISAR_COLABORADOR') and #oauth2.hasScope('read')")
+	//@PreAuthorize("hasAuthority('ROLE_PESQUISAR_COLABORADOR') and #oauth2.hasScope('read')")
 	public List<Colaborador> listar() {
 		return colaboradorRepository.findAll();
 	}
 	
 	@GetMapping("/colaborador/{id}")
-	@PreAuthorize("hasAuthority('ROLE_PESQUISAR_COLABORADOR') and #oauth2.hasScope('read')")
+	//@PreAuthorize("hasAuthority('ROLE_PESQUISAR_COLABORADOR') and #oauth2.hasScope('read')")
 	public ResponseEntity<Colaborador> listarPorId(@PathVariable Long id) {
 		Colaborador colaborador  = colaboradorRepository.findOne(id);
 		return colaborador != null ? ResponseEntity.ok(colaborador) : ResponseEntity.notFound().build();
 	}
 	
 	@PostMapping("/colaborador")
-	@PreAuthorize("hasAuthority('ROLE_CADASTRAR_COLABORADOR') and #oauth2.hasScope('write')")
+	//@PreAuthorize("hasAuthority('ROLE_CADASTRAR_COLABORADOR') and #oauth2.hasScope('write')")
 	public void adicionar(@RequestBody @Valid Colaborador colaborador, HttpServletResponse response) {
 		Colaborador colaboradorSalvo = colaboradorRepository.save(colaborador);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequestUri().path("/{id}")
@@ -56,7 +56,7 @@ public class ColaboradorController {
 	}
 	
 	@DeleteMapping("/colaborador/{id}")
-	@PreAuthorize("hasAuthority('ROLE_REMOVER_COLABORADOR') and #oauth2.hasScope('write')")
+	//@PreAuthorize("hasAuthority('ROLE_REMOVER_COLABORADOR') and #oauth2.hasScope('write')")
 	public void remover(@PathVariable Long id) {
 		colaboradorRepository.delete(id);
 	}

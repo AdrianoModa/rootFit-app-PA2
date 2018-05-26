@@ -85,8 +85,8 @@ public class Usuario implements Serializable {
 		String year = Integer.toString(cldr.get(Calendar.YEAR));
 		String ultsDoisDigts = year.substring(year.length() - 2);
 		String month = Integer.toString(cldr.get(Calendar.MONTH));
-		String tresDigts = Integer.toString(rdn.nextInt(999));
-		this.matricula = ultsDoisDigts + month + tresDigts;
+		String quatrDigts = Integer.toString(rdn.nextInt(9999));
+		this.matricula = ultsDoisDigts + month + quatrDigts;
 	}
 
 	
