@@ -2,8 +2,10 @@ package com.rootfit.model;
 
 
 import java.io.Serializable;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Objects;
+import java.util.Random;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -54,6 +56,13 @@ public class Usuario implements Serializable {
 		this.id = id;
 	}
 
+	public Usuario(Long id, String nome, String login, String senha) {
+		this.id = id;
+		this.nome = nome;
+		this.login = login;
+		this.senha = senha;
+	}
+	
 	public Usuario(Long id, String cpf, String email, String genero, String login, String matricula, String nome,
 			String senha, String rg, String telefone, Endereco endereco) {
 		super();
@@ -68,6 +77,16 @@ public class Usuario implements Serializable {
 		this.rg = rg;
 		this.telefone = telefone;
 		this.endereco = endereco;
+	}
+	
+	public void gerarMatricula() {
+		Random rdn = new Random();
+		Calendar cldr = Calendar.getInstance();
+		String year = Integer.toString(cldr.get(Calendar.YEAR));
+		String ultsDoisDigts = year.substring(year.length() - 2);
+		String month = Integer.toString(cldr.get(Calendar.MONTH));
+		String tresDigts = Integer.toString(rdn.nextInt(999));
+		this.matricula = ultsDoisDigts + month + tresDigts;
 	}
 
 	
@@ -119,14 +138,15 @@ public class Usuario implements Serializable {
 	public void setLogin(String login) {
 		this.login = login;
 	}
+	
+	public void setMatricula(String matricula) {
+		this.matricula = matricula;
+	}
 
 	public String getMatricula() {
 		return matricula;
 	}
 
-	public void setMatricula(String matricula) {
-		this.matricula = matricula;
-	}
 
 	public String getNome() {
 		return nome;

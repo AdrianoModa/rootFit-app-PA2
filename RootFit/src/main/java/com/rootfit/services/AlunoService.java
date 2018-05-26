@@ -1,6 +1,7 @@
 package com.rootfit.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,28 +13,37 @@ import com.rootfit.repositories.AlunoRepository;
 public class AlunoService {
 	
 	@Autowired
-	private AlunoRepository alunoDAO;
+	private AlunoRepository alunoRepository;
+	
+	public Boolean compare_matricula(String matricula) {
+		Optional<Aluno> aluno = alunoRepository.findAlunoByMatricula(matricula);
+		if (aluno.isPresent()) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 
 	public Aluno adicionarAluno(Aluno aluno){
-		return alunoDAO.save(aluno);
+		return alunoRepository.save(aluno);
 	}
 	
 	public Aluno atualizarAluno(Aluno aluno){
-		Aluno clienteExistente = alunoDAO.findOne(aluno.getId());	
-		return alunoDAO.save(clienteExistente);
+		Aluno clienteExistente = alunoRepository.findOne(aluno.getId());	
+		return alunoRepository.save(clienteExistente);
 	}
 	
 	public Aluno buscarPorId(Long id){
-		return alunoDAO.findOne(id);
+		return alunoRepository.findOne(id);
 	}
 	
 	public void removerAluno(Long id){
-		Aluno aluno = alunoDAO.findOne(id);
-		alunoDAO.delete(aluno);
+		Aluno aluno = alunoRepository.findOne(id);
+		alunoRepository.delete(aluno);
 	}
 	
 	public List<Aluno> ListarTodosAlunos(){
-		return alunoDAO.findAll();
+		return alunoRepository.findAll();
 	}
 	
 }

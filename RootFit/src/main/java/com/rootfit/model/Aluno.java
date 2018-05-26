@@ -9,7 +9,6 @@ import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -18,9 +17,13 @@ public class Aluno extends Usuario implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private Boolean status;
+	
 	private String objetivo;
+	
 	private Date nascimento;
+	
 	private Date inicio;
+	
 	
 	@ManyToOne
 	@JsonIgnore
@@ -38,16 +41,28 @@ public class Aluno extends Usuario implements Serializable {
 	private Endereco endereco;
 	
 	public Aluno() {
+		super.gerarMatricula();
 		
 	}
 	
 	public Aluno(Long id) {
 		super(id);
+		super.gerarMatricula();
+		
+	}
+	
+	public Aluno(Long id, String nome, String login, String senha, Date inicio, Instrutor inst) {
+		super(id, nome, login, senha);
+		super.gerarMatricula();
+		
+		this.inicio = inicio;
+		this.instrutor = inst;
 		
 	}
 	
 	public Aluno(Long id, Boolean status, String objetivo, Date nascimento, Date inicio, Instrutor instrutor) {
 		super(id);
+		super.gerarMatricula();
 		this.status = status;
 		this.objetivo = objetivo;
 		this.nascimento = nascimento;
