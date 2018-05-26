@@ -7,6 +7,7 @@ import javax.validation.Valid;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,6 +28,8 @@ public class AlunoController {
 	
 	@Autowired
 	private AlunoService alunoService;
+	@Autowired
+	private BCryptPasswordEncoder encoder;
 	
 	@GetMapping
 	public List<Aluno> listarTodos(){
@@ -40,6 +43,9 @@ public class AlunoController {
 	
 	@PostMapping
 	public Aluno cadastrarLogin(@RequestBody Aluno aluno){
+		aluno.gerarMatricula();
+		String cryptoSenha = encoder.encode(aluno.getSenha());
+		aluno.setSenha(cryptoSenha);
 		return alunoService.adicionarAluno(aluno);
 	}
 	

@@ -1,6 +1,7 @@
 package com.rootfit.config;
 
-import com.rootfit.config.token.CustomTokenEnhancer;
+import java.util.Arrays;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,7 +16,7 @@ import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 
-import java.util.Arrays;
+import com.rootfit.config.token.CustomTokenEnhancer;
 
 @Configuration
 @EnableAuthorizationServer
