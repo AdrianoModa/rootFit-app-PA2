@@ -6,6 +6,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +22,9 @@ public class InstrutorController {
 
 	@Autowired
 	InstrutorService instrutorService;
+	
+	@Autowired
+	BCryptPasswordEncoder encoder;
 
 	@RequestMapping(value="/{id}", method=RequestMethod.GET)
 	public ResponseEntity<?> findById(@PathVariable Long id){
@@ -34,8 +38,11 @@ public class InstrutorController {
 		return ResponseEntity.ok().body(obj);
 	}
 
-	@RequestMapping(value="/newInstrutor", method=RequestMethod.POST)
+	@RequestMapping(method=RequestMethod.POST)
 	public ResponseEntity<?> persistInstrutor(@RequestBody Instrutor instrutor){
+		instrutor.gerarMatricula();
+		String cryptoSenha = encoder.encode(instrutor.getSenha());
+		instrutor.setSenha(cryptoSenha);
 		instrutorService.adiciona(instrutor);
 		return ResponseEntity.status(HttpStatus.CREATED).build();
 	}
@@ -51,7 +58,7 @@ public class InstrutorController {
 		return ResponseEntity.ok(instrutor);
 	}
 
-	@RequestMapping(value="/delete/{id}", method=RequestMethod.DELETE)
+	@RequestMapping(value="/{id}", method=RequestMethod.DELETE)
 	public ResponseEntity<?> deleteInstrutor(@PathVariable Long id){
 		@SuppressWarnings("unused")
 		Instrutor inst = instrutorService.buscarPorId(id);
