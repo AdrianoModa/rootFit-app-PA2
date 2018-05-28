@@ -3,12 +3,9 @@ package com.rootfit.model;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 
 @Entity
 public class Estado implements Serializable{
@@ -17,37 +14,66 @@ public class Estado implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long id;
-	private String estado;
+	private Long Id;
+
+	private Long CodigoUf;
+	private String Nome;
+	private String Uf;
+	private String Regiao;
 	
-	@OneToMany(mappedBy="estado")
+	@OneToMany(mappedBy="estado", cascade=CascadeType.ALL)
 	private List<Cidade> cidades = new ArrayList<>();
 	
 	public Estado() {
 		
 	}
 
-	public Estado(Long id, String estado, List<Cidade> cidades) {
-		super();
-		this.id = id;
-		this.estado = estado;
+	public Estado(Long codigoUf, String nome, String uf, String regiao, List<Cidade> cidades) {
+		CodigoUf = codigoUf;
+		Nome = nome;
+		Uf = uf;
+		Regiao = regiao;
 		this.cidades = cidades;
 	}
 
 	public Long getId() {
-		return id;
+		return Id;
 	}
 
 	public void setId(Long id) {
-		this.id = id;
+		Id = id;
 	}
 
-	public String getEstado() {
-		return estado;
+	public Long getCodigoUf() {
+		return CodigoUf;
 	}
 
-	public void setEstado(String estado) {
-		this.estado = estado;
+	public void setCodigoUf(Long codigoUf) {
+		CodigoUf = codigoUf;
+	}
+
+	public String getNome() {
+		return Nome;
+	}
+
+	public void setNome(String nome) {
+		Nome = nome;
+	}
+
+	public String getUf() {
+		return Uf;
+	}
+
+	public void setUf(String uf) {
+		Uf = uf;
+	}
+
+	public String getRegiao() {
+		return Regiao;
+	}
+
+	public void setRegiao(String regiao) {
+		Regiao = regiao;
 	}
 
 	public List<Cidade> getCidades() {
@@ -59,30 +85,21 @@ public class Estado implements Serializable{
 	}
 
 	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		return result;
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (!(o instanceof Estado)) return false;
+		Estado estado = (Estado) o;
+		return Objects.equals(Id, estado.Id) &&
+				Objects.equals(CodigoUf, estado.CodigoUf) &&
+				Objects.equals(Nome, estado.Nome) &&
+				Objects.equals(Uf, estado.Uf) &&
+				Objects.equals(Regiao, estado.Regiao) &&
+				Objects.equals(cidades, estado.cidades);
 	}
 
 	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Estado other = (Estado) obj;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		return true;
-	}
-	
-	
+	public int hashCode() {
 
+		return Objects.hash(Id, CodigoUf, Nome, Uf, Regiao, cidades);
+	}
 }

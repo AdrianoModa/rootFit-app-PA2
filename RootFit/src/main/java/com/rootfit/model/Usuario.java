@@ -7,18 +7,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Random;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
@@ -39,8 +28,8 @@ public class Usuario implements Serializable {
 	private String senha;
 	private String rg;
 	private String telefone;
-	
-	@ManyToOne
+
+	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="endereco_id")
 	private Endereco endereco;
 	
