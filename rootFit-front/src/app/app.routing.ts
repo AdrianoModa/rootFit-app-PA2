@@ -11,6 +11,7 @@ import { ListarUsuariosComponent } from './listar-usuarios/listar-usuarios.compo
 import { FormComponent } from './listar-usuarios/form/form.component';
 import { FormAvaliacaoFisicaComponent } from './cadastrar-avaliacao-fisica/form-avaliacao-fisica/form-avaliacao-fisica.component';
 import { RecuperarSenhaComponent } from './seguranca/recuperar-senha/recuperar-senha.component';
+import { FormFichaTreinoComponent } from './cadastrar-ficha-treino/form-ficha-treino/form-ficha-treino.component';
 
 
 const APP_ROUTES: Routes = [
@@ -28,8 +29,8 @@ const APP_ROUTES: Routes = [
   { path: 'avaliacao-fisica/:id', component: FormAvaliacaoFisicaComponent},
   { path: 'perfil', component: PerfilComponent},
   { path: 'avaliacao-fisica', component: CadastrarAvaliacaoFisicaComponent },
-  { path: 'recuperar-senha', component: RecuperarSenhaComponent}
-  
+  { path: 'recuperar-senha', component: RecuperarSenhaComponent},
+  { path: 'ficha-treino', component: FormFichaTreinoComponent },
 
 ];
 
