@@ -56,6 +56,8 @@ public class AlunoController {
 			ResponseEntity.notFound().build();
 		}
 		BeanUtils.copyProperties(aluno, alunoExistente, "id");
+		String cryptoSenha = encoder.encode(aluno.getSenha());
+		alunoExistente.setSenha(cryptoSenha);
 		aluno = alunoService.atualizarAluno(alunoExistente);
 		return ResponseEntity.ok(aluno);
 	}

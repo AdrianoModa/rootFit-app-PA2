@@ -27,6 +27,8 @@ import { CadastrarAvaliacaoFisicaComponent } from './cadastrar-avaliacao-fisica/
 import { FormAvaliacaoFisicaComponent } from './cadastrar-avaliacao-fisica/form-avaliacao-fisica/form-avaliacao-fisica.component';
 import { AvaliacaoFisicaService } from './shared/services/avaliacao-fisica.service';
 import { PerfilComponent } from './listar-usuarios/perfil/perfil.component';
+import { CadastrarFichaTreinoComponent } from './cadastrar-ficha-treino/cadastrar-ficha-treino.component';
+import { FormFichaTreinoComponent } from './cadastrar-ficha-treino/form-ficha-treino/form-ficha-treino.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,8 @@ import { PerfilComponent } from './listar-usuarios/perfil/perfil.component';
     CadastrarAvaliacaoFisicaComponent,
     FormAvaliacaoFisicaComponent,
     PerfilComponent,
+    CadastrarFichaTreinoComponent,
+    FormFichaTreinoComponent
   ],
   imports: [
     BrowserModule,
