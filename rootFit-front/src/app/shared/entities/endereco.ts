@@ -1,9 +1,11 @@
+import { Estado } from './estado';
+import { Cidade } from './cidade';
 
 export class Endereco {
-  id: number;
   logradouro: string;
   numero: string;
   complemento: string;
   bairro: string;
+  estado: Estado = new Estado();
   cep: string;
 }

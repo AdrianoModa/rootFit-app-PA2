@@ -5,7 +5,9 @@ import { Component, OnInit } from '@angular/core';
 import { ColaboradorService } from '../shared/services/colaborador.service';
 import { ToastyService } from 'ng2-toasty';
 import { ErrorHandlerService } from '../shared/services/error-handler.service';
-import { FormControl } from '@angular/forms';
+import { FormControl, NgForm } from '@angular/forms';
+
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-cadastrar-usuario',
@@ -16,7 +18,15 @@ export class CadastrarUsuarioComponent implements OnInit {
 
   colaborador = new Colaborador();
 
-  constructor(private http: AuthHttp, 
+  tipo = [
+          {id: 1, nome: 'Administrador'},
+          {id: 2, nome: 'Colaborador'},
+          {id: 3, nome: 'Instrutor'},
+          {id: 4, nome: 'Aluno'}
+         ];
+  tipoAc = "1";
+
+  constructor(private http: Http, 
               private colaboradorService: ColaboradorService,
               private toasty: ToastyService,
               private errorHandle: ErrorHandlerService) { }
@@ -25,14 +35,22 @@ export class CadastrarUsuarioComponent implements OnInit {
   ngOnInit() {
   }
 
-  salvarColaborador(form: FormControl){
+  salvarColaborador( form: NgForm){
       this.colaboradorService.adicionar(this.colaborador)
         .then(() => {
-            this.toasty.success('Usuário cadastrado com sucesso!');
-
-            form.reset();
+          this.toasty.success('Colaborador cadastrado com sucesso!');
         })
-        .catch(erro => this.errorHandle.handle(erro))
+        .catch(
+          erro => this.errorHandle.handle(erro)
+        );
   }
 
+  salvarAdministrador(){
+  }
+
+  salvarAluno(){
+  }
+
+  salvarInstrutor(){
+  }
 }

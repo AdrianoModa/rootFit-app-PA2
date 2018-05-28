@@ -4,33 +4,198 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="header">
-                            <nav aria-label="breadcrumb">
-                                    <ol class="breadcrumb">
-                                      <li class="breadcrumb-item"><a href="dashboard">Dashboard</a></li>
-                                      <li class="breadcrumb-item active" aria-current="page"><a href="/">Cadastrar-usuário</a></li>
-                                    </ol>
-                            </nav>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="dashboard">Dashboard</a>
+                                </li>
+                                <li class="breadcrumb-item active" aria-current="page">
+                                    <a href="/">Cadastrar-usuário</a>
+                                </li>
+                            </ol>
+                        </nav>
                         <hr/>
-                        <h5 class="title">Selecione o tipo de usuário</h5>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <select class="form-control" id="exampleFormControlSelect1">
-                                        <option>Selecionar tipo</option>
-                                        <option>Administrador</option>
-                                    </select>
+                    </div>
+                    <div class="content">
+                        <form #f="ngForm" (ngSubmit)="salvarColaborador(f)">
+                            <div class="row">
+                                <div class="col-md-4 bg-warning">
+                                    <div class="form-group">
+                                        <label>Selecione o tipo:</label>
+                                        <select class="form-control" name="tipo" [(ngModel)]="tipoAc">
+                                            <option *ngFor="let tipos of tipo" value="{{ tipos.id }}">{{ tipos.nome }}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-4" *ngIf="f.value.tipo === '2'">
+                                    <div class="form-group">
+                                        <label>Selecione o cargo:</label>
+                                        <select class="form-control" name="cargo" ngModel>
+                                            <option value="">Selecionar cargo</option>
+                                            <option *ngFor="let tipos of tipo" value="{{ tipos.id }}">{{ tipos.nome }}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-4" *ngIf="f.value.tipo === '4'">
+                                    <div class="form-group">
+                                        <label>Selecione o instrutor:</label>
+                                        <select class="form-control" name="instrutor" ngModel>
+                                            <option value="">Selecionar instrutor</option>
+                                            <option *ngFor="let tipos of tipo" value="{{ tipos.id }}">{{ tipos.nome }}</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                            <div class="row" *ngIf="f.value.tipo === ''">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Matrícula</label>
+                                        <input type="text" name="matricula" class="form-control" disabled placeholder="Matricula" ngModel>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Inicio</label>
+                                        <input type="month" name="inicio" class="form-control" disabled placeholder="Inicio" ngModel>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Nome</label>
+                                        <input type="text" name="nome" class="form-control" placeholder="Nome" ngModel>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Email</label>
+                                        <input type="email" name="email" class="form-control" placeholder="Email" email ngModel>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Data de Nascimento</label>
+                                        <input type="date" name="datanasc" class="form-control" placeholder="Nascimento" ngModel>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label>Status:</label>
+                                            <select class="form-control" name="status" ngModel>
+                                                <option value="">Selecionar status</option>
+                                                <option *ngFor="let tipos of tipo" value="{{ tipos.id }}">{{ tipos.nome }}</option>
+                                            </select>
+                                        </div>
+                                </div>
+                            </div>
+
+                            <div class="row" *ngIf="f.value.tipo !== '1'">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>CPF</label>
+                                        <input type="text" name="cpf" class="form-control" placeholder="CPF" ngModel>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>RG</label>
+                                        <input type="text" name="rg" class="form-control" placeholder="RG" ngModel>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label>Gênero</label>
+                                        <select class="form-control" name="genero" ngModel>
+                                            <option value="">Selecionar genero</option>
+                                            <option *ngFor="let tipos of tipo" value="{{ tipos.id }}">{{ tipos.nome }}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row" *ngIf="f.value.tipo !== '1'">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>CEP</label>
+                                        <input type="text" name="cep" class="form-control" placeholder="CEP" ngModel>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Logradouro</label>
+                                        <input type="text" name="endereco" class="form-control" placeholder="Endereço" ngModel>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label>Número</label>
+                                        <input type="text" name="numero" class="form-control" placeholder="Número" ngModel>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row" *ngIf="f.value.tipo !== '1'">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Bairro</label>
+                                        <input type="text" name="bairro" class="form-control" placeholder="Bairro" ngModel>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Cidade</label>
+                                        <input type="text" name="cidade" class="form-control" placeholder="Cidade" ngModel>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Complemento</label>
+                                            <input type="text" name="complemento" class="form-control" placeholder="Complemento" ngModel>
+                                        </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Telefone</label>
+                                        <input type="text" name="telefone" class="form-control" placeholder="Telefone" ngModel>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Senha</label>
+                                        <input type="password" name="senha" class="form-control" ngModel>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>Confirmar Senha</label>
+                                            <input type="password" name="confsenha" class="form-control" ngModel>
+                                        </div>
+                                    </div>
+                            </div>
+
+
+                            <div class="row" *ngIf="f.value.tipo === '4'">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Objetivo</label>
+                                        <textarea rows="5" name="objetivo" class="form-control" placeholder="Qual a sua meta na academia" ngModel></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-success btn-fill pull-right" *ngIf="f.value.tipo === '1'" >Cadastrar Administrador</button>
+                            <button type="submit" class="btn btn-success btn-fill pull-right" *ngIf="f.value.tipo === '2'" >Cadastrar Colaborador</button>
+                            <button type="submit" class="btn btn-success btn-fill pull-right" *ngIf="f.value.tipo === '3'" >Cadastrar Instrutor</button>
+                            <button type="submit" class="btn btn-success btn-fill pull-right" *ngIf="f.value.tipo === '4'" >Cadastrar Aluno</button>
+                            <div class="clearfix"></div>
+                        </form>
                     </div>
                 </div>
-                <div class="card">
-                        <div class="header">
-                            <div class="row">
-                               
-                            </div>
-                        </div>
-                    </div>
             </div>
         </div>
     </div>

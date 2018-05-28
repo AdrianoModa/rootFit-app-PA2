@@ -6,6 +6,6 @@ export class Colaborador {
   id: number;
   usuario: Usuario = new Usuario();
   cargo:string;
-  endereco: Endereco = new Endereco();
+  endereco: [{}];
   tipoUsuario: TipoUsuario = new TipoUsuario();
 }

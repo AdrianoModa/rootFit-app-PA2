@@ -41,7 +41,7 @@ import { PerfilComponent } from './listar-usuarios/perfil/perfil.component';
     NavbarComponent,
     CadastrarAvaliacaoFisicaComponent,
     FormAvaliacaoFisicaComponent,
-    PerfilComponent
+    PerfilComponent,
   ],
   imports: [
     BrowserModule,

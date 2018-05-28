@@ -25,6 +25,12 @@
                     <p>Cadastrar</p>
                 </a>
             </li>
+            <li routerLinkActive="active"  *ngIf="auth.temPermissao('ROLE_CADASTRAR_COLABORADOR')" >
+                    <a  routerLink ="cadastrar-avaliacao-fisica">
+                        <i class="pe-7s-note2"></i>
+                        <p>Avaliação Física</p>
+                    </a>
+                </li>
         </ul>
     </div>
     
