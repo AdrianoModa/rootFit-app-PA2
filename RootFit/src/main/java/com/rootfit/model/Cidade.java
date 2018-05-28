@@ -6,6 +6,8 @@ import java.util.List;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 @Entity
 public class Cidade implements Serializable{
@@ -18,9 +20,11 @@ public class Cidade implements Serializable{
 	private String cidade;
 	
 	@OneToMany(mappedBy="cidade")
+	@JsonIgnore
 	private List<Endereco> enderecos = new ArrayList<>();
 	
 	@ManyToOne(cascade=CascadeType.ALL)
+	@JsonIgnore
 	@JoinColumn(name="estado_id")
 	private Estado estado;
 	
