@@ -4,37 +4,34 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
-                        <li class="breadcrumb-item"><a routerLink="/avaliacao-fisica">Avaliacao Fisica</a></li>
+                        <li class="breadcrumb-item"><a routerLink="/avaliacao-fisica">Ficha Treino</a></li>
                         <li class="breadcrumb-item active" aria-current="page">{{editando ? 'Edição':'Cadastro'}}</li>
                     </ol>
                 </nav>
             </div>
         <div class="row">
             <div class="col-md-12">
-                <div class="card" >                    
+                <div class="card">                    
                     <div class="content">
-                        <h4>{{editando ? 'Edição' : 'Cadastro' }} de Avaliacao Física</h4><br/>
+                        <h4>{{editando ? 'Edição' : 'Cadastrar' }} de Avaliacao Física</h4><br/>
                         <form #frm="ngForm" (ngSubmit)="salvar(frm)">
                             <div class="row">
                                 <div class="col-md-5">
                                     <div class="form-group">
                                         <label>Nome Instrutor</label>
-                                        <input type="text" (ngModel)="avaliacoes.instrutor.nome" disabled class="form-control" 
-                                        placeholder="Nome do Aluno" [value]="avaliacoes.instrutor.nome">
+                                        <h5>{{ avaliacoes.instrutor.nome }}</h5>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label>Matricula</label>
-                                        <input type="text" (ngModel)="avaliacoes.instrutor.matricula" disabled class="form-control" 
-                                        placeholder="Ex:1613000" [value]="avaliacoes.instrutor.matricula">
+                                        <h5>{{ avaliacoes.instrutor.matricula }}</h5>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Email</label>
-                                        <input type="email" (ngModel)="avaliacoes.instrutor.email" disabled class="form-control" 
-                                        placeholder="email@meuemail.com" [value]="avaliacoes.instrutor.email">
+                                        <h5>{{ avaliacoes.instrutor.email }}</h5>
                                     </div>
                                 </div>
                             </div>
@@ -96,7 +93,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <button type="submit" label="Atualizar" [disabled]="frm.invalid" class="btn btn-primary">Atualizar</button>
+                            <button type="submit" label="Atualizar" [disabled]="frm.invalid" class="btn btn-danger" >Atualizar</button>
                             <button type="submit" label="Adicionar" [disabled]="frm.invalid" class="btn btn-primary">Adicionar</button>
                             <div class="clearfix"></div>
                         </form>

@@ -1,3 +1,4 @@
+import { CadastrarFichaTreinoComponent } from './cadastrar-ficha-treino/cadastrar-ficha-treino.component';
 import { PerfilComponent } from './listar-usuarios/perfil/perfil.component';
 import { CadastrarAvaliacaoFisicaComponent } from './cadastrar-avaliacao-fisica/cadastrar-avaliacao-fisica.component';
 import { LoginFormComponent } from './seguranca/login-form/login-form.component';
@@ -30,7 +31,9 @@ const APP_ROUTES: Routes = [
   { path: 'perfil', component: PerfilComponent},
   { path: 'avaliacao-fisica', component: CadastrarAvaliacaoFisicaComponent },
   { path: 'recuperar-senha', component: RecuperarSenhaComponent},
-  { path: 'ficha-treino', component: FormFichaTreinoComponent },
+  { path: 'ficha-treino', component: CadastrarFichaTreinoComponent},
+  { path: 'cadastrar-ficha-treino', component: FormFichaTreinoComponent },
+  { path: 'ficha-treino/:id', component: FormFichaTreinoComponent },
 
 ];
 
