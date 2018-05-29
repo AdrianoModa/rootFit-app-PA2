@@ -21,7 +21,7 @@ import com.rootfit.model.FichaTreino;
 import com.rootfit.services.FichaTreinoService;
 
 @RestController
-@RequestMapping("/fichaTreino")
+@RequestMapping("/ficha-treino")
 @CrossOrigin("${origem-permitida}")
 public class FichaTreinoController {
 	
