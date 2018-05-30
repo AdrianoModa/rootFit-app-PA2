@@ -15,53 +15,49 @@
                     <div class="content">
                         <h4>{{editando ? 'Edição' : 'Cadastrar' }} de Avaliacao Física</h4><br/>
                         <form #frm="ngForm" (ngSubmit)="salvar(frm)">
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <div class="form-group">
-                                        <label>Nome Instrutor</label>
-                                        <h5>{{ avaliacoes.instrutor.nome }}</h5>
+                            <div class="col-md-12" *ngIf="editando" >
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <div class="form-group">
+                                            <label>Nome Instrutor</label>
+                                            <h5>{{ avaliacoes.instrutor.nome }}</h5>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>Matricula</label>
+                                            <h5>{{ avaliacoes.instrutor.matricula }}</h5>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Email do Instrutor</label>
+                                            <h5>{{ avaliacoes.instrutor.email }}</h5>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label>Matricula</label>
-                                        <h5>{{ avaliacoes.instrutor.matricula }}</h5>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Email</label>
-                                        <h5>{{ avaliacoes.instrutor.email }}</h5>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <h4>Dados do Aluno: {{avaliacoes.aluno.nome}}</h4>
-                            <hr>
-
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <div class="form-group">
-                                        <label>Nome Aluno</label>
-                                        <input type="text" (ngModel)="avaliacoes.aluno.nome" disabled class="form-control" 
-                                        placeholder="Nome do Aluno" [value]="avaliacoes.aluno.nome">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <div class="form-group">
+                                            <label>Nome Aluno</label>
+                                            <h5>{{ avaliacoes.aluno.nome }}</h5>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>Matricula</label>
+                                            <h5>{{ avaliacoes.aluno.matricula }}</h5>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Email do Aluno</label>
+                                            <h5>{{ avaliacoes.aluno.email }}</h5>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label>Matricula</label>
-                                        <input type="text" (ngModel)="avaliacoes.aluno.matricula" disabled class="form-control" 
-                                        placeholder="Ex:1613000" [value]="avaliacoes.aluno.matricula">
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Email</label>
-                                        <input type="email" (ngModel)="avaliacoes.instrutor.email" disabled class="form-control" 
-                                        placeholder="email@meuemail.com" [value]="avaliacoes.aluno.email">
-                                    </div>
-                                </div>
-                            </div>
+                            </div>                                
 
                             <div class="row">
                                 <div class="col-md-3">
@@ -76,10 +72,17 @@
                                         <input type="text" class="form-control" name="altura" placeholder="Altura" [(ngModel)]="avaliacoes.altura">
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-3">
                                     <div class="form-group">
                                         <label>Data Avaliacao</label>
                                         <input type="text" class="form-control" name="dataAvaliacao" placeholder="aaaa/MM/dd" [(ngModel)]="avaliacoes.dataAvaliacao">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Medidas</label>
+                                        <input type="text" class="form-control" name="medidasMusculares" placeholder="Medidas" [(ngModel)]="avaliacoes.medidasMusculares">
                                     </div>
                                 </div>
                             </div>                                                     
