@@ -1,6 +1,5 @@
 package com.rootfit.model;
 
-
 import java.io.Serializable;
 import java.util.Objects;
 

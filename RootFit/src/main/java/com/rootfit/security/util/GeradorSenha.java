@@ -1,6 +1,5 @@
 package com.rootfit.security.util;
 
-import ch.qos.logback.core.net.SyslogOutputStream;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 public class GeradorSenha {
