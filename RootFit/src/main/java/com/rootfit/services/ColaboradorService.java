@@ -10,7 +10,7 @@ import com.rootfit.model.Colaborador;
 import com.rootfit.repositories.ColaboradorRepository;
 
 @Service
-public class ColaboradorService {
+public class ColaboradorService extends UsuarioService{
 	
 	@Autowired
 	private ColaboradorRepository colaboradorRepository;

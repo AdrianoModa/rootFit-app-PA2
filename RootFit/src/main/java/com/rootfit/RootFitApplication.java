@@ -4,14 +4,9 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import com.rootfit.model.Aluno;
-import com.rootfit.repositories.AlunoRepository;
-import com.rootfit.repositories.InstrutorRepository;
 
 @SpringBootApplication
 public class RootFitApplication implements CommandLineRunner {

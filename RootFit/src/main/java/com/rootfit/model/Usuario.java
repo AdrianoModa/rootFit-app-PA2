@@ -2,14 +2,18 @@ package com.rootfit.model;
 
 
 import java.io.Serializable;
-import java.util.Calendar;
-import java.util.List;
 import java.util.Objects;
-import java.util.Random;
 
-import javax.persistence.*;
-
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 @Entity
 @Inheritance(strategy=InheritanceType.JOINED)
@@ -28,6 +32,7 @@ public class Usuario implements Serializable {
 	private String senha;
 	private String rg;
 	private String telefone;
+
 
 	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="endereco_id")
@@ -67,18 +72,6 @@ public class Usuario implements Serializable {
 		this.telefone = telefone;
 		this.endereco = endereco;
 	}
-	
-	public void gerarMatricula() {
-		Random rdn = new Random();
-		Calendar cldr = Calendar.getInstance();
-		String year = Integer.toString(cldr.get(Calendar.YEAR));
-		String ultsDoisDigts = year.substring(year.length() - 2);
-		String month = Integer.toString(cldr.get(Calendar.MONTH));
-		String quatrDigts = Integer.toString(rdn.nextInt(9999));
-		this.matricula = ultsDoisDigts + month + quatrDigts;
-	}
-
-	
 
 	public Endereco getEndereco() {
 		return endereco;

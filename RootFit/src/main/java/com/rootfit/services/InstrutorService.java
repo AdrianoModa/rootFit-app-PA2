@@ -9,7 +9,7 @@ import com.rootfit.model.Instrutor;
 import com.rootfit.repositories.InstrutorRepository;
 
 @Service
-public class InstrutorService {
+public class InstrutorService extends UsuarioService{
 	
 	@Autowired
 	private InstrutorRepository instrutorDAO;

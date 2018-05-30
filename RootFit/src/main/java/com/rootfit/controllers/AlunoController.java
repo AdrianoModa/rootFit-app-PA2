@@ -7,7 +7,6 @@ import javax.validation.Valid;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,8 +27,6 @@ public class AlunoController {
 	
 	@Autowired
 	private AlunoService alunoService;
-	@Autowired
-	private BCryptPasswordEncoder encoder;
 	
 	@GetMapping
 	public List<Aluno> listarTodos(){
@@ -43,9 +40,9 @@ public class AlunoController {
 	
 	@PostMapping
 	public Aluno cadastrarLogin(@RequestBody Aluno aluno){
-		aluno.gerarMatricula();
-		String cryptoSenha = encoder.encode(aluno.getSenha());
-		aluno.setSenha(cryptoSenha);
+		aluno.setMatricula(alunoService.gerarMatricula());
+		String crptoPwd = alunoService.cyptoPwd(aluno.getSenha());
+		aluno.setSenha(crptoPwd);
 		return alunoService.adicionarAluno(aluno);
 	}
 	
@@ -56,9 +53,6 @@ public class AlunoController {
 			ResponseEntity.notFound().build();
 		}
 		BeanUtils.copyProperties(aluno, alunoExistente, "id");
-		String cryptoSenha = encoder.encode(aluno.getSenha());
-		alunoExistente.setSenha(cryptoSenha);
-		aluno = alunoService.atualizarAluno(alunoExistente);
 		return ResponseEntity.ok(aluno);
 	}
 

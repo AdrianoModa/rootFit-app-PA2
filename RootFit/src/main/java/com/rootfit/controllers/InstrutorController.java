@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -39,12 +38,11 @@ public class InstrutorController {
 	}
 
 	@RequestMapping(method=RequestMethod.POST)
-	public ResponseEntity<?> persistInstrutor(@RequestBody Instrutor instrutor){
-		instrutor.gerarMatricula();
-		String cryptoSenha = encoder.encode(instrutor.getSenha());
-		instrutor.setSenha(cryptoSenha);
-		instrutorService.adiciona(instrutor);
-		return ResponseEntity.status(HttpStatus.CREATED).build();
+	public Instrutor persistInstrutor(@RequestBody Instrutor instrutor){
+		instrutor.setMatricula(instrutorService.gerarMatricula());
+		String crptoPwd = instrutorService.cyptoPwd(instrutor.getSenha());
+		instrutor.setSenha(crptoPwd);
+		return instrutorService.adiciona(instrutor);
 	}
 
 	@RequestMapping(value="/{id}", method=RequestMethod.PUT)
