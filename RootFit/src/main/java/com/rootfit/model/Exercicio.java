@@ -7,6 +7,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Exercicio {
 	
@@ -19,6 +21,7 @@ public class Exercicio {
 	
 	@ManyToOne
 	@JoinColumn(name="fichaTreino_id")
+	@JsonIgnore
 	private FichaTreino fichaTreino;
 	
 	public Exercicio() {

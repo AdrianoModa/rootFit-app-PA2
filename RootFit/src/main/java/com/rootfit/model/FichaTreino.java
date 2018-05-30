@@ -10,6 +10,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class FichaTreino implements Serializable{
 	private static final long serialVersionUID = 1L;
@@ -20,6 +22,7 @@ public class FichaTreino implements Serializable{
 	
 	@ManyToOne
 	@JoinColumn(name="aluno_id")
+	@JsonIgnore
 	private Aluno aluno;
 	
 	@OneToMany(mappedBy="fichaTreino")

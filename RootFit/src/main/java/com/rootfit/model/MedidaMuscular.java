@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class MedidaMuscular {
 	
@@ -16,6 +18,7 @@ public class MedidaMuscular {
 	private Double tamanho;
 	
 	@ManyToMany(mappedBy= "medidasMusculares")
+	@JsonIgnore
 	private List<AvaliacaoFisica> avaliacoesFisicas = new ArrayList<>();
 	
 	public MedidaMuscular() {
