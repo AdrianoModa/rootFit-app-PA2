@@ -1,3 +1,4 @@
+import { ExercicioService } from './shared/services/exercicio.service';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -29,6 +30,7 @@ import { AvaliacaoFisicaService } from './shared/services/avaliacao-fisica.servi
 import { PerfilComponent } from './listar-usuarios/perfil/perfil.component';
 import { CadastrarFichaTreinoComponent } from './cadastrar-ficha-treino/cadastrar-ficha-treino.component';
 import { FormFichaTreinoComponent } from './cadastrar-ficha-treino/form-ficha-treino/form-ficha-treino.component';
+import { FichaTreinoService } from './shared/services/ficha-treino.service';
 
 @NgModule({
   declarations: [
@@ -62,6 +64,8 @@ import { FormFichaTreinoComponent } from './cadastrar-ficha-treino/form-ficha-tr
     InstrutorService, 
     ColaboradorService, 
     AvaliacaoFisicaService,
+    FichaTreinoService,
+    ExercicioService,
     AuthService,
     JwtHelper,
     ErrorHandlerService

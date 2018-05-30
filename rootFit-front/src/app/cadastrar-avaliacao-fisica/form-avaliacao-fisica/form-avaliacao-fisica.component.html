@@ -4,7 +4,7 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
-                        <li class="breadcrumb-item"><a routerLink="/avaliacao-fisica">Ficha Treino</a></li>
+                        <li class="breadcrumb-item"><a routerLink="/avaliacao-fisica">Avaliacao Fisica</a></li>
                         <li class="breadcrumb-item active" aria-current="page">{{editando ? 'Edição':'Cadastro'}}</li>
                     </ol>
                 </nav>
@@ -93,7 +93,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <button type="submit" label="Atualizar" [disabled]="frm.invalid" class="btn btn-danger" >Atualizar</button>
+                            <button type="submit" label="Atualizar" [disabled]="frm.invalid" class="btn btn-primary" >Atualizar</button>
                             <button type="submit" label="Adicionar" [disabled]="frm.invalid" class="btn btn-primary">Adicionar</button>
                             <div class="clearfix"></div>
                         </form>

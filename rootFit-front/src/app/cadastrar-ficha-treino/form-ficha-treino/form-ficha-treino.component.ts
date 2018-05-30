@@ -1,11 +1,11 @@
+import { FichaTreinoService } from './../../shared/services/ficha-treino.service';
+import { FichaTreino } from './../../shared/entities/ficha-treino';
 import { Router, ActivatedRoute } from '@angular/router';
 import { InstrutorService } from './../../shared/services/instrutor.service';
 import { AlunoService } from './../../shared/services/aluno.service';
 import { Component, OnInit } from '@angular/core';
-import { AvaliacaoFisica } from '../../shared/entities/avaliacao-fisica';
 import { Aluno } from '../../shared/entities/aluno';
 import { Instrutor } from '../../shared/entities/instrutor';
-import { AvaliacaoFisicaService } from '../../shared/services/avaliacao-fisica.service';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -15,12 +15,12 @@ import { FormControl } from '@angular/forms';
 })
 export class FormFichaTreinoComponent implements OnInit {
 
-  avaliacoes: AvaliacaoFisica[] = [];
+  fichaTreino: FichaTreino[] = [];
   alunos: Aluno[] = [];
   instrutores: Instrutor[] = [];
 
   constructor(
-    private avaliacaoFisicaService: AvaliacaoFisicaService,
+    private fichaTreinoService: FichaTreinoService,
     private alunoService: AlunoService,
     private InstrutorService: InstrutorService,
     private route: ActivatedRoute, private router: Router) { }
@@ -32,9 +32,9 @@ export class FormFichaTreinoComponent implements OnInit {
     var id = this.route.params.subscribe(params => {
       var id = params['id'];
 
-      this.avaliacaoFisicaService.buscarPorId(id)
+      this.fichaTreinoService.buscarPorId(id)
         .subscribe(
-          avaliacao => this.avaliacoes = avaliacao,          
+          avaliacao => this.fichaTreino = avaliacao,          
           response => {
             if (response.status == 404) {
               this.router.navigate(['Não Encontrado']);
@@ -48,8 +48,8 @@ export class FormFichaTreinoComponent implements OnInit {
   }
 
   consultar(){
-    this.avaliacaoFisicaService.buscar()
-    .subscribe(dados => this.avaliacoes = dados);
+    this.fichaTreinoService.buscar()
+    .subscribe(dados => this.fichaTreino = dados);
   }
 
   consultarAluno(){
@@ -63,8 +63,8 @@ export class FormFichaTreinoComponent implements OnInit {
   }
 
   consultarPorId(frm: FormControl){
-    this.avaliacaoFisicaService.buscarPorId(frm.value)
-    .subscribe(dados => this.avaliacoes = dados)
+    this.fichaTreinoService.buscarPorId(frm.value)
+    .subscribe(dados => this.fichaTreino = dados)
   }
 
   salvar(frm: FormControl){
@@ -76,7 +76,7 @@ export class FormFichaTreinoComponent implements OnInit {
   }
 
   adicionar(frm: FormControl){
-    this.avaliacaoFisicaService.adicionar(frm.value)
+    this.fichaTreinoService.adicionar(frm.value)
     .subscribe(dados  => {
       frm.reset()
       alert("Avaliacao Gerada com Sucesso!");
@@ -85,7 +85,7 @@ export class FormFichaTreinoComponent implements OnInit {
   }
 
   atualizar(frm: FormControl){
-    this.avaliacaoFisicaService.atualizar(this.avaliacoes)
+    this.fichaTreinoService.atualizar(this.fichaTreino)
     .subscribe(() => {
       frm.reset()
       alert("Seu cadastro foi atualizado com sucesso!");

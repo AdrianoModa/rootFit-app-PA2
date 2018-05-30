@@ -16,8 +16,6 @@ import { FormFichaTreinoComponent } from './cadastrar-ficha-treino/form-ficha-tr
 
 
 const APP_ROUTES: Routes = [
-
-  
  
   { path: 'login', component: LoginFormComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -32,8 +30,9 @@ const APP_ROUTES: Routes = [
   { path: 'avaliacao-fisica', component: CadastrarAvaliacaoFisicaComponent },
   { path: 'recuperar-senha', component: RecuperarSenhaComponent},
   { path: 'ficha-treino', component: CadastrarFichaTreinoComponent},
-  { path: 'cadastrar-ficha-treino', component: FormFichaTreinoComponent },
   { path: 'ficha-treino/:id', component: FormFichaTreinoComponent },
+  { path: 'cadastrar-ficha-treino', component: FormFichaTreinoComponent },
+  
 
 ];
 
