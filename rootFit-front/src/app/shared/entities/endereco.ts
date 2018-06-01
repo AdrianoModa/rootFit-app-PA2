@@ -1,5 +1,4 @@
 import { Estado } from './estado';
-import { Cidade } from './cidade';
 
 export class Endereco {
   logradouro: string;

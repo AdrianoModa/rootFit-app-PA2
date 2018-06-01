@@ -1,3 +1,4 @@
+import { Colaborador } from './../entities/colaborador';
 import { Headers } from '@angular/http';
 import { Injectable } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
@@ -5,7 +6,6 @@ import { ActivatedRoute } from '@angular/router';
 import { AuthHttp } from 'angular2-jwt';
 import 'rxjs/add/operator/toPromise'
 import { promise } from 'protractor';
-import { Colaborador } from '../entities/colaborador';
 
 @Injectable()
 export class ColaboradorService {
@@ -27,10 +27,14 @@ export class ColaboradorService {
       .then(() => null)
   }
 
-  adicionar(colaborador: Colaborador): Promise<Colaborador>{
-    return this.http.post(this.colaboradorUrl, colaborador)
-    .toPromise()
-    .then(response => response.json());
-
+  adicionar(colaborador: Colaborador) {
+    return this.http.post(this.colaboradorUrl, colaborador);
   }
+
+  // adicionar(colaborador: Colaborador): Promise<Colaborador> {
+  //   return this.http.post(this.colaboradorUrl,
+  //       JSON.stringify(colaborador))
+  //     .toPromise()
+  //     .then(response => response.json());
+  // }
 }

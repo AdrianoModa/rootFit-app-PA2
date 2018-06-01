@@ -31,6 +31,7 @@ import { PerfilComponent } from './listar-usuarios/perfil/perfil.component';
 import { CadastrarFichaTreinoComponent } from './cadastrar-ficha-treino/cadastrar-ficha-treino.component';
 import { FormFichaTreinoComponent } from './cadastrar-ficha-treino/form-ficha-treino/form-ficha-treino.component';
 import { FichaTreinoService } from './shared/services/ficha-treino.service';
+import { TipoUsuarioService } from './shared/services/tipo-usuario.service';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import { FichaTreinoService } from './shared/services/ficha-treino.service';
     ExercicioService,
     AuthService,
     JwtHelper,
-    ErrorHandlerService
+    ErrorHandlerService,
+    TipoUsuarioService
   ],
   bootstrap: [AppComponent]
 })
