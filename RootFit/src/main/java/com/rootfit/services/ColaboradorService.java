@@ -16,6 +16,10 @@ public class ColaboradorService extends UsuarioService{
 	private ColaboradorRepository colaboradorRepository;
 
 	public Colaborador adicionarColaborador(Colaborador colaborador){
+		colaborador.setMatricula(gerarMatricula());
+		String crptoPwd = cyptoPwd(colaborador.getSenha());
+		colaborador.setSenha(crptoPwd);
+
 		return colaboradorRepository.save(colaborador);
 	}
 	
