@@ -1,7 +1,9 @@
 package com.rootfit.controllers;
 
+import java.net.URI;
 import java.util.List;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 import org.springframework.beans.BeanUtils;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.rootfit.model.Aluno;
 import com.rootfit.services.AlunoService;
@@ -24,30 +27,33 @@ import com.rootfit.services.AlunoService;
 @RequestMapping("/aluno")
 @CrossOrigin("${origem-permitida}")
 public class AlunoController {
-	
+
 	@Autowired
 	private AlunoService alunoService;
-	
+
 	@GetMapping
-	public List<Aluno> listarTodos(){
+	public List<Aluno> listarTodos() {
 		return alunoService.ListarTodosAlunos();
 	}
-	
+
 	@GetMapping("/{id}")
-	public Aluno listarPorId(@PathVariable @Valid Long id){
+	public Aluno listarPorId(@PathVariable @Valid Long id) {
 		return alunoService.buscarPorId(id);
 	}
-	
+
 	@PostMapping
-	public Aluno cadastrarLogin(@RequestBody Aluno aluno){
-		aluno.setMatricula(alunoService.gerarMatricula());
-		String crptoPwd = alunoService.cyptoPwd(aluno.getSenha());
-		aluno.setSenha(crptoPwd);
-		return alunoService.adicionarAluno(aluno);
+	public ResponseEntity<Aluno> cadastrarLogin(@RequestBody @Valid Aluno aluno, HttpServletResponse response ){
+		Aluno alunoSalvo = alunoService.adicionarAluno(aluno);
+
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequestUri().path("/{id}")
+                .buildAndExpand(alunoSalvo.getId()).toUri();
+        response.setHeader("Location", uri.toASCIIString());
+
+        return ResponseEntity.created(uri).body(alunoSalvo);
 	}
-	
+
 	@PutMapping("/{id}")
-	public ResponseEntity<Aluno> atualizar(@PathVariable Long id, @RequestBody Aluno aluno){
+	public ResponseEntity<Aluno> atualizar(@PathVariable Long id, @RequestBody Aluno aluno) {
 		Aluno alunoExistente = alunoService.buscarPorId(id);
 		if (alunoExistente == null) {
 			ResponseEntity.notFound().build();
@@ -57,7 +63,7 @@ public class AlunoController {
 	}
 
 	@DeleteMapping("/{id}")
-	public ResponseEntity<Void> remover(@PathVariable Long id){
+	public ResponseEntity<Void> remover(@PathVariable Long id) {
 		Aluno aluno = alunoService.buscarPorId(id);
 		if (aluno == null) {
 			ResponseEntity.notFound().build();
