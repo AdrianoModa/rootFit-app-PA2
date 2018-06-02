@@ -12,7 +12,6 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 
 @Entity
 @Inheritance(strategy=InheritanceType.JOINED)
@@ -37,7 +36,8 @@ public class Usuario implements Serializable {
 	@JoinColumn(name="endereco_id")
 	private Endereco endereco;
 	
-	@ManyToOne
+	@ManyToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="tipoUsuario_id")
 	private TipoUsuario tipoUsuario;
 	
 	
