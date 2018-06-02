@@ -24,10 +24,10 @@ public class Instrutor extends Usuario implements Serializable{
 	public Instrutor() {
 		
 	}
-	
+
 	public Instrutor(Long id, String cpf, String email, String genero, String login, String matricula, String nome,
-			String senha, String rg, String telefone, Endereco endereco) {
-		super(id, cpf, email, genero, login, matricula, nome, senha, rg, telefone, endereco);
+			String senha, String rg, String telefone, Endereco endereco, TipoUsuario tipoUsuario) {
+		super(id, cpf, email, genero, login, matricula, nome, senha, rg, telefone, endereco, tipoUsuario);
 	}
 
 	public List<Aluno> getAlunos() {

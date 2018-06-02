@@ -24,7 +24,7 @@ public class Colaborador extends Usuario implements Serializable{
 		super(id, nome, login, senha);
 		this.cargo = cargo;
 	}
-	
+
 	public String getCargo() {
 		return cargo;
 	}

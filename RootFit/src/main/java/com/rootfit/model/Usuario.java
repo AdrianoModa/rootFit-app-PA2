@@ -37,7 +37,7 @@ public class Usuario implements Serializable {
 	@JoinColumn(name="endereco_id")
 	private Endereco endereco;
 	
-	@OneToOne
+	@ManyToOne
 	private TipoUsuario tipoUsuario;
 	
 	
@@ -57,7 +57,7 @@ public class Usuario implements Serializable {
 	}
 	
 	public Usuario(Long id, String cpf, String email, String genero, String login, String matricula, String nome,
-			String senha, String rg, String telefone, Endereco endereco) {
+			String senha, String rg, String telefone, Endereco endereco, TipoUsuario tipoUsuario) {
 		super();
 		this.id = id;
 		this.cpf = cpf;
@@ -70,6 +70,7 @@ public class Usuario implements Serializable {
 		this.rg = rg;
 		this.telefone = telefone;
 		this.endereco = endereco;
+		this.tipoUsuario = tipoUsuario;
 	}
 
 	public Endereco getEndereco() {

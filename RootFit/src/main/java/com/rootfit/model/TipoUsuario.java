@@ -22,7 +22,7 @@ public class TipoUsuario {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String descricao;
-	
+
 	@JsonBackReference
 	@ManyToMany(fetch= FetchType.EAGER)
 	@JoinTable(name="tipoUsuario_permissao", joinColumns = @JoinColumn(name="tipoUsuario_id"),

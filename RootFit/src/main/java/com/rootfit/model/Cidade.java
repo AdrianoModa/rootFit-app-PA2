@@ -19,15 +19,6 @@ public class Cidade implements Serializable{
 	private Long id;
 	private String cidade;
 	
-	@OneToMany(mappedBy="cidade")
-	@JsonIgnore
-	private List<Endereco> enderecos = new ArrayList<>();
-	
-	@ManyToOne(cascade=CascadeType.ALL)
-	@JsonIgnore
-	@JoinColumn(name="estado_id")
-	private Estado estado;
-	
 	Cidade(){
 		
 	}
@@ -46,13 +37,6 @@ public class Cidade implements Serializable{
 		this.id = id;
 	}
 
-	public Estado getEstado() {
-		return estado;
-	}
-
-	public void setEstado(Estado estado) {
-		this.estado = estado;
-	}
 
 	public String getCidade() {
 		return cidade;
@@ -62,13 +46,6 @@ public class Cidade implements Serializable{
 		this.cidade = cidade;
 	}
 
-	public List<Endereco> getEnderecos() {
-		return enderecos;
-	}
-
-	public void setEnderecos(List<Endereco> enderecos) {
-		this.enderecos = enderecos;
-	}
 
 	@Override
 	public int hashCode() {

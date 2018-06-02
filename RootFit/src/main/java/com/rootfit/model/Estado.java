@@ -14,74 +14,32 @@ public class Estado implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long Id;
+	private Long id;
+	private String estado;
 
-	private Long CodigoUf;
-	private String Nome;
-	private String Uf;
-	private String Regiao;
-	
-	@OneToMany(mappedBy="estado", cascade=CascadeType.ALL)
-	private List<Cidade> cidades = new ArrayList<>();
 	
 	public Estado() {
 		
 	}
 
-	public Estado(Long codigoUf, String nome, String uf, String regiao, List<Cidade> cidades) {
-		CodigoUf = codigoUf;
-		Nome = nome;
-		Uf = uf;
-		Regiao = regiao;
-		this.cidades = cidades;
+	public Estado(String estado) {
+		this.estado = estado;
 	}
 
 	public Long getId() {
-		return Id;
+		return id;
 	}
 
 	public void setId(Long id) {
-		Id = id;
+		id = id;
 	}
 
-	public Long getCodigoUf() {
-		return CodigoUf;
+	public String getEstado() {
+		return estado;
 	}
 
-	public void setCodigoUf(Long codigoUf) {
-		CodigoUf = codigoUf;
-	}
-
-	public String getNome() {
-		return Nome;
-	}
-
-	public void setNome(String nome) {
-		Nome = nome;
-	}
-
-	public String getUf() {
-		return Uf;
-	}
-
-	public void setUf(String uf) {
-		Uf = uf;
-	}
-
-	public String getRegiao() {
-		return Regiao;
-	}
-
-	public void setRegiao(String regiao) {
-		Regiao = regiao;
-	}
-
-	public List<Cidade> getCidades() {
-		return cidades;
-	}
-
-	public void setCidades(List<Cidade> cidades) {
-		this.cidades = cidades;
+	public void setEstado(String estado) {
+		this.estado = estado;
 	}
 
 	@Override
@@ -89,17 +47,12 @@ public class Estado implements Serializable{
 		if (this == o) return true;
 		if (!(o instanceof Estado)) return false;
 		Estado estado = (Estado) o;
-		return Objects.equals(Id, estado.Id) &&
-				Objects.equals(CodigoUf, estado.CodigoUf) &&
-				Objects.equals(Nome, estado.Nome) &&
-				Objects.equals(Uf, estado.Uf) &&
-				Objects.equals(Regiao, estado.Regiao) &&
-				Objects.equals(cidades, estado.cidades);
+		return Objects.equals(id, estado.id);
 	}
 
 	@Override
 	public int hashCode() {
 
-		return Objects.hash(Id, CodigoUf, Nome, Uf, Regiao, cidades);
+		return Objects.hash(id);
 	}
 }

@@ -26,30 +26,28 @@ public class Endereco implements Serializable{
 	private String complemento;
 	private String bairro;
 	private String cep;
+	private String cidade;
+	private String estado;
 	
 	@JsonIgnore
 	@OneToMany(mappedBy="endereco")
 	private List<Usuario> usuarios = new ArrayList<>();
-	
-	@ManyToOne
-	@JoinColumn(name="cidade_id")
-	private Cidade cidade;
-	
+
 /*	@OneToMany(mappedBy="endereco")
 	private List<Aluno> alunos = new ArrayList<>();
 	*/
 //	@OneToMany(mappedBy="endereco")
 //	private List<Colaborador> colaboradores = new ArrayList<>();
-	
+
 //	@OneToMany(mappedBy="endereco")
 //	private List<Instrutor> instrutor = new ArrayList<>();
-	
-	
+
+
 	public Endereco() {
-		
+
 	}
 
-	public Endereco(Long id, String logradouro, String numero, String complemento, String bairro, String cep) {
+	public Endereco(Long id, String logradouro, String numero, String complemento, String bairro, String cep, String cidade, String estado) {
 		super();
 		this.id = id;
 		this.logradouro = logradouro;
@@ -57,6 +55,8 @@ public class Endereco implements Serializable{
 		this.complemento = complemento;
 		this.bairro = bairro;
 		this.cep = cep;
+		this.cidade = cidade;
+		this.estado = estado;
 	}
 
 	public Long getId() {
@@ -66,7 +66,7 @@ public class Endereco implements Serializable{
 	public void setId(Long id) {
 		this.id = id;
 	}
-	
+
 /*	public List<Aluno> getAlunos() {
 		return alunos;
 	}
@@ -90,14 +90,6 @@ public class Endereco implements Serializable{
 	public void setInstrutor(List<Instrutor> instrutor) {
 		this.instrutor = instrutor;
 	}**/
-
-	public Cidade getCidade() {
-		return cidade;
-	}
-
-	public void setCidade(Cidade cidade) {
-		this.cidade = cidade;
-	}
 
 	public String getLogradouro() {
 		return logradouro;
@@ -139,7 +131,23 @@ public class Endereco implements Serializable{
 		this.cep = cep;
 	}
 
-	@Override
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    @Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
