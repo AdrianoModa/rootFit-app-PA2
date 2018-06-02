@@ -1,6 +1,10 @@
 package com.rootfit.controllers;
 
+import java.net.URI;
 import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.rootfit.model.Instrutor;
 import com.rootfit.services.InstrutorService;
@@ -38,11 +43,13 @@ public class InstrutorController {
 	}
 
 	@RequestMapping(method=RequestMethod.POST)
-	public Instrutor persistInstrutor(@RequestBody Instrutor instrutor){
-		instrutor.setMatricula(instrutorService.gerarMatricula());
-		String crptoPwd = instrutorService.cyptoPwd(instrutor.getSenha());
-		instrutor.setSenha(crptoPwd);
-		return instrutorService.adiciona(instrutor);
+	public ResponseEntity<Instrutor> persistInstrutor(@RequestBody @Valid Instrutor instrutor, HttpServletResponse response){
+		Instrutor instrutorSalvo = instrutorService.adiciona(instrutor);
+		
+		URI uri = ServletUriComponentsBuilder.fromCurrentRequestUri().path("/{id}")
+                .buildAndExpand(instrutorSalvo.getId()).toUri();
+        response.setHeader("Location", uri.toASCIIString());
+        return ResponseEntity.created(uri).body(instrutorSalvo);
 	}
 
 	@RequestMapping(value="/{id}", method=RequestMethod.PUT)

@@ -1,7 +1,6 @@
 package com.rootfit.services;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,6 +22,9 @@ public class AlunoService extends UsuarioService{
 	}*/
 
 	public Aluno adicionarAluno(Aluno aluno){
+		aluno.setMatricula(gerarMatricula());
+		String crptoPwd = cyptoPwd(aluno.getSenha());
+		aluno.setSenha(crptoPwd);
 		return alunoRepository.save(aluno);
 	}
 	

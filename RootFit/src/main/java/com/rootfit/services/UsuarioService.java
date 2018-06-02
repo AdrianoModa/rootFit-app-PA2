@@ -17,6 +17,13 @@ public class UsuarioService {
 	@Autowired
 	private UsuarioRepository usuarioRepository;
 	
+	public Usuario adicionar(Usuario usuario) {
+		usuario.setMatricula(gerarMatricula());
+		String crptoPwd = cyptoPwd(usuario.getMatricula());
+		usuario.setSenha(crptoPwd);
+		return usuarioRepository.save(usuario);
+	}
+	
 	public String gerarMatricula() {
 		Random rdn = new Random();
 		Calendar cldr = Calendar.getInstance();

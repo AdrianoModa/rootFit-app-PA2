@@ -14,7 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/tipo-usuario")
-@CrossOrigin("${origem-permitida}")
+//@CrossOrigin("${origem-permitida}")
 public class TipoUsuarioController {
 
     @Autowired
