@@ -1,3 +1,5 @@
+import { CidadesService } from './shared/services/cidades.service';
+import { EstadosService } from './shared/services/estados.service';
 import { ExercicioService } from './shared/services/exercicio.service';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
@@ -70,7 +72,9 @@ import { TipoUsuarioService } from './shared/services/tipo-usuario.service';
     AuthService,
     JwtHelper,
     ErrorHandlerService,
-    TipoUsuarioService
+    TipoUsuarioService,
+    EstadosService,
+    CidadesService
   ],
   bootstrap: [AppComponent]
 })

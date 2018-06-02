@@ -23,7 +23,7 @@
                                     <div class="form-group">
                                         <label>Selecione o tipo:</label>
                                         <select class="form-control" name="tipoUsuario" ngModel>
-                                            <option *ngFor="let tiposU of tipos" value="{{ tiposU.value }}" >{{ tiposU.label }}</option>
+                                            <option *ngFor="let t of tipos" value="{{ t.value }}" >{{ t.label }}</option>
                                         </select>
                                     </div>
                                 </div>
@@ -32,7 +32,7 @@
                                         <label>Selecione o cargo:</label>
                                         <select class="form-control" name="cargo" [(ngModel)]="colaborador.cargo">
                                             <option value="">Selecionar cargo</option>
-                                            <option *ngFor="let tiposU of tipos" value="{{ tiposU.value }}">{{ tiposU.label }}</option>
+                                            <option *ngFor="let c of cargos" value="{{ c.value }}">{{ c.label }}</option>
                                         </select>
                                     </div>
                                 </div>
@@ -41,7 +41,7 @@
                                         <label>Selecione o instrutor:</label>
                                         <select class="form-control" name="instrutor" ngModel>
                                             <option value="">Selecionar instrutor</option>
-                                            <option *ngFor="let tiposU of tipos" value="{{ tiposU.value }}">{{ tiposU.label }}</option>
+                                            <option *ngFor="let i of instrutores" value="{{ i.value }}">{{ i.label }}</option>
                                         </select>
                                     </div>
                                 </div>
@@ -85,7 +85,7 @@
                                             <label>Status:</label>
                                             <select class="form-control" name="status" [(ngModel)]="colaborador.status">
                                                 <option value="">Selecionar status</option>
-                                                <option *ngFor="let tiposU of tipos" value="{{ tiposU.value }}">{{ tiposU.label }}</option>
+                                                <option *ngFor="let s of status" value="{{ s.value }}">{{ s.label }}</option>
                                             </select>
                                         </div>
                                 </div>
@@ -109,7 +109,7 @@
                                         <label>Gênero</label>
                                         <select class="form-control" name="genero" [(ngModel)]="colaborador.genero">
                                             <option value="">Selecionar genero</option>
-                                            <option *ngFor="let tiposU of tipos" value="{{ tiposU.value }}">{{ tiposU.label }}</option>
+                                            <option *ngFor="let g of generos" value="{{ g.label }}">{{ g.label }}</option>
                                         </select>
                                     </div>
                                 </div>
@@ -122,13 +122,19 @@
                                         <input type="text" name="cep" class="form-control" placeholder="CEP" [(ngModel)]="colaborador.endereco.cep">
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-5">
                                     <div class="form-group">
                                         <label>Logradouro</label>
                                         <input type="text" name="endereco" class="form-control" placeholder="Endereço" [(ngModel)]="colaborador.endereco.logradouro">
                                     </div>
                                 </div>
                                 <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label>Complemento</label>
+                                        <input type="text" name="complemento" class="form-control" placeholder="Complemento" [(ngModel)]="colaborador.endereco.complemento">
+                                    </div>
+                                </div>
+                                <div class="col-md-1">
                                     <div class="form-group">
                                         <label>Número</label>
                                         <input type="text" name="numero" class="form-control" placeholder="Número" [(ngModel)]="colaborador.endereco.numero">
@@ -139,21 +145,27 @@
                             <div class="row" *ngIf="f.value.tipoUsuario !== '1'">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label>Bairro</label>
-                                        <input type="text" name="bairro" class="form-control" placeholder="Bairro" [(ngModel)]="colaborador.endereco.bairro" >
+                                        <label>Estado</label>
+                                        <select class="form-control" name="estado" [(ngModel)]="colaborador.endereco.estado">
+                                            <option value="">Selecionar estado</option>
+                                            <option *ngFor="let e of estados">{{ e.label }}</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Cidade</label>
-                                        <input type="text" name="cidade" class="form-control" placeholder="Cidade" ngModel>
+                                        <select class="form-control" name="estado" [(ngModel)]="colaborador.endereco.cidade">
+                                            <option value="">Selecionar cidade</option>
+                                            <option *ngFor="let m of cidades">{{ m.label }}</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label>Complemento</label>
-                                            <input type="text" name="complemento" class="form-control" placeholder="Complemento" [(ngModel)]="colaborador.endereco.complemento">
-                                        </div>
+                                    <div class="form-group">
+                                        <label>Bairro</label>
+                                        <input type="text" name="bairro" class="form-control" placeholder="Bairro" [(ngModel)]="colaborador.endereco.bairro" >
+                                    </div>
                                 </div>
                             </div>
 

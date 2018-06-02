@@ -1,4 +1,4 @@
-import { TipoUsuario } from "./tipousuario";
+import { Endereco } from "./endereco";
 
 export class Usuario{
     id: number;
@@ -8,11 +8,12 @@ export class Usuario{
     genero: string;
     login: string;
     matricula: string;
+    endereco : Endereco = new Endereco();
     nome: string;
     senha: string;
     rg: string;
     telefone: string;
     status: boolean;
-    tipoUsuario: number ;
+    tipo_usuario_id: string ;
   }
   
