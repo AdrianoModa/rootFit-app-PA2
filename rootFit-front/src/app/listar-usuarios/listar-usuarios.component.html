@@ -43,7 +43,7 @@
                             <thead>
                                 <tr>
                                     <th scope="col">Nome</th>
-                                    <th scope="col">Email</th>
+                                    <th scope="col">Matricula</th>
                                     <th scope="col">Telefone</th>
                                     <th scope="col" class="text-center">Perfil</th>
                                     <th scope="col" class="text-center">Editar</th>
@@ -53,7 +53,7 @@
                             <tbody>
                                 <tr *ngFor="let colab of colaboradores">
                                     <td>{{colab.nome}}</td>
-                                    <td>{{colab.email}}</td>
+                                    <td>{{colab.matricula}}</td>
                                     <td>{{colab.telefone}}</td>
                                     <td class="text-center">
                                         <button class="btn btn-light btn-sm" [routerLink]="['/perfil']">
