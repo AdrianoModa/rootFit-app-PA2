@@ -9,12 +9,32 @@ export class InstrutorService {
 
   instrutorURL = 'http://localhost:8080/instrutor'
 
-  constructor(private http: AuthHttp) { }
+  constructor(private httpCliente: HttpClient, private http: AuthHttp) { }
 
   consultar(): Promise<any> {
     return this.http.get(this.instrutorURL)
       .toPromise()
       .then( response => response.json());
+  }
+
+  buscar() {
+    return this.httpCliente.get<Instrutor[]>(`${this.instrutorURL}`);
+  }
+
+  buscarPorId(id: number) {
+    return this.httpCliente.get<Instrutor[]>(`${this.instrutorURL}/${id}`);
+  }
+
+  adicionar(instrutor: any) {
+    return this.httpCliente.post(this.instrutorURL, instrutor);
+  }
+
+  atualizar(instrutor: any) {
+    return this.httpCliente.put(this.instrutorURL + '/' + `${instrutor.id}`, instrutor);
+  }
+
+  remover(id: number) {
+    return this.httpCliente.delete(this.instrutorURL + '/' + `${id}`);
   }
 
 }
