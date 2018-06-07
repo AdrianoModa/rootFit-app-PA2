@@ -1,4 +1,5 @@
 import { Endereco } from "./endereco";
+import { TipoUsuario } from "./tipousuario";
 
 export class Usuario{
     id: number;
@@ -13,7 +14,6 @@ export class Usuario{
     senha: string;
     rg: string;
     telefone: string;
-    status: boolean;
-    tipo_usuario_id: string ;
+    status: boolean;    
   }
   

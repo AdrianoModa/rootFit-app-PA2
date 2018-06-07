@@ -36,7 +36,7 @@ public class Usuario implements Serializable {
 	@JoinColumn(name="endereco_id")
 	private Endereco endereco;
 	
-	@ManyToOne(cascade=CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name="tipoUsuario_id")
 	private TipoUsuario tipoUsuario;
 	

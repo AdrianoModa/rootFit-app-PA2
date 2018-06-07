@@ -16,13 +16,14 @@
                         </nav>
                         <hr/>
                     </div>
+                    <h2>Tipo: {{ colaborador.tipoUsuario.id }}</h2>
                     <div class="content">
                         <form #f="ngForm" (ngSubmit)="salvarColaborador(f)">
                             <div class="row">
                                 <div class="col-md-4 bg-warning">
                                     <div class="form-group">
                                         <label>Selecione o tipo:</label>
-                                        <select class="form-control" name="tipoUsuario" ngModel>
+                                        <select class="form-control" name="tipoUsuario" [(ngModel)]="colaborador.tipoUsuario.id">
                                             <option *ngFor="let t of tipos" value="{{ t.value }}" >{{ t.label }}</option>
                                         </select>
                                     </div>

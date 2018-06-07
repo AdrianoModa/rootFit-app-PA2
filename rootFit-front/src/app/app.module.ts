@@ -34,6 +34,7 @@ import { CadastrarFichaTreinoComponent } from './cadastrar-ficha-treino/cadastra
 import { FormFichaTreinoComponent } from './cadastrar-ficha-treino/form-ficha-treino/form-ficha-treino.component';
 import { FichaTreinoService } from './shared/services/ficha-treino.service';
 import { TipoUsuarioService } from './shared/services/tipo-usuario.service';
+import { UsuarioService } from './shared/services/usuario.service';
 
 @NgModule({
   declarations: [
@@ -74,7 +75,8 @@ import { TipoUsuarioService } from './shared/services/tipo-usuario.service';
     ErrorHandlerService,
     TipoUsuarioService,
     EstadosService,
-    CidadesService
+    CidadesService,
+    UsuarioService
   ],
   bootstrap: [AppComponent]
 })

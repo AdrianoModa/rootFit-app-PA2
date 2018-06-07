@@ -1,3 +1,4 @@
+import { UsuarioService } from './../shared/services/usuario.service';
 import { CidadesService } from './../shared/services/cidades.service';
 import { EstadosService } from './../shared/services/estados.service';
 import { Router } from '@angular/router';
@@ -16,6 +17,7 @@ import { ErrorHandlerService } from '../shared/services/error-handler.service';
 
 import 'rxjs/add/operator/map';
 import { map } from 'rxjs/operator/map';
+import { Usuario } from '../shared/entities/usuario';
 
 @Component({
   selector: 'app-cadastrar-usuario',
@@ -25,9 +27,20 @@ import { map } from 'rxjs/operator/map';
 export class CadastrarUsuarioComponent implements OnInit {
 
   colaborador = new Colaborador();
+  usuario = new Usuario();
+  tipoUsuario = new TipoUsuario();
+
+  private usuarios = [
+    { value: '', label: '' }
+  ]
+
+  private colaboradores = [
+    { value: '', label: ''}
+  ]
 
   private tipos = [
-    { value: null, label: null }
+    { value : 1 , label : "ADMIN" },
+    { value : 2 , label : "USER" }
   ];
 
   private estados = [
@@ -67,6 +80,7 @@ export class CadastrarUsuarioComponent implements OnInit {
               private tipoUsuarioService: TipoUsuarioService,
               private estadosService: EstadosService,
               private cidadesService: CidadesService,
+              private usuariosService: UsuarioService,
               private toasty: ToastyService,
               private errorHandle: ErrorHandlerService,
               private route: Router) { }
@@ -76,6 +90,8 @@ export class CadastrarUsuarioComponent implements OnInit {
     this.consultarTipoUsuario();
     this.consultarEstados();
     this.consultarCidades();
+    this.consultarUsuarios();
+    this.consultarColaborador();
   }
 
 
@@ -101,6 +117,20 @@ export class CadastrarUsuarioComponent implements OnInit {
       return {label: t.descricao, value: t.id  };
     }))
     .catch(erro => this.errorHandle.handle(erro));
+  }
+
+  consultarUsuarios(){
+    this.usuariosService.consultar()
+    .then(usuarios => this.usuarios = usuarios)
+    .catch(erro => this.errorHandle.handle(erro))
+    console.log(this.usuarios)
+  }
+
+  consultarColaborador(){
+    this.colaboradorService.consultar()
+    .then(colaboradores => this.colaboradores = colaboradores)
+    .catch(erro => this.errorHandle.handle(erro))
+    console.log(this.colaborador)
   }
 
   salvarColaborador(frm: FormControl){
