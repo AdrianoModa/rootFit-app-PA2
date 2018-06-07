@@ -74,13 +74,13 @@ public class ColaboradorController {
         return ResponseEntity.created(uri).body(colaboradorSalvo);
     }
 	
-	@DeleteMapping("/colaborador/{id}")
+	@DeleteMapping("/{id}")
 	//@PreAuthorize("hasAuthority('ROLE_REMOVER_COLABORADOR') and #oauth2.hasScope('write')")
 	public void remover(@PathVariable Long id) {
 		colaboradorRepository.delete(id);
 	}
 
-	@PutMapping("colaborador/{id}")
+	@PutMapping("/{id}")
 	public ResponseEntity<Colaborador> atualizar(@PathVariable Long id, @Valid @RequestBody Colaborador colaborador){
 		Colaborador colaboradorSalvo = colaboradorService.atualizarColaborador(id, colaborador);
 		return ResponseEntity.ok(colaboradorSalvo);
