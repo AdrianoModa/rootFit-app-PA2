@@ -1,0 +1,25 @@
+.bg-danger{
+    background: #ef7b7b;
+    color: #fff;
+}
+.bg-warning{
+    background: #ffa258;
+    color: #fff;
+}
+.bg-success{
+    background: #cefc86;
+    color: #fff;
+}
+.text-slarge{
+    font-weight: bold;
+    font-size: 70px;
+}
+.text-large{
+    font-weight: bold;
+    font-size: 100px;
+}
+.title-profile{
+    font-size: 40px;
+    font-weight: 100;
+    color: black
+}

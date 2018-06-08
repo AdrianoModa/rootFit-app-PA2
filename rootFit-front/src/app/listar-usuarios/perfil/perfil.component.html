@@ -11,13 +11,12 @@
               <a href="#">
                 <img class="avatar border-gray" src="assets/img/faces/face-3.jpg" alt="..." />
 
-                <h4 class="title">{{auth.jwtPayload?.nome}}
+                <h4 class="title-profile">{{auth.jwtPayload?.nome}}</h4>
                   <br />
-                  <small>Matricula: {{auth.jwtPayload?.matricula}}</small>
-                </h4>
+                  <p>Objetivo</p>
               </a>
             </div>
-            <p class="description text-center"> 
+            <p class="description text-center">
             </p>
           </div>
           <hr>
@@ -33,7 +32,56 @@
             </button>
           </div>
         </div>
+        <div class="row">
+          <div class="col-md-2">
+            <div class="card bg-danger">
+              <div class="content">
+                <h4 class="text-slarge text-center">IMC</h4>
+                <p class="text-large text-center">32</p>
+                <div class="footer">
+                  <p class="text-center">Odesidade Grau I</p>
+                  <hr>
+                  <div>
+                    <i class="fa fa-history"></i> Histórico
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-2">
+              <div class="card bg-warning">
+                <div class="content">
+                  <h4 class="text-slarge text-center">Faltas</h4>
+                  <p class="text-large text-center">4</p>
+                  <div class="footer">
+                    <p class="text-center">Junho de 2018</p>
+                    <hr>
+                    <div>
+                      <i class="fa fa-history"></i> Histórico
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+          <div class="col-md-8">
+              <div class="card bg-success">
+                <div class="content">
+                  <h4 class="text-slarge text-center">Graficos</h4>
+                  <p class="text-large text-center">32</p>
+                  <div class="footer">
+                    <p class="text-center">Odesidade Grau I</p>
+                    <hr>
+                    <div>
+                      <i class="fa fa-history"></i> Histórico
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
