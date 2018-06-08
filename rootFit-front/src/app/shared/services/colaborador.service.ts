@@ -10,6 +10,8 @@ import { promise } from 'protractor';
 @Injectable()
 export class ColaboradorService {
 
+  colaboradores: any;
+
   colaboradorUrl = 'http://localhost:8080/colaborador';
 
   constructor(private http: AuthHttp) { }
@@ -18,6 +20,12 @@ export class ColaboradorService {
     return this.http.get(this.colaboradorUrl)
       .toPromise()
       .then( response => response.json());
+  }
+
+  consultarPorId(id: number): Promise<any> {
+    return this.http.get(`${this.colaboradorUrl}/${id}`)
+      .toPromise()
+      .then(response => response.json());
   }
 
   excluir(id: number): Promise<void> {
@@ -29,6 +37,17 @@ export class ColaboradorService {
 
   adicionar(colaborador: Colaborador) {
     return this.http.post(this.colaboradorUrl, colaborador);
+  }
+
+  // atualizar(colaborador: any) {
+  //   return this.http.put(this.colaboradorUrl + '/' + `${colaborador.id}`, colaborador)
+  //   .subscribe(dados => this.colaboradores = dados )
+  // }
+
+  atualizar(colaborador: Colaborador): Promise<void> {
+    return this.http.put(`${this.colaboradorUrl}/${colaborador.id}`, colaborador)
+      .toPromise()
+      .then(response => response.json());
   }
 
   // adicionar(colaborador: Colaborador): Promise<Colaborador> {
