@@ -1,19 +1,48 @@
-<div class="container">
-    <div class="col-lg-4"></div>
-    <div class="col-lg-4">
-      <form autocomplete="off" #f="ngForm">
-        <div class="form-group">
-          <label>Matricula</label>
-          <input type="matricula" name="usuario" class="form-control" pattern="[0-9]{7}" ngModel required #usuario="ngModel">
-          <div *ngIf="!usuario.valid && usuario.touched">
-            <p>
-              <small>Matrícula é obrigatória!</small>
-            </p>
-          </div>
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="/login">Login</a>
+                                </li>
+                                <li class="breadcrumb-item active" aria-current="page">Recuperar Senha
+                                </li>
+                            </ol>
+                        </nav>
+                        <hr/>
+                    </div>                        
+                    <div class="content">                           
+                        <form autocomplete="off" #f="ngForm">
+                            <div class="row">                                
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Matricula</label>
+                                        <input type="matricula" name="usuario" class="form-control" pattern="[0-9]{7}" ngModel required #usuario="ngModel">
+                                          <div *ngIf="!usuario.valid && usuario.touched">
+                                            <p>
+                                              <small>Matrícula é obrigatória!</small>
+                                            </p>
+                                          </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-8">
+                                  <br>
+                                  <br>
+                                  <p>Digite sua matricula e receba em seu email cadastrado a sua senha</p>
+                                </div>
+
+                            </div>
+                            <button type="submit" label="Login" [disabled]="!f.valid" class="btn btn-success btn-fill pull-left">Recuperar Senha</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-        <button type="submit" label="Login" [disabled]="!f.valid"
-          class="btn btn-success btn-fill pull-right">Recuperar Senha</button>
-      </form>
     </div>
-    <div class="col-lg-4"></div>
-  </div>
+</div>
