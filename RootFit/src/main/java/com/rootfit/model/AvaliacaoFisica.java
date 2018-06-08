@@ -13,8 +13,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table
 public class AvaliacaoFisica implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
@@ -24,6 +26,12 @@ public class AvaliacaoFisica implements Serializable{
 	private Double peso;
 	private Double altura;
 	private LocalDate dataAvaliacao;
+	private Double bracoEsquerda;
+	private Double bracoDireito;
+	private Double pernaEsquerda;
+	private Double pernaDireita;
+	private Double abdomen;
+	private Double peitoral; 
 
 	@ManyToOne
 	@JoinColumn(name="aluno_id")
@@ -39,23 +47,28 @@ public class AvaliacaoFisica implements Serializable{
 		inverseJoinColumns = @JoinColumn(name="medidaMuscular_id"))
 	private List<MedidaMuscular> medidasMusculares = new ArrayList<>();
 	
-	
-	
 	public AvaliacaoFisica() {
 		
 	}
 
-	public AvaliacaoFisica(Long id, Double peso, Double altura, LocalDate dataAvaliacao, Aluno aluno, Instrutor instrutor) {
+	public AvaliacaoFisica(Long id, Double peso, Double altura, LocalDate dataAvaliacao, Double bracoEsquerda,
+			Double bracoDireito, Double pernaEsquerda, Double pernaDireita, Double abdomen, Double peitoral,
+			Aluno aluno, Instrutor instrutor, List<MedidaMuscular> medidasMusculares) {
 		super();
 		this.id = id;
 		this.peso = peso;
 		this.altura = altura;
 		this.dataAvaliacao = dataAvaliacao;
+		this.bracoEsquerda = bracoEsquerda;
+		this.bracoDireito = bracoDireito;
+		this.pernaEsquerda = pernaEsquerda;
+		this.pernaDireita = pernaDireita;
+		this.abdomen = abdomen;
+		this.peitoral = peitoral;
 		this.aluno = aluno;
 		this.instrutor = instrutor;
+		this.medidasMusculares = medidasMusculares;
 	}
-	
-	
 
 	public List<MedidaMuscular> getMedidasMusculares() {
 		return medidasMusculares;
@@ -112,6 +125,54 @@ public class AvaliacaoFisica implements Serializable{
 	public void setId(Long id) {
 		this.id = id;
 	}
+	
+	public Double getBracoEsquerda() {
+		return bracoEsquerda;
+	}
+
+	public void setBracoEsquerda(Double bracoEsquerda) {
+		this.bracoEsquerda = bracoEsquerda;
+	}
+
+	public Double getBracoDireito() {
+		return bracoDireito;
+	}
+
+	public void setBracoDireito(Double bracoDireito) {
+		this.bracoDireito = bracoDireito;
+	}
+
+	public Double getPernaEsquerda() {
+		return pernaEsquerda;
+	}
+
+	public void setPernaEsquerda(Double pernaEsquerda) {
+		this.pernaEsquerda = pernaEsquerda;
+	}
+
+	public Double getPernaDireita() {
+		return pernaDireita;
+	}
+
+	public void setPernaDireita(Double pernaDireita) {
+		this.pernaDireita = pernaDireita;
+	}
+
+	public Double getAbdomen() {
+		return abdomen;
+	}
+
+	public void setAbdomen(Double abdomen) {
+		this.abdomen = abdomen;
+	}
+
+	public Double getPeitoral() {
+		return peitoral;
+	}
+
+	public void setPeitoral(Double peitoral) {
+		this.peitoral = peitoral;
+	}
 
 	@Override
 	public int hashCode() {
@@ -137,7 +198,5 @@ public class AvaliacaoFisica implements Serializable{
 			return false;
 		return true;
 	}
-	
-	
 
 }
