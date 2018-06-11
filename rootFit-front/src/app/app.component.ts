@@ -17,4 +17,8 @@ export class AppComponent {
   exibindoMenu(){
     return this.router.url !== '/login';
   }
+
+  exibindoMenuCriarConta(){
+    return this.router.url !== '/criar-conta';
+  }
 }

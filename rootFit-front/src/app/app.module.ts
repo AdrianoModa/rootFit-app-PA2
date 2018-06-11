@@ -15,43 +15,49 @@ import { SharedModule } from './shared/shared.module';
 import { AppComponent } from './app.component';
 import { routing } from './app.routing';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { MenuComponent } from './menu/menu.component';
 import { AlunoService } from './shared/services/aluno.service';
 import { InstrutorService } from './shared/services/instrutor.service';
 import { ColaboradorService } from './shared/services/colaborador.service';
-import { ListarUsuariosComponent } from './listar-usuarios/listar-usuarios.component';
-import { FormComponent } from './listar-usuarios/form/form.component';
+import { AlunoComponent } from './aluno/aluno.component';
+import { FormAlunoComponent } from './aluno/form-aluno/form-aluno.component';
 import { FormEnderecoComponent } from './shared/form-endereco/form-endereco.component';
-import { CadastrarUsuarioComponent } from './cadastrar-usuario/cadastrar-usuario.component';
 import { SegurancaModule } from './seguranca/seguranca.module';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { CadastrarAvaliacaoFisicaComponent } from './cadastrar-avaliacao-fisica/cadastrar-avaliacao-fisica.component';
-import { FormAvaliacaoFisicaComponent } from './cadastrar-avaliacao-fisica/form-avaliacao-fisica/form-avaliacao-fisica.component';
+import { AvaliacaoFisicaComponent } from './avaliacao-fisica/avaliacao-fisica.component';
+import { FormAvaliacaoFisicaComponent } from './avaliacao-fisica/form-avaliacao-fisica/form-avaliacao-fisica.component';
 import { AvaliacaoFisicaService } from './shared/services/avaliacao-fisica.service';
-import { PerfilComponent } from './listar-usuarios/perfil/perfil.component';
-import { CadastrarFichaTreinoComponent } from './cadastrar-ficha-treino/cadastrar-ficha-treino.component';
-import { FormFichaTreinoComponent } from './cadastrar-ficha-treino/form-ficha-treino/form-ficha-treino.component';
-import { FichaTreinoService } from './shared/services/ficha-treino.service';
+import { PerfilComponent } from './aluno/perfil/perfil.component';
+import { TreinoComponent } from './treino/treino.component';
+import { FormTreinoComponent } from './treino/form-treino/form-treino.component';
+import { TreinoService } from './shared/services/treino.service';
 import { TipoUsuarioService } from './shared/services/tipo-usuario.service';
 import { UsuarioService } from './shared/services/usuario.service';
+import { CriarContaComponent } from './criar-conta/criar-conta.component';
+import { ExerciciosComponent } from './exercicios/exercicios.component';
+import { FormExerciciosComponent } from './exercicios/form-exercicios/form-exercicios.component';
+import { AcademiaComponent } from './academia/academia.component';
+import { FormAcademiaComponent } from './academia/form-academia/form-academia.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    MenuComponent,
-    ListarUsuariosComponent,
-    FormComponent,
+    AlunoComponent,
+    FormAlunoComponent,
     FormEnderecoComponent,
-    CadastrarUsuarioComponent,
     SidebarComponent,
     NavbarComponent,
-    CadastrarAvaliacaoFisicaComponent,
+    AvaliacaoFisicaComponent,
     FormAvaliacaoFisicaComponent,
     PerfilComponent,
-    CadastrarFichaTreinoComponent,
-    FormFichaTreinoComponent
+    TreinoComponent,
+    FormTreinoComponent,
+    CriarContaComponent,
+    ExerciciosComponent,
+    FormExerciciosComponent,
+    AcademiaComponent,
+    FormAcademiaComponent
   ],
   imports: [
     BrowserModule,
@@ -68,7 +74,7 @@ import { UsuarioService } from './shared/services/usuario.service';
     InstrutorService, 
     ColaboradorService, 
     AvaliacaoFisicaService,
-    FichaTreinoService,
+    TreinoService,
     ExercicioService,
     AuthService,
     JwtHelper,

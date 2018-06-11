@@ -1,0 +1,94 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="dashboard">DASHBOARD</a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <a routerLink="/alunos">ALUNOS</a>
+                                </li>
+                                <li class="breadcrumb-item active" aria-current="page">{{editando ? 'EDIÇÃO':'CADASTRO'}}</li>
+                            </ol>
+                        </nav>
+                        <hr/>
+                    </div>
+                    <div class="content">
+                        <form #f="ngForm" (ngSubmit)="adicionar(f)">
+                            <div class="row">
+                                <div class="col-md-4 bg-warning">
+                                    <div class="form-group">
+                                        <label>Selecione o tipo:</label>
+                                        <select class="form-control" name="tste">
+                                            <option ></option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" *ngIf="f.value.tipoUsuario === ''">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Matrícula</label>
+                                        <input type="text" name="matricula" class="form-control" disabled placeholder="Matricula">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Inicio</label>
+                                        <input type="month" name="inicio" class="form-control" disabled placeholder="Inicio">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Nome</label>
+                                        <input type="text" name="nome" class="form-control" placeholder="Nome" [(ngModel)]="colaborador.nome">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Email</label>
+                                        <input type="email" name="email" class="form-control" placeholder="Email" email [(ngModel)]="colaborador.email">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Data de Nascimento</label>
+                                        <input type="date" name="datanasc" class="form-control" placeholder="Nascimento" [(ngModel)]="colaborador.datanasc">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label>Status:</label>
+                                            <select class="form-control" name="status" [(ngModel)]="colaborador.status">
+                                                <option value="">Selecionar status</option>
+                                                <option *ngFor="let s of status" value="{{ s.value }}">{{ s.label }}</option>
+                                            </select>
+                                        </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row" *ngIf="f.value.tipoUsuario === '4'">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Objetivo</label>
+                                        <textarea rows="5" name="objetivo" class="form-control" placeholder="Qual a sua meta na academia" [(ngModel)]="colaborador.objetivo"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-success btn-fill pull-right" >Adicionar</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

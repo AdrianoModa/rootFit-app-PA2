@@ -1,38 +1,48 @@
-import { CadastrarFichaTreinoComponent } from './cadastrar-ficha-treino/cadastrar-ficha-treino.component';
-import { PerfilComponent } from './listar-usuarios/perfil/perfil.component';
-import { CadastrarAvaliacaoFisicaComponent } from './cadastrar-avaliacao-fisica/cadastrar-avaliacao-fisica.component';
-import { LoginFormComponent } from './seguranca/login-form/login-form.component';
-import { CadastrarUsuarioComponent } from './cadastrar-usuario/cadastrar-usuario.component';
 import { Routes, RouterModule } from '@angular/router';
 import { ModuleWithProviders, Component } from '@angular/core';
 
-import { AppComponent } from './app.component';
+import { FormAcademiaComponent } from './academia/form-academia/form-academia.component';
+import { AcademiaComponent } from './academia/academia.component';
+import { CriarContaComponent } from './criar-conta/criar-conta.component';
+import { TreinoComponent } from './treino/treino.component';
+import { AvaliacaoFisicaComponent } from './avaliacao-fisica/avaliacao-fisica.component';
+import { LoginFormComponent } from './seguranca/login-form/login-form.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { ListarUsuariosComponent } from './listar-usuarios/listar-usuarios.component';
-import { FormComponent } from './listar-usuarios/form/form.component';
-import { FormAvaliacaoFisicaComponent } from './cadastrar-avaliacao-fisica/form-avaliacao-fisica/form-avaliacao-fisica.component';
+import { AlunoComponent } from './aluno/aluno.component';
+import { FormAlunoComponent } from './aluno/form-aluno/form-aluno.component';
+import { FormAvaliacaoFisicaComponent } from './avaliacao-fisica/form-avaliacao-fisica/form-avaliacao-fisica.component';
 import { RecuperarSenhaComponent } from './seguranca/recuperar-senha/recuperar-senha.component';
-import { FormFichaTreinoComponent } from './cadastrar-ficha-treino/form-ficha-treino/form-ficha-treino.component';
+import { FormTreinoComponent } from './treino/form-treino/form-treino.component';
 
 
 const APP_ROUTES: Routes = [
- 
-  { path: 'login', component: LoginFormComponent },
-  { path: '', redirectTo: '/login', pathMatch: 'full'},
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'listar-usuarios', component: ListarUsuariosComponent},
-  { path: 'listar-usuarios/adicionar', component: FormComponent},
-  { path: 'listar-usuarios/:id', component: FormComponent},
-  { path: 'cadastrar-usuarios', component: CadastrarUsuarioComponent},
-  { path: 'cadastrar-avaliacao-fisica', component: FormAvaliacaoFisicaComponent},
-  { path: 'avaliacao-fisica/:id', component: FormAvaliacaoFisicaComponent},
-  { path: 'perfil', component: PerfilComponent},
-  { path: 'avaliacao-fisica', component: CadastrarAvaliacaoFisicaComponent },
-  { path: 'recuperar-senha', component: RecuperarSenhaComponent},
-  { path: 'ficha-treino', component: CadastrarFichaTreinoComponent},
-  { path: 'ficha-treino/:id', component: FormFichaTreinoComponent },
-  { path: 'cadastrar-ficha-treino', component: FormFichaTreinoComponent },
   
+  { path: '', redirectTo: '/login', pathMatch: 'full'},
+  { path: 'login', component: LoginFormComponent },
+  { path: 'dashboard', component: DashboardComponent },
+  
+  { path: 'academias', component: AcademiaComponent},
+  { path: 'academias/adicionar', component: FormAcademiaComponent},
+  { path: 'academias/:id', component: FormAcademiaComponent},
+
+  { path: 'alunos', component: AlunoComponent},
+  { path: 'alunos/adicionar', component: FormAlunoComponent},
+  { path: 'alunos/:id', component: FormAlunoComponent},
+
+  { path: 'avaliacoes-fisicas', component: AvaliacaoFisicaComponent },
+  { path: 'avaliacoes-fisicas/adicionar', component: FormAvaliacaoFisicaComponent},
+  { path: 'avaliacoes-fisicas/:id', component: FormAvaliacaoFisicaComponent},
+
+  { path: 'treinos', component: TreinoComponent},
+  { path: 'treinos/:id', component: FormTreinoComponent },
+  { path: 'treinos/adicionar', component: FormTreinoComponent },
+
+  { path: 'exercicios', component: TreinoComponent},
+  { path: 'exercicios/:id', component: FormTreinoComponent },
+  { path: 'exercicios/adicionar', component: FormTreinoComponent },
+
+  { path: 'recuperar-senha', component: RecuperarSenhaComponent},
+  { path: 'criar-conta', component: CriarContaComponent },
 
 ];
 

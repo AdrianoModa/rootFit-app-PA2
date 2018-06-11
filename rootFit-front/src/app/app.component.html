@@ -1,16 +1,16 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <!-- <app-menu *ngIf="exibindoMenu()"></app-menu> -->
 <div class="wrapper">
-    <div class="sidebar" data-color="green" data-image="" *ngIf="exibindoMenu()">
-        <app-sidebar *ngIf="exibindoMenu()"></app-sidebar>
-        <div class="sidebar-background" style="background-image: url(/assets/img/capagym.jpg)" *ngIf="exibindoMenu()"></div>
+    <div class="sidebar" data-color="green" data-image="" *ngIf="exibindoMenuCriarConta() && exibindoMenu()">
+        <app-sidebar *ngIf="exibindoMenu() && exibindoMenuCriarConta()"></app-sidebar>
+        <div class="sidebar-background" style="background-image: url(/assets/img/capagym.jpg)" *ngIf="exibindoMenuCriarConta() && exibindoMenu()"></div>
     </div>
 
-    <div class="main-panel" *ngIf="exibindoMenu()">
-        <app-navbar *ngIf="exibindoMenu()"></app-navbar>
-        <router-outlet *ngIf="exibindoMenu()"></router-outlet>
+    <div class="main-panel" *ngIf="exibindoMenuCriarConta() && exibindoMenu()">
+        <app-navbar *ngIf="exibindoMenuCriarConta()"></app-navbar>
+        <router-outlet *ngIf="exibindoMenuCriarConta()"></router-outlet>
     </div>
-    <router-outlet *ngIf="!exibindoMenu()"></router-outlet>
+    <router-outlet *ngIf="!exibindoMenuCriarConta() || !exibindoMenu()"></router-outlet>
     
 
     <ng2-toasty></ng2-toasty>

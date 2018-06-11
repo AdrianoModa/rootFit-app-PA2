@@ -1,35 +1,3 @@
-.container{
-    color: black;
-    height: 100%;
-    width: 100%;
-    padding-top:150px;
-    padding-left: 300px;
-    padding-right: 300px;
-    background: #000 url("/assets/img/capagym2.jpg");
-}
-.form-control{
-    border: white 1px solid;
-    height: 55px;
-    border-radius: 10px;
-    box-shadow: #000 1px 1px 1px;
-}
-input-placeholder{
-    color: springgreen;
-    font-size: 18px;
-    font-weight: bold;
-}
-a{
-    color: black;
-}
-
-.ng-invalid.ng-touched:not(form){
-    border: solid 1px red;
-}
-
-p{
-    color: red;
-}
-
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100,700,500);
 
 body {
@@ -47,6 +15,16 @@ body{
   background-size: 600% 100%;
   -webkit-animation: HeroBG 20s ease infinite;
           animation: HeroBG 20s ease infinite;
+}
+
+.container{
+  color: black;
+  height: 100%;
+  width: 100%;
+  padding-top:150px;
+  padding-left: 300px;
+  padding-right: 300px;
+  background: #000 url("/assets/img/capagym2.jpg");
 }
 
 @-webkit-keyframes HeroBG {
@@ -256,4 +234,3 @@ label {
   color: #fff;
   background-color: #2D3B55;
 }
-

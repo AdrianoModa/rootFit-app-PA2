@@ -1,0 +1,86 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="/dashboard">DASHBOARD</a>
+                                </li>
+                                <li class="breadcrumb-item active" aria-current="page">
+                                    ALUNOS
+                                </li>
+                                
+                            </ol>
+                        </nav>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class=text-right>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="buscar" placeholder="buscar">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content table-responsive table-full-width">
+                        <table class="table table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Foto</th>
+                                    <th scope="col">Nome</th>
+                                    <th scope="col">Matricula</th>
+                                    <th scope="col">Telefone</th>
+                                    <th scope="col">Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td width="10">
+                                        <img class="pull-left img-circle nav-user-photo" width="50" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxhcCYW4QDWMOjOuUTxOd50KcJvK-rop9qE9zRltSbVS_bO-cfWA"
+                                        />
+                                    </td>
+                                    <td>
+                                        {{aluno.nome}}
+                                        <br>
+                                    </td>
+                                    <td>
+                                        {{aluno.matricula}}
+                                        <br>
+                                    </td>
+                                    <td>
+                                        {{aluno.telefone}}
+                                        <br>
+                                    </td>
+                                    <td class="td-actions text-right">
+                                        <a rel="tooltip" title="View Profile" class="btn btn-info btn-simple btn-xs">
+                                            <i class="fa fa-user"></i>
+                                        </a>
+                                        <a rel="tooltip" title="Edit Profile" class="btn btn-success btn-simple btn-xs">
+                                            <i class="fa fa-edit"></i>
+                                        </a>
+                                        <a rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                            <i class="fa fa-times"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class=text-left>
+                                    <button class="btn btn-success btn-fill" routerLink="adicionar">
+                                        NOVO
+                                        <i class="fa fa-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
