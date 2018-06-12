@@ -11,7 +11,9 @@
     border: white 1px solid;
     height: 55px;
     border-radius: 10px;
-    box-shadow: #000 1px 1px 1px;
+}
+.logo img{
+  max-width: 300px;
 }
 input-placeholder{
     color: springgreen;
@@ -35,7 +37,7 @@ p{
 body {
   padding-top: 90px;
   background:#F7F7F7;
-  color:#666666;
+  color:#000;
   font-family: 'Roboto', sans-serif;
   font-weight:100;
 }
@@ -82,9 +84,6 @@ label {
 }
 .panel-login {
    border: none;
-  -webkit-box-shadow: 0px 0px 2px 2px rgba(188,190,194,0.39);
-  -moz-box-shadow: 0px 0px 2px 2px rgba(188,190,194,0.39);
-  box-shadow: 0px 0px 2px 2px rgba(188,190,194,0.39);
   }
 .panel-login .checkbox input[type=checkbox]{
   margin-left: 0px;
@@ -124,7 +123,7 @@ label {
   padding-left: 3px;
   padding-top: 1px;
   font-size: 11px;
-  color: #555555;
+  color: #000;
 }
 .panel-login .checkbox input[type="checkbox"] {
   opacity: 0;
@@ -147,9 +146,7 @@ label {
   margin: 30px;
 }
 .panel-login>.panel-heading {
-  color: #848c9d;
-  background-color: #e8e9ec;
-  border-color: #fff;
+  color: #000;
   text-align:center;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -163,7 +160,7 @@ label {
 }
 .panel-login>.panel-heading .login {
   padding: 20px 30px;
-  border-bottom-leftt-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 .panel-login>.panel-heading .register {
   padding: 20px 30px;
@@ -172,7 +169,7 @@ label {
 }
 .panel-login>.panel-heading a{
   text-decoration: none;
-  color: #666;
+  color: #0000;
   font-weight: 300;
   font-size: 16px;
   -webkit-transition: all 0.1s linear;
@@ -180,7 +177,7 @@ label {
   transition: all 0.1s linear;
 }
 .panel-login>.panel-heading a#register-form-link {
-  color: #fff;
+  color: #000;
   width: 100%;
   text-align: right;
 }
@@ -198,7 +195,7 @@ label {
   transition: all 0.1s linear;
   -webkit-box-shadow: none;
   box-shadow: none;
-  border-bottom: 1px solid #e7e7e7;
+  border-bottom: 1px solid #999;
   border-radius: 0px;
   padding: 6px 0px;
 }
@@ -211,26 +208,30 @@ label {
   border-color: #ccc;
 }
 .btn-login {
-  background-color: #E8E9EC;
+  background-color: springgreen;
   outline: none;
-  color: #2D3B55;
+  color: #000;
   font-size: 14px;
   height: auto;
-  font-weight: normal;
+  font-weight: bold;
   padding: 14px 0;
   text-transform: uppercase;
   border: none;
   border-radius: 0px;
   box-shadow: none;
 }
+.labelHead{
+  color: #000;
+  font-weight: 300;
+}
 .btn-login:hover,
 .btn-login:focus {
-  color: #fff;
+  color: #000;
   background-color: #2D3B55;
 }
 .forgot-password {
   text-decoration: underline;
-  color: #888;
+  color: #000;
 }
 .forgot-password:hover,
 .forgot-password:focus {
@@ -241,10 +242,10 @@ label {
 .btn-register {
   background-color: #E8E9EC;
   outline: none;
-  color: #2D3B55;
+  color: #000;
   font-size: 14px;
   height: auto;
-  font-weight: normal;
+  font-weight: bold;
   padding: 14px 0;
   text-transform: uppercase;
   border: none;

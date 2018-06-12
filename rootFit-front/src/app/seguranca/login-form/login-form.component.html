@@ -13,8 +13,8 @@
                 </div>
 
                 <div class="form-group">
-                  <label>Matricula</label>
-                  <input type="text" name="username" class="form-control" pattern="[0-9]{7}" placeholder="email" ngModel required #usuario="ngModel">
+                  <label><p class="labelHead">Matrícula</p></label>
+                  <input type="text" name="username" class="form-control" pattern="[0-9]{7}" placeholder="seunome@email.com" ngModel required #usuario="ngModel">
                   <div *ngIf="!usuario.valid && usuario.touched">
                     <p>
                       <small>Matrícula é obrigatória!</small>
@@ -22,8 +22,8 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label>Senha</label>
-                  <input type="password" name="senha" class="form-control" minlength="5" placeholder="Senha" ngModel required #senha="ngModel">
+                  <label><p class="labelHead">Senha</p></label>
+                  <input type="password" name="senha" class="form-control" minlength="5" ngModel required #senha="ngModel">
                   <div *ngIf="!senha.valid && senha.touched">
                     <p>
                       <small>Senha é obrigatória!</small>
