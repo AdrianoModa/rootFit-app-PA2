@@ -27,7 +27,6 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { AvaliacaoFisicaComponent } from './avaliacao-fisica/avaliacao-fisica.component';
 import { FormAvaliacaoFisicaComponent } from './avaliacao-fisica/form-avaliacao-fisica/form-avaliacao-fisica.component';
 import { AvaliacaoFisicaService } from './shared/services/avaliacao-fisica.service';
-import { PerfilComponent } from './aluno/perfil/perfil.component';
 import { TreinoComponent } from './treino/treino.component';
 import { FormTreinoComponent } from './treino/form-treino/form-treino.component';
 import { TreinoService } from './shared/services/treino.service';
@@ -50,7 +49,6 @@ import { FormAcademiaComponent } from './academia/form-academia/form-academia.co
     NavbarComponent,
     AvaliacaoFisicaComponent,
     FormAvaliacaoFisicaComponent,
-    PerfilComponent,
     TreinoComponent,
     FormTreinoComponent,
     CriarContaComponent,

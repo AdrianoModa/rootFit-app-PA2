@@ -18,72 +18,77 @@
                             <hr/>
                         </div>
                         <div class="content">
-                            <form #f="ngForm" (ngSubmit)="adicionar(f)">
-                                <div class="row">
-                                    <div class="col-md-4 bg-warning">
-                                        <div class="form-group">
-                                            <label>Selecione o tipo:</label>
-                                            <select class="form-control" name="tste">
-                                                <option ></option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row" *ngIf="f.value.tipoUsuario === ''">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Matrícula</label>
-                                            <input type="text" name="matricula" class="form-control" disabled placeholder="Matricula">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Inicio</label>
-                                            <input type="month" name="inicio" class="form-control" disabled placeholder="Inicio">
-                                        </div>
-                                    </div>
-                                </div>
-    
+                            <form >
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Nome</label>
-                                            <input type="text" name="nome" class="form-control" placeholder="Nome" [(ngModel)]="colaborador.nome">
-                                        </div>
+                                            <input type="text" name="nome" id="nome" class="form-control" >
+                                          </div>
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Email</label>
-                                            <input type="email" name="email" class="form-control" placeholder="Email" email [(ngModel)]="colaborador.email">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="form-group">
-                                            <label>Data de Nascimento</label>
-                                            <input type="date" name="datanasc" class="form-control" placeholder="Nascimento" [(ngModel)]="colaborador.datanasc">
+                                            <input type="text" name="inicio" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-md-2">
-                                            <div class="form-group">
-                                                <label>Status:</label>
-                                                <select class="form-control" name="status" [(ngModel)]="colaborador.status">
-                                                    <option value="">Selecionar status</option>
-                                                    <option *ngFor="let s of status" value="{{ s.value }}">{{ s.label }}</option>
-                                                </select>
-                                            </div>
-                                    </div>
-                                </div>
-
-    
-                                <div class="row" *ngIf="f.value.tipoUsuario === '4'">
-                                    <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Objetivo</label>
-                                            <textarea rows="5" name="objetivo" class="form-control" placeholder="Qual a sua meta na academia" [(ngModel)]="colaborador.objetivo"></textarea>
+                                            <label>Data de Nascimento</label>
+                                            <input type="date" name="date" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label>Status:</label>
+                                            <select class="form-control" name="status">
+                                                <option value="">Selecionar status:</option>
+                                                <option *ngFor="let s of status" value="{{ s.value }}">{{ s.label }}</option>
+                                            </select>
+                                        </div>
+                                </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>Estado</label>
+                                            <input type="text" name="estado" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>Cidade</label>
+                                            <input type="text" name="cidade" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>Telefone</label>
+                                            <input type="text" name="telefone" class="form-control" >
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>Academia</label>
+                                            <input type="text" name="academia" class="form-control" >
                                         </div>
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-success btn-fill pull-right" >Adicionar</button>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Senha</label>
+                                            <input type="password" name="senha" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Confirmar senha</label>
+                                            <input type="password" name="consenha" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-success btn-fill pull-right" >Inserir</button>
                                 <div class="clearfix"></div>
                             </form>
                         </div>

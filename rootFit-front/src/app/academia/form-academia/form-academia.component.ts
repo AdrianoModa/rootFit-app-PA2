@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormAcademiaComponent implements OnInit {
 
+  status = [
+    {id: 0, descricao: "Ativo"},
+    {id: 1, descricao: "Inativo"}
+  ]
+
   constructor() { }
 
   ngOnInit() {
