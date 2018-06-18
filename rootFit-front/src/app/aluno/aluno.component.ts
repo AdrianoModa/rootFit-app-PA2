@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { ColaboradorService } from '../shared/services/colaborador.service';
 import { ErrorHandlerService } from '../shared/services/error-handler.service';
+import { AlunoService } from '../shared/services/aluno.service';
 
 @Component({
   selector: 'app-aluno',
@@ -11,14 +12,21 @@ import { ErrorHandlerService } from '../shared/services/error-handler.service';
 })
 export class AlunoComponent implements OnInit {
 
-  //colaboradores: Colaborador[] = [];
 
-  colaboradores= [];
+  alunos= [];
 
-  constructor( 
+  constructor(private alunoService: AlunoService,
               private errorHandler: ErrorHandlerService,
               private toasty: ToastyService ) { }
 
   ngOnInit() {
+    this.alunoService.consultar();
+  }
+
+  consultarAluno(){
+    this.alunoService.consultar()
+    .then(dados => {
+      this.alunos = dados;
+    })
   }
 }

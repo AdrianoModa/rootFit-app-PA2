@@ -13,38 +13,21 @@ import { ErrorHandlerService } from '../shared/services/error-handler.service';
 })
 export class DashboardComponent implements OnInit {
 
-  colaboradores = [];
-  instrutores = [];
+
   alunos = [];
 
-  constructor(private colaboradorService: ColaboradorService,
-              private instrutorService: InstrutorService,
-              private alunoService: AlunoService, 
+  constructor(private alunoService: AlunoService, 
               private errorHandler: ErrorHandlerService) { }
 
   ngOnInit() {
-    this.consultarColaborador();
-    this.consultarInstrutor();
     this.consultarAluno();
   }
 
-  consultarColaborador() {
-   this.colaboradorService.consultar()
-      .then(colaboradores => this.colaboradores = colaboradores)
-      .catch(erro => this.errorHandler.handle(erro));
-  }
+
 
   consultarAluno() {
     this.alunoService.consultar()
        .then(alunos => this.alunos = alunos)
        .catch(erro => this.errorHandler.handle(erro));
    }
-   consultarInstrutor() {
-    this.instrutorService.consultar()
-       .then(instrutores => this.instrutores = instrutores)
-       .catch(erro => this.errorHandler.handle(erro));
-   }
-
-  
-
 }
