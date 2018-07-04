@@ -37,21 +37,21 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                <tr *ngFor="let avaliacaofisica of avaliacoesfisicas">
                                     <td width="10">
                                         <img class="pull-left img-circle nav-user-photo" width="50" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxhcCYW4QDWMOjOuUTxOd50KcJvK-rop9qE9zRltSbVS_bO-cfWA"
                                         />
                                     </td>
                                     <td>
-                                        {{aluno.nome}}
+                                        {{avaliacaofisica.nome}}
                                         <br>
                                     </td>
                                     <td>
-                                        {{aluno.matricula}}
+                                        {{avaliacaofisica.matricula}}
                                         <br>
                                     </td>
                                     <td>
-                                        {{aluno.telefone}}
+                                        {{avaliacaofisica.telefone}}
                                         <br>
                                     </td>
                                     <td class="td-actions text-right">

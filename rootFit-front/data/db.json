@@ -5,12 +5,14 @@
       "nome": "Maikon Albuquerque",
       "telefone": "(85) 34720299",
       "email": "maikonmorais@gmail.com",
+      "imc": "Obesidade Grau I",
       "tipo": "Aluno",
       "id": 1
     },
     {
       "matricula": "1613230",
       "nome": "Adriano Moda",
+      "imc": "Abaixo do Peso",
       "telefone": "(85) 34720009",
       "email": "adrianomodafeitosa@gmail.com",
       "tipo": "Aluno",
@@ -19,6 +21,7 @@
     {
       "matricula": "1613290",
       "nome": "Matheus Tanaques",
+      "imc": "Acima do Peso",
       "telefone": "(85) 34720900",
       "email": "matheustanaques@gmail.com",
       "tipo": "Aluno",
@@ -27,6 +30,7 @@
     {
       "matricula": "1613007",
       "nome": "Pedro Castro e Silva",
+      "imc": "Peso Normal",
       "telefone": "(85) 34720200",
       "email": "pedrocastroesilva@gmail.com",
       "tipo": "Aluno",
@@ -35,6 +39,7 @@
     {
       "matricula": "1613007",
       "nome": "Ciro Gomes",
+      "imc": "Acima do Peso",
       "telefone": "(85) 34720200",
       "email": "cirogomes@gmail.com",
       "tipo": "Aluno",
@@ -43,6 +48,7 @@
     {
       "matricula": "1613055",
       "nome": "Pedro Góes",
+      "imc": "Obesidade Grau II",
       "telefone": "(85) 34720200",
       "email": "pedrogoes@gmail.com",
       "tipo": "Aluno",
@@ -52,6 +58,7 @@
       "matricula": "1613067",
       "nome": "Wietske Meyering",
       "telefone": "(85) 34720200",
+      "imc": "Peso Normal",
       "email": "wietskemeyering@gmail.com",
       "tipo": "Aluno",
       "id": 7
@@ -59,6 +66,7 @@
     {
       "matricula": "1613098",
       "nome": "Neymar Jr.",
+      "imc": "Abaixo do Peso",
       "telefone": "(85) 34720200",
       "email": "neymarjunior@gmail.com",
       "tipo": "Aluno",
@@ -67,6 +75,7 @@
     {
       "matricula": "1613077",
       "nome": "Kendrick Lamar",
+      "imc": "Peso Normal",
       "telefone": "(85) 34720200",
       "email": "kendricklamar@gmail.com",
       "tipo": "Aluno",
@@ -75,10 +84,41 @@
     {
       "matricula": "1613011",
       "nome": "Mycroft Holmes",
+      "imc": "Obesidade Grau III",
       "telefone": "(85) 34720200",
       "email": "pedrocastroesilva@gmail.com",
       "tipo": "Aluno",
       "id": 10
+    }
+  ],
+  "avaliacoes-fisicas": [
+    {
+      "matricula": "1613235",
+      "nome": "Maikon Albuquerque",
+      "telefone": "(85) 34720299",
+      "email": "maikonmorais@gmail.com",
+      "tipo": "Aluno",
+      "id": 1
+    }
+  ],
+  "treinos": [
+    {
+      "matricula": "1613235",
+      "nome": "Maikon Albuquerque",
+      "telefone": "(85) 34720299",
+      "email": "maikonmorais@gmail.com",
+      "tipo": "Aluno",
+      "id": 1
+    }
+  ],
+  "exercicios": [
+    {
+      "matricula": "1613235",
+      "nome": "Maikon Albuquerque",
+      "telefone": "(85) 34720299",
+      "email": "maikonmorais@gmail.com",
+      "tipo": "Aluno",
+      "id": 1
     }
   ]
 }

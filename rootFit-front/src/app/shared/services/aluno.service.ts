@@ -1,17 +1,18 @@
 import { Injectable } from '@angular/core';
+import { Http } from '@angular/http';
 
-import { AuthHttp } from 'angular2-jwt';
+import 'rxjs/add/operator/toPromise'
 
 @Injectable()
 export class AlunoService {
 
-  alunoURL = 'http://localhost:3000/alunos';
+ // alunoURL = 'http://localhost:3000/alunos';
 
-  constructor(private http: AuthHttp) { }
+  constructor(private http: Http) { }
 
   consultar(): Promise<any> {
-    return this.http.get(this.alunoURL)
+    return this.http.get('http://localhost:3000/alunos')
       .toPromise()
-      .then( response => response.json());
+      .then(response => response.json());
   }
 }

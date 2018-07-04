@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AvaliacaoFisicaService } from '../shared/services/avaliacao-fisica.service';
 
 @Component({
   selector: 'app-avaliacao-fisica',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AvaliacaoFisicaComponent implements OnInit {
 
-  constructor() { }
+  avaliacoesfisicas = [];
+
+  constructor( private avaliacaoFisicaService: AvaliacaoFisicaService ) { }
 
   ngOnInit() {
+    this.consultar();
+  }
+            
+  consultar() {
+   this.avaliacaoFisicaService.consultar()
+      .then(dados => {
+        this.avaliacoesfisicas = dados;
+      });
   }
 
 }

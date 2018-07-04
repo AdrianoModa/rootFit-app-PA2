@@ -1,7 +1,6 @@
 import { ToastyService } from 'ng2-toasty';
 import { Component, OnInit } from '@angular/core';
 
-import { ColaboradorService } from '../shared/services/colaborador.service';
 import { ErrorHandlerService } from '../shared/services/error-handler.service';
 import { AlunoService } from '../shared/services/aluno.service';
 
@@ -13,20 +12,20 @@ import { AlunoService } from '../shared/services/aluno.service';
 export class AlunoComponent implements OnInit {
 
 
-  alunos= [];
+  alunos = [];
 
   constructor(private alunoService: AlunoService,
               private errorHandler: ErrorHandlerService,
               private toasty: ToastyService ) { }
 
   ngOnInit() {
-    this.alunoService.consultar();
+    this.consultar();
   }
-
-  consultarAluno(){
-    this.alunoService.consultar()
-    .then(dados => {
-      this.alunos = dados;
-    })
+            
+  consultar() {
+   this.alunoService.consultar()
+      .then(dados => {
+        this.alunos = dados;
+      })
   }
 }

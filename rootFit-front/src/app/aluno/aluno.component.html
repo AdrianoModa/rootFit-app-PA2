@@ -29,11 +29,13 @@
                         <table class="table table-hover table-striped">
                             <thead>
                                 <tr>
-                                    <th scope="col">Foto</th>
-                                    <th scope="col">Nome</th>
-                                    <th scope="col">Matricula</th>
-                                    <th scope="col">Telefone</th>
-                                    <th scope="col">Ações</th>
+                                    <th scope="col" class="text-left">Foto</th>
+                                    <th scope="col" class="text-left">Nome Completo</th>
+                                    <th scope="col" class="text-left">IMC</th>
+                                    <th scope="col" class="text-left">Email</th>
+                                    <th scope="col" class="text-left">Matricula</th>
+                                    <th scope="col" class="text-left">Telefone</th>
+                                    <th scope="col" class="text-center">Ações</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -42,8 +44,16 @@
                                         <img class="pull-left img-circle nav-user-photo" width="50" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxhcCYW4QDWMOjOuUTxOd50KcJvK-rop9qE9zRltSbVS_bO-cfWA"
                                         />
                                     </td>
+                                    <td >
+                                        <a href="#">{{aluno.nome}}</a>
+                                        <br>
+                                    </td>
                                     <td>
-                                        {{aluno.nome}}
+                                        {{aluno.imc}}
+                                        <br>
+                                    </td>
+                                    <td>
+                                        {{aluno.email}}
                                         <br>
                                     </td>
                                     <td>
@@ -54,7 +64,7 @@
                                         {{aluno.telefone}}
                                         <br>
                                     </td>
-                                    <td class="td-actions text-right">
+                                    <td class="td-actions text-center">
                                         <a rel="tooltip" title="View Profile" class="btn btn-info btn-simple btn-xs">
                                             <i class="fa fa-user"></i>
                                         </a>

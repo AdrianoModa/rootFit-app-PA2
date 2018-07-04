@@ -1,33 +1,19 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Http } from '@angular/http';
 
-import { AvaliacaoFisica } from './../entities/avaliacao-fisica';
+import 'rxjs/add/operator/toPromise'
 
 @Injectable()
 export class AvaliacaoFisicaService {
 
-  avaliacaoURL = 'http://localhost:8080/avaliacao-fisica';
+  // avaliacaoURL = 'http://localhost:3000/avaliacaofisica';
 
-  constructor(private httpCliente: HttpClient) { }
+  constructor(private http: Http) { }
 
-  buscar() {
-    return this.httpCliente.get<AvaliacaoFisica[]>(`${this.avaliacaoURL}`);
+    consultar(): Promise<any> {
+      return this.http.get('http://localhost:3000/avaliacoes-fisicas')
+        .toPromise()
+        .then(response => response.json());
+    }
+
   }
-
-  buscarPorId(id: number) {
-    return this.httpCliente.get<AvaliacaoFisica[]>(`${this.avaliacaoURL}/${id}`);
-  }
-
-  adicionar(avaliacao: any) {
-    return this.httpCliente.post(this.avaliacaoURL, avaliacao);
-  }
-  
-  atualizar(avaliacao: any) {
-    return this.httpCliente.put(this.avaliacaoURL + '/' + `${avaliacao.id}`, avaliacao);
-  }
-
-  remover(id: number) {
-    return this.httpCliente.delete(this.avaliacaoURL + '/' + `${id}`);
-  }
-
-}
